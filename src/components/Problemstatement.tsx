@@ -1,4 +1,4 @@
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, Target } from "lucide-react";
 
 const ProblemStatements = () => {
   const problemStatements = [
@@ -10,22 +10,27 @@ const ProblemStatements = () => {
   ];
 
   return (
-    <div className="grid gap-3 animate-fade-in">
-      <h3 className="text-xl font-bold text-white mb-4">Problem Statements</h3>
-      {problemStatements.map((problem) => (
-        <div
-          key={problem.id}
-          className="bg-secondary/50 backdrop-blur-sm p-3 rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 transform hover:scale-105"
-        >
-          <div className="flex items-center gap-2">
-            <span className="text-teal">
-              <AlertCircle className="w-4 h-4" />
-            </span>
-  <span className="text-sm text-white">{problem.title}</span>
+    <section className="py-12 animate-fade-in" id="problem-statements">
+      <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-2">
+        <Target className="text-teal-400" />
+        Problem Statements
+      </h2>
+      <div className="grid gap-6 px-5">
+        {problemStatements.map((problem) => (
+          <div
+            key={problem.id}
+            className="bg-secondary/50 backdrop-blur-sm p-5 rounded-lg border border-white/20 hover:border-primary/40 transition-all duration-300 transform hover:scale-105"
+          >
+            <div className="flex items-center gap-4">
+              <span className="text-teal">
+                <AlertCircle className="w-6 h-6" />
+              </span>
+              <h2 className="text-base  text-white">{problem.title}</h2>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

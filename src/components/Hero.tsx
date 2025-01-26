@@ -17,7 +17,7 @@ const Hero = () => {
       {/* Content Wrapper */}
       <div className="text-center relative z-10">
         {/* Tagline */}
-        <div className="inline-block mb-4 px-4 py-1.5 bg-[#00FFA3]/10 text-[#6ecbc9] rounded-full text-sm font-medium">
+        <div className="inline-block mb-4 px-4 py-1.5 bg-[#00FFA3]/10 text-[#e0ecec] rounded-full text-sm font-medium">
           A COUNTDOWN HACKATHON START
         </div>
 
@@ -31,7 +31,7 @@ const Hero = () => {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
+        <p className="text-white text-lg md:text-xl mb-12 max-w-2xl mx-auto">
           Join the ultimate tech innovation challenge. Transform your ideas into
           reality.
         </p>

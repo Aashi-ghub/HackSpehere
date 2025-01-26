@@ -30,11 +30,16 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+          {/* Updated HackSphere Logo */}
           <Link
             to="/"
-            className="text-2xl font-bold text-[#00FFA3] hover:text-[#00FFA3]/80 transition-colors navbar-logo"
+            className="text-xl md:text-xl font-bold text-white hover:no-underline leading-tight"
           >
-            TechHack
+            Hack
+            <span className="bg-gradient-to-r from-[#00FFA3] to-[#00A3FF] bg-clip-text text-transparent">
+              {" "}
+              Sphere
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -43,7 +48,7 @@ const Navigation = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className="text-gray-300 hover:text-[#00FFA3] transition-colors duration-200 nav-link"
+                className="text-white hover:text-[#378f89] transition-colors duration-200 nav-link"
               >
                 {link.name}
               </Link>

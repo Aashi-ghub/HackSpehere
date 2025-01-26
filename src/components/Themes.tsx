@@ -36,7 +36,7 @@ const Themes = () => {
             key={index}
             className="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-teal-700 hover:border-slate-100 transition-all duration-300 transform hover:scale-105 group"
           >
-            <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
+            <div className="mb-4 transform group-hover:scale-100 transition-transform duration-300">
               {theme.icon}
             </div>
             <h3 className="text-xl text-teal-500 font-bold">{theme.title}</h3>

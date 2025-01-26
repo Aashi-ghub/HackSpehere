@@ -6,22 +6,22 @@ const Timeline: React.FC = () => {
   return (
     <div className="relative">
       <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-2">
-        <Calendar className="text-primary" />
+        <Calendar className="text-teal-400" />
         Event Timeline
       </h2>
       {/* Vertical Line */}
-      <div className="absolute left-4 md:left-1/2 h-full w-0.5 bg-green-600/30 transform md:-translate-x-0.5"></div>
+      <div className="absolute left-4 md:left-1/2 h-full w-0.5 bg-teal-800 transform md:-translate-x-0.5"></div>
 
       <div className="space-y-8">
         {/* Timeline Item 1 */}
         <div className="relative">
           {/* Pulsating Dot */}
-          <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-green-600 transform -translate-x-2 mt-6 sign">
+          <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-teal-300 transform -translate-x-2 mt-6 sign">
             <div className="absolute w-8 h-8 rounded-full bg-green-600/20 transform -translate-x-2 -translate-y-2 animate-pulse"></div>
           </div>
 
           <div className="ml-12 md:ml-0 md:mr-[50%] md:pr-8">
-            <div className="bg-gray-800/50 p-4 rounded-xl backdrop-blur-sm border border-gray-700/50 hover:border-green-500/50 transition-colors">
+            <div className="bg-gray-800/50 p-4 rounded-xl backdrop-blur-sm border border-gray-700/50 hover:border-teal-300 transition-colors">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center space-x-3 text-green-500">
                   <svg
@@ -52,11 +52,11 @@ const Timeline: React.FC = () => {
 
         {/* Timeline Item 2 */}
         <div className="relative">
-          <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-green-600 transform -translate-x-2 mt-6">
+          <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-teal-500 transform -translate-x-2 mt-6">
             <div className="absolute w-8 h-8 rounded-full bg-green-600/20 transform -translate-x-2 -translate-y-2 animate-pulse"></div>
           </div>
 
-          <div className="ml-12 md:ml-0 md:ml-[50%] md:pl-8">
+          <div className="ml-12 md:ml-[50%] md:pl-8">
             <div className="bg-gray-800/50 p-4 rounded-xl backdrop-blur-sm border border-gray-700/50 hover:border-green-500/50 transition-colors">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center space-x-3 text-green-500">
@@ -131,7 +131,7 @@ const Timeline: React.FC = () => {
             <div className="absolute w-8 h-8 rounded-full bg-green-600/20 transform -translate-x-2 -translate-y-2 animate-pulse"></div>
           </div>
 
-          <div className="ml-12 md:ml-0 md:ml-[50%] md:pl-8">
+          <div className="ml-12 md:ml-[50%] md:pl-8">
             <div className="bg-gray-800/50 p-4 rounded-xl backdrop-blur-sm border border-gray-700/50 hover:border-green-500/50 transition-colors">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center space-x-3 text-green-500">
@@ -207,7 +207,7 @@ const Timeline: React.FC = () => {
             <div className="absolute w-8 h-8 rounded-full bg-green-600/20 transform -translate-x-2 -translate-y-2 animate-pulse"></div>
           </div>
 
-          <div className="ml-12 md:ml-0 md:ml-[50%] md:pl-8">
+          <div className="ml-12 md:ml-[50%] md:pl-8">
             <div className="bg-gray-800/50 p-4 rounded-xl backdrop-blur-sm border border-gray-700/50 hover:border-green-500/50 transition-colors">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center space-x-3 text-green-500">

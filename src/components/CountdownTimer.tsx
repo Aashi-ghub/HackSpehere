@@ -9,13 +9,15 @@ const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date("2025-03-1T00:00:00").getTime();
+    const targetDate = new Date("2025-03-01T00:00:00").getTime();
 
-    const interval = setInterval(() => {
+    const updateTimer = () => {
       const now = new Date().getTime();
       const difference = targetDate - now;
 
-      if (difference > 0) {
+      if (difference <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      } else {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
           hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
@@ -23,7 +25,10 @@ const CountdownTimer = () => {
           seconds: Math.floor((difference / 1000) % 60),
         });
       }
-    }, 1000);
+    };
+
+    updateTimer(); // Initial call to set the timer immediately
+    const interval = setInterval(updateTimer, 1000);
 
     return () => clearInterval(interval);
   }, []);
@@ -35,7 +40,7 @@ const CountdownTimer = () => {
           key={unit}
           className="bg-black/80 backdrop-blur-sm p-4 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-200"
         >
-          <div className="text-4xl font-bold text-[#3fa6a8] mb-2">
+          <div className="text-4xl font-bold text-[#eff4f4] mb-2">
             {value.toString().padStart(2, "0")}
           </div>
           <div className="text-gray-400 uppercase text-sm">{unit}</div>

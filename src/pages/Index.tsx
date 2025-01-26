@@ -18,8 +18,6 @@ const Index = () => {
       {/* Grid pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-40 z-0 pointer-events-none" />
 
-      
-
       <Navigation />
 
       <div className="relative z-10">
@@ -30,8 +28,16 @@ const Index = () => {
           </div>
           <div className="mx-4">
             <WhatWeOffer />
-            <Timeline />
-            <Themes />
+
+            {/* Add IDs for scroll navigation */}
+            <div id="timeline">
+              <Timeline />
+            </div>
+
+            <div id="themes">
+              <Themes />
+            </div>
+
             {/* TechCards Section (moved above Team) */}
             <div className="mt-16 mx-6">
               <TechCards />

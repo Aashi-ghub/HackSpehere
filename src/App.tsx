@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import RegistrationPage from "./pages/register";
 
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/register" element={<RegistrationPage />} />
+          
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

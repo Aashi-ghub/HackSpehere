@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import "../index.css"; // Ensure this path is correct
 
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "Themes", path: "/#themes" },
+  { name: "Register", path: "/register" },
+  { name: "Timeline", path: "/#timeline" },
+];
+
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -16,13 +23,6 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Themes", path: "/themes" },
-    { name: "Register", path: "/register" },
-    { name: "Timeline", path: "/timeline" },
-  ];
-
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -31,7 +31,6 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Updated HackSphere Logo */}
           <Link
             to="/"
             className="text-xl md:text-xl font-bold text-white hover:no-underline leading-tight"
@@ -49,6 +48,16 @@ const Navigation = () => {
               <Link
                 key={link.name}
                 to={link.path}
+                onClick={(e) => {
+                  if (link.path.startsWith("/#")) {
+                    e.preventDefault();
+                    const targetId = link.path.split("#")[1];
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                      targetElement.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }
+                }}
                 className="text-white hover:text-[#378f89] transition-colors duration-200 nav-link font-secondary"
               >
                 {link.name}
@@ -73,8 +82,18 @@ const Navigation = () => {
                 <Link
                   key={link.name}
                   to={link.path}
+                  onClick={(e) => {
+                    if (link.path.startsWith("/#")) {
+                      e.preventDefault();
+                      const targetId = link.path.split("#")[1];
+                      const targetElement = document.getElementById(targetId);
+                      if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: "smooth" });
+                      }
+                      setIsOpen(false);
+                    }
+                  }}
                   className="block px-3 py-2 rounded-md text-gray-300 hover:text-[#00FFA3] transition-colors duration-200 nav-link font-secondary"
-                  onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </Link>

@@ -136,7 +136,7 @@ export default function RegistrationForm() {
                       name="teamName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Team Name</FormLabel>
+                          <FormLabel className=" text-white">Team Name</FormLabel>
                           <FormControl>
                             <Input placeholder="Enter team name" {...field} />
                           </FormControl>
@@ -149,7 +149,7 @@ export default function RegistrationForm() {
                       name="teamDescription"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Team Description (Optional)</FormLabel>
+                          <FormLabel className=" text-white">Team Description (Optional)</FormLabel>
                           <FormControl>
                             <Textarea
                               placeholder="Brief description of your team"
@@ -165,7 +165,7 @@ export default function RegistrationForm() {
                       name="teamSize"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Team Size</FormLabel>
+                          <FormLabel className=" text-white">Team Size</FormLabel>
                           <Select
                             onValueChange={(value) => {
                               field.onChange(value);

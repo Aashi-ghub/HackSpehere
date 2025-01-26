@@ -41,3 +41,61 @@
   color: #888;
 }
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+.navigation {
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: rgba(0, 0, 0, 0.8); /* Ensure the background is visible */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.navigation.scrolled {
+  background-color: rgba(0, 0, 0, 0.9); /* Change background on scroll */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.md\\:hidden {
+  display: block;
+}
+
+.md\\:flex {
+  display: flex;
+}
+
+.space-x-6 > * + * {
+  margin-left: 1.5rem;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.block {
+  display: block;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}

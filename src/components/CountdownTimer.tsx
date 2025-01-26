@@ -9,7 +9,7 @@ const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date("2025-01-15T00:00:00").getTime();
+    const targetDate = new Date("2025-03-1T00:00:00").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -35,7 +35,7 @@ const CountdownTimer = () => {
           key={unit}
           className="bg-black/80 backdrop-blur-sm p-4 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-200"
         >
-          <div className="text-4xl font-bold text-[#00FFA3] mb-2">
+          <div className="text-4xl font-bold text-[#3fa6a8] mb-2">
             {value.toString().padStart(2, "0")}
           </div>
           <div className="text-gray-400 uppercase text-sm">{unit}</div>

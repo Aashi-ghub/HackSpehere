@@ -41,13 +41,6 @@
   text-wrap: balance;
 }
 
-.bg-grid-pattern {
-  background-image: 
-    linear-gradient(to right, rgba(0, 255, 163, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 255, 163, 0.1) 1px, transparent 1px);
-  background-size: 30px 30px;
-}
-
 @keyframes float {
   0% { transform: translateY(0px) rotate(0deg); }
   50% { transform: translateY(-20px) rotate(5deg); }
@@ -86,5 +79,7 @@
 .animate-pulse-teal {
   animation: pulse-teal 2s infinite;
 }
-.sign{
-  color: rgb(0 255 163)}
+
+.sign {
+  color: rgb(0 255 163);
+}

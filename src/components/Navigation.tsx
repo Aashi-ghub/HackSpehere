@@ -25,16 +25,14 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#0D1117]/80 backdrop-blur-md"
-          : "bg-transparent"
-      }`}
+        scrolled ? "bg-[#0D1117]/80 backdrop-blur-md" : "bg-transparent"
+      } navbar`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link
             to="/"
-            className="text-2xl font-bold text-[#00FFA3] hover:text-[#00FFA3]/80 transition-colors"
+            className="text-2xl font-bold text-[#00FFA3] hover:text-[#00FFA3]/80 transition-colors navbar-logo"
           >
             TechHack
           </Link>
@@ -45,7 +43,7 @@ const Navigation = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className="text-gray-300 hover:text-[#00FFA3] transition-colors duration-200"
+                className="text-gray-300 hover:text-[#00FFA3] transition-colors duration-200 nav-link"
               >
                 {link.name}
               </Link>
@@ -69,7 +67,7 @@ const Navigation = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="block px-3 py-2 rounded-md text-gray-300 hover:text-[#00FFA3] transition-colors duration-200"
+                  className="block px-3 py-2 rounded-md text-gray-300 hover:text-[#00FFA3] transition-colors duration-200 nav-link"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}

@@ -35,7 +35,7 @@ const Hero = () => {
         <div className="mb-16">
           <Link
             to="/register"
-            className="inline-flex items-center px-8 py-4 bg-[#41c8d2] text-black rounded-full hover:bg-teal-200 transition-all duration-300 transform hover:scale-105 font-medium"
+            className="inline-flex items-center px-8 py-4 bg-[#39a5ad] text-white rounded-full hover:bg-teal-200 transition-all duration-300 transform hover:scale-105 font-medium"
           >
             REGISTER NOW
             <ArrowRight className="ml-2 transition-transform" />

@@ -12,7 +12,7 @@ const VideoBackground = () => {
       >
         <source src="/Blue and Black  Futuristic Cyber Security Mobile Video.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-[#0f363b] opacity-80" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-[#051011] opacity-80" />
     </div>
   );
 };

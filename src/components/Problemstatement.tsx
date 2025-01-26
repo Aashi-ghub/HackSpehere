@@ -18,10 +18,10 @@ const ProblemStatements = () => {
           className="bg-secondary/50 backdrop-blur-sm p-3 rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 transform hover:scale-105"
         >
           <div className="flex items-center gap-2">
-            <span className="text-primary">
+            <span className="text-teal">
               <AlertCircle className="w-4 h-4" />
             </span>
-            <span className="text-sm text-white">{problem.title}</span>
+  <span className="text-sm text-white">{problem.title}</span>
           </div>
         </div>
       ))}

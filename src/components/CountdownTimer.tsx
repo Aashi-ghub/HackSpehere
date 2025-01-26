@@ -38,7 +38,7 @@ const CountdownTimer = () => {
       {Object.entries(timeLeft).map(([unit, value]) => (
         <div
           key={unit}
-          className="bg-black/80 backdrop-blur-sm p-4 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-200"
+          className="bg-teal-600/10 backdrop-blur-sm p-4 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-200"
         >
           <div className="text-4xl font-bold text-[#eff4f4] mb-2">
             {value.toString().padStart(2, "0")}

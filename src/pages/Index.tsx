@@ -7,6 +7,7 @@ import Team from "../components/Team";
 import Sponsors from "../components/Sponsors";
 import TechCards from "../components/Problemstatement";
 import WhatWeOffer from "../components/WhatWeOffer";
+import Footer from "../components/footer";
 
 const Index = () => {
   return (
@@ -31,7 +32,7 @@ const Index = () => {
               zIndex: -1,
             }}
           >
-            <div className="w-16 h-16 bg-primary/20 rounded-full blur-xl" />
+            <div className="w-16 h-16 bg-teal/20 rounded-full blur-xl" />
           </div>
         ))}
       </div>
@@ -44,17 +45,20 @@ const Index = () => {
           <div className="flex flex-col justify-center items-center">
             <Hero />
           </div>
-          <WhatWeOffer />
-          <Timeline />
-          <Themes />
-          <Team />
-          <Sponsors />
+          <div className="mx-4">
+            <WhatWeOffer />
+            <Timeline />
+            <Themes />
+            <Team />
+            <Sponsors />
+          </div>
           {/* TechCards Section */}
-          <div className="mt-16">
+          <div className="mt-16 mx-4">
             <TechCards />
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

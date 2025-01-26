@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import "../index.css"; // Ensure this path is correct
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,7 @@ const Navigation = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled ? "bg-[#0D1117]/80 backdrop-blur-md" : "bg-transparent"
-      } navbar`}
+      } navbar font-primary`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -48,7 +49,7 @@ const Navigation = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className="text-white hover:text-[#378f89] transition-colors duration-200 nav-link"
+                className="text-white hover:text-[#378f89] transition-colors duration-200 nav-link font-secondary"
               >
                 {link.name}
               </Link>
@@ -72,7 +73,7 @@ const Navigation = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="block px-3 py-2 rounded-md text-gray-300 hover:text-[#00FFA3] transition-colors duration-200 nav-link"
+                  className="block px-3 py-2 rounded-md text-gray-300 hover:text-[#00FFA3] transition-colors duration-200 nav-link font-secondary"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}

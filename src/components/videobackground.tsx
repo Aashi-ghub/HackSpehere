@@ -1,0 +1,20 @@
+import React from 'react';
+
+const VideoBackground = () => {
+  return (
+    <div className="fixed inset-0 z-0">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute w-full h-full object-cover opacity-100"
+      >
+        <source src="/Blue and Black  Futuristic Cyber Security Mobile Video.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-[#0f363b] opacity-80" />
+    </div>
+  );
+};
+
+export default VideoBackground;

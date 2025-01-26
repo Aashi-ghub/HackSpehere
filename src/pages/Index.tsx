@@ -8,15 +8,13 @@ import Sponsors from "../components/Sponsors";
 import TechCards from "../components/Problemstatement";
 import WhatWeOffer from "../components/WhatWeOffer";
 import Footer from "../components/footer";
+import VideoBackground from "../components/videobackground";
 
 const Index = () => {
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="fixed inset-0 bg-gradient-to-br from-black via-black to-[#0f363b] z-0" />
-
-      {/* Grid pattern */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-40 z-0 pointer-events-none" />
+      {/* Video background with gradient overlay */}
+      <VideoBackground />
 
       <Navigation />
 

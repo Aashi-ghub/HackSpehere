@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="text-center relative z-10">
         {/* Tagline */}
         <div className="inline-block mb-4 px-4 py-1.5 bg-[#00FFA3]/10 text-[#e0ecec] rounded-full text-sm font-medium">
-          A COUNTDOWN HACKATHON START
+          A COUNTDOWN TO HACKATHON STARTs
         </div>
         {/* Title */}
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">

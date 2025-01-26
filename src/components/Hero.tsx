@@ -33,7 +33,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
           <Link
             to="/register"
-            className="inline-flex items-center px-8 py-4 bg-[#00FFA3] text-black rounded-full hover:bg-[#00FFA3]/90 transition-all duration-300 transform hover:scale-105 font-medium"
+            className="inline-flex items-center px-8 py-4 bg-[#4bdbd6] text-black rounded-full hover:bg-teal-200 transition-all duration-300 transform hover:scale-105 font-medium"
           >
             REGISTER NOW
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />

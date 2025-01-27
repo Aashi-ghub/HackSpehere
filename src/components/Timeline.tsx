@@ -3,11 +3,15 @@ import React, { useState } from "react";
 
 const Timeline: React.FC = () => {
   const [activeDescription, setActiveDescription] = useState<string | null>(null);
+  const [activeItem, setActiveItem] = useState<string | null>(null);
+  const [heading, setHeading] = useState<string>("Description");
 
   const timelineItems = [
     {
       title: "Registration Open",
       description: "Kickstart your journey by registering for the event.",
+      detailedDescription: "Explore the registration details and take the first step toward participation.",
+      hasButton: true,
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -15,22 +19,22 @@ const Timeline: React.FC = () => {
           height="24"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="cyan"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide lucide-square-pen w-6 h-6"
+          className="w-6 h-6"
         >
           <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
           <path d="M18.375 2.625a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4Z"></path>
         </svg>
       ),
-      isRegistration: true,
     },
     {
       title: "Problem Statement Release",
       description: "Find your teammates and form a strong team.",
-      detailedDescription: "Explore various problem statements and brainstorm with your team.",
+      detailedDescription: "Explore various problem statements and brainstorm innovative solutions with your team.",
+      hasButton: false,
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -38,11 +42,11 @@ const Timeline: React.FC = () => {
           height="24"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="cyan"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide lucide-users w-6 h-6"
+          className="w-6 h-6"
         >
           <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
           <circle cx="9" cy="7" r="4"></circle>
@@ -54,7 +58,8 @@ const Timeline: React.FC = () => {
     {
       title: "Dev Sprint (Day-1)",
       description: "Build fast, innovate faster—Dev Sprint awaits!",
-      detailedDescription: "Design to dev :-   we will provide a figma design to them and they have to develop the website with the help of the design in limited time...",
+      heading: "Design to Dev",
+      detailedDescription: "We will provide a Figma design to them, and they have to develop the website with the help of the design in limited time...",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -62,11 +67,11 @@ const Timeline: React.FC = () => {
           height="24"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="cyan"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide lucide-square-pen w-6 h-6"
+          className="w-6 h-6"
         >
           <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
           <path d="M18.375 2.625a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4Z"></path>
@@ -74,9 +79,11 @@ const Timeline: React.FC = () => {
       ),
     },
     {
-      title: "GitChallenge (Day-2) ",
-      description: "Find your teammates and form a strong team.",
-      detailedDescription: "GitHack :-we will provide a base code or the basic structure of the base website and every team will make some changes according to them such as they can add some features or they can change the design or something like these...after changing the bse code they will push their new updated code to their github and after that other teams will fork that updated code to do more updation any team can fork any team's code and same process will be repeated again and again.....they will have a limited no of forks so that it doesn't require more time..and for judgment we will review the last code they have pushed not the whole history but only the latest code...and by reviewing the latest code they will be given points....",
+      title: "Git Challenge (Day-2)",
+      description: "Collaborate, code, and conquer challenges together with GitChallenge!",
+      heading: "Githack",
+      detailedDescription:
+        "We will provide a base code or the basic structure of the base website. Every team will make changes such as adding features, redesigning, etc. After updating, they will push their new code to GitHub. Other teams can fork this code and make further updates, with a limited number of forks allowed. Judging will be based on the final code submitted.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -84,11 +91,11 @@ const Timeline: React.FC = () => {
           height="24"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="cyan"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide lucide-users w-6 h-6"
+          className="w-6 h-6"
         >
           <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
           <circle cx="9" cy="7" r="4"></circle>
@@ -98,9 +105,10 @@ const Timeline: React.FC = () => {
       ),
     },
     {
-      title: "Pitch Deck Submission (Day-3)",
-      description: "Build fast, innovate faster—Dev Sprint awaits!",
-      detailedDescription: "PPT presentation/ submission :-the teams will submit their solutions and we will shortlist or assign points to them according to their ppt",
+      title: "Pitch Deck Submission",
+      description: "Craft your vision, showcase your innovation, and submit your winning pitch deck!",
+      heading: "Pitch Deck",
+      detailedDescription: "Teams will submit their solutions, and points will be assigned based on their presentation.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -108,11 +116,11 @@ const Timeline: React.FC = () => {
           height="24"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="cyan"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide lucide-square-pen w-6 h-6"
+          className="w-6 h-6"
         >
           <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
           <path d="M18.375 2.625a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4Z"></path>
@@ -120,9 +128,10 @@ const Timeline: React.FC = () => {
       ),
     },
     {
-      title: "Hackathon Day (Final Day)",
-      description: "Find your teammates and form a strong team.",
-      detailedDescription: "A hackathon is an event, typically lasting several days, where people come together to collaborate in order to solve a problem or identify new opportunities",
+      title: "Hackathon Day (Final day)",
+      description: "Final stretch, last code push—let's finish strong and make innovation happen!",
+      heading: "Final Day",
+      detailedDescription: "Welcome to the hackathon!",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -130,11 +139,11 @@ const Timeline: React.FC = () => {
           height="24"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="cyan"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide lucide-users w-6 h-6"
+          className="w-6 h-6"
         >
           <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
           <circle cx="9" cy="7" r="4"></circle>
@@ -144,6 +153,13 @@ const Timeline: React.FC = () => {
       ),
     },
   ];
+
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      setActiveDescription(null);
+      setActiveItem(null);
+    }
+  };
 
   return (
     <div className="relative">
@@ -173,7 +189,11 @@ const Timeline: React.FC = () => {
               }`}
             >
               <div
-                onClick={() => setActiveDescription(item.detailedDescription)}
+                onClick={() => {
+                  setActiveDescription(item.detailedDescription);
+                  setActiveItem(item.title);
+                  setHeading(item.title);
+                }}
                 className="bg-gray-800/50 p-4 rounded-xl backdrop-blur-sm border border-gray-700/50 hover:border-teal-300 transition-colors cursor-pointer"
               >
                 <div className="flex items-center justify-between mb-2">
@@ -181,11 +201,6 @@ const Timeline: React.FC = () => {
                     {item.icon}
                     <h3 className="text-lg font-bold text-white">{item.title}</h3>
                   </div>
-                  {item.isRegistration && (
-                    <button className="px-4 py-1 bg-teal-500 text-white rounded-md text-sm hover:bg-teal-600">
-                      Register Now
-                    </button>
-                  )}
                 </div>
                 <p className="text-sm text-gray-400">{item.description}</p>
               </div>
@@ -196,15 +211,29 @@ const Timeline: React.FC = () => {
 
       {/* Description Modal */}
       {activeDescription && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
-          <div className="bg-gray-900 text-white p-6 rounded-lg border border-cyan-400 relative">
+        <div
+          onClick={handleBackdropClick}
+          className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50"
+        >
+          <div className="bg-gray-900 text-white p-6 rounded-lg border border-cyan-400 relative w-96 max-h-96 overflow-y-auto">
             <button
-              onClick={() => setActiveDescription(null)}
+              onClick={() => {
+                setActiveDescription(null);
+                setActiveItem(null);
+              }}
               className="absolute top-2 right-2 text-cyan-400 hover:text-white"
             >
               &times;
             </button>
-            <p className="text-sm">{activeDescription}</p>
+            <h3 className="text-lg font-bold text-cyan-400 mb-4">{heading}</h3>
+            <p className="text-sm mb-4">{activeDescription}</p>
+            {activeItem === "Registration Open" && (
+              <button
+                className="bg-cyan-500 text-white px-4 py-2 rounded-lg hover:bg-cyan-600 transition"
+              >
+                Register
+              </button>
+            )}
           </div>
         </div>
       )}

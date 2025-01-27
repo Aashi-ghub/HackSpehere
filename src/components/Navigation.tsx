@@ -33,12 +33,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <Link
             to="/"
-            className="text-xl md:text-xl font-bold text-white hover:no-underline leading-tight"
           >
-            Hack
+            
             <span className="bg-gradient-to-r from-[#00FFA3] to-[#00A3FF] bg-clip-text text-transparent">
               {" "}
-              Sphere
+              Hack Sphere
             </span>
           </Link>
 

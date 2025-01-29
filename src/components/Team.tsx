@@ -1,28 +1,34 @@
 import { Users } from "lucide-react";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useState } from "react";
+import { Linkedin } from "lucide-react";
 const Team = () => {
   const [activeTeam, setActiveTeam] = useState("organizing");
+ 
   const teamCategories = {
     organizing: [
-      { name: "John Doe", role: "Lead Organizer", image: "https://i.pravatar.cc/150?img=1" },
-      { name: "Jane Smith", role: "Co-Organizer", image: "https://i.pravatar.cc/150?img=2" },
-      { name: "Mike Johnson", role: "Event Manager", image: "https://i.pravatar.cc/150?img=3" },
+      { name: "Shridhar Kumar", role: "Lead Organizer", image: "/1705691561997.jpeg", linkedin: "https://www.linkedin.com/in/shridhar-kumar-65143824a/" },
+      { name: "Siddharth Rishab", role: "Co-Organizer", image: "/1724743115009.jpeg", linkedin: "https://www.linkedin.com/in/siddharth-rishabh-a8a18b274/" },
+      { name: "Aryan Shrivastava", role: "Event Manager", image: "/1719437893743.jpeg", linkedin: "https://www.linkedin.com/in/aryan-srivastava-cgc2237354/" },
+      { name: "Yash Rajput", role: "Event Manager", image: "/1705141588146.jpeg", linkedin: "https://www.linkedin.com/in/yash4823/" },
     ],
     technical: [
-      { name: "Alex Chen", role: "Tech Lead", image: "https://i.pravatar.cc/150?img=4" },
-      { name: "Sarah Wilson", role: "Backend Developer", image: "https://i.pravatar.cc/150?img=5" },
-      { name: "David Park", role: "Frontend Developer", image: "https://i.pravatar.cc/150?img=6" },
+      { name: "Kanan", role: "Frontend Developer", image: "/kanan.jpg", linkedin: "https://www.linkedin.com/in/kanan-kango-16499b282/" },
+      { name: "Jyoti", role: "Backend Developer", image: "https://i.pravatar.cc/150?img=5", linkedin: "https://linkedin.com/in/jyoti" },
+      { name: "Gautam Dhiman", role: "Frontend Developer", image: "https://i.pravatar.cc/150?img=6", linkedin: "https://linkedin.com/in/gautam-dhiman" },
+      { name: "Aashi Raghuwanshi", role: "Tech", image: "https://i.pravatar.cc/150?img=12", linkedin: "https://www.linkedin.com/in/aashi-raghuwanshi/" },
     ],
     design: [
-      { name: "Emma Davis", role: "Design Lead", image: "https://i.pravatar.cc/150?img=7" },
-      { name: "Lucas Brown", role: "UI Designer", image: "https://i.pravatar.cc/150?img=8" },
-      { name: "Sophia Lee", role: "UX Designer", image: "https://i.pravatar.cc/150?img=9" },
+      { name: "Kamakshi", role: "Design Lead", image: "https://i.pravatar.cc/150?img=7", linkedin: "https://linkedin.com/in/kamakshi" },
+      { name: "Arushi", role: "Designer", image: "https://i.pravatar.cc/150?img=8", linkedin: "https://linkedin.com/in/arushi" },
+      { name: "Devendra", role: "Designer", image: "https://i.pravatar.cc/150?img=9", linkedin: "https://linkedin.com/in/devendra" },
+      { name: "Sania", role: "Designer", image: "https://i.pravatar.cc/150?img=12", linkedin: "https://linkedin.com/in/sania" },
     ],
     pr: [
-      { name: "Oliver White", role: "PR Lead", image: "https://i.pravatar.cc/150?img=10" },
-      { name: "Isabella Garcia", role: "Social Media Manager", image: "https://i.pravatar.cc/150?img=11" },
-      { name: "William Taylor", role: "Content Creator", image: "https://i.pravatar.cc/150?img=12" },
+      { name: "Sarang", role: "PR Lead", image: "https://i.pravatar.cc/150?img=10", linkedin: "https://linkedin.com/in/sarang" },
+      { name: "Kushal", role: "Social Media Manager", image: "https://i.pravatar.cc/150?img=11", linkedin: "https://linkedin.com/in/kushal" },
+      { name: "Rahul", role: "Content Creator", image: "https://i.pravatar.cc/150?img=12", linkedin: "https://linkedin.com/in/rahul" },
+      { name: "Unnati", role: "Content Creator", image: "https://i.pravatar.cc/150?img=12", linkedin: "https://linkedin.com/in/unnati" },
     ],
   };
   return (
@@ -66,25 +72,40 @@ const Team = () => {
         </ToggleGroup>
       </div>
       {/* Team Members Grid */}
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-4 gap-6">
         {teamCategories[activeTeam as keyof typeof teamCategories].map((member, index) => (
-          <div
-            key={index}
-            className="group relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg p-8 rounded-xl border border-teal-500/20 hover:border-teal-500/60 transition-all duration-300 text-center transform hover:-translate-y-1 hover:shadow-lg hover:shadow-teal-500/20"
-          >
-            <div className="relative z-10">
-              <div className="relative mb-6">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-28 h-28 rounded-full mx-auto border-2 border-teal-500 group-hover:scale-105 transition-transform duration-300 shadow-lg"
-                />
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-teal-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div key={index} className="group perspective">
+            <div className="relative w-full h-[300px] transition-transform duration-700 transform-style-3d hover:rotate-y-180">
+              {/* Front of card */}
+              <div className="absolute w-full h-full backface-hidden bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg p-8 rounded-xl border border-teal-500/20 hover:border-teal-500/60 transition-all duration-300 text-center">
+                <div className="relative z-10">
+                  <div className="relative mb-6">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-28 h-28 rounded-full mx-auto border-2 border-teal-500 transition-transform duration-300 shadow-lg"
+                    />
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-teal-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                  <h3 className="text-2xl text-white font-bold mb-2">{member.name}</h3>
+                  <p className="text-teal-400 font-medium">{member.role}</p>
+                </div>
               </div>
-              <h3 className="text-2xl text-white font-bold mb-2">{member.name}</h3>
-              <p className="text-teal-400 font-medium">{member.role}</p>
+              {/* Back of card */}
+              <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-teal-900/90 to-teal-800/90 backdrop-blur-lg p-8 rounded-xl border border-teal-500/20 flex flex-col items-center justify-center">
+                <h3 className="text-2xl text-white font-bold mb-4">{member.name}</h3>
+                <p className="text-teal-300 mb-6">{member.role}</p>
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full transition-all duration-300 hover:scale-105"
+                >
+                  <Linkedin className="w-5 h-5" />
+                  Connect on LinkedIn
+                </a>
+              </div>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
         ))}
       </div>

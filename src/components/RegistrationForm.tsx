@@ -86,13 +86,28 @@ export default function RegistrationForm() {
     },
   });
   const onSubmit = async (data: FormValues) => {
+    console.log("Hello");
     try {
       console.log("Form data:", data);
-      toast({
+      // Send form data to backend
+      const res= await fetch('/auth/register',{
+        method:"POST",
+        headers:{
+          "Content-type":"application/json"
+        },
+        body:JSON.stringify(data)
+      });
+      if(res.ok){
+        toast({
         title: "Registration Successful!",
         description: "Your team has been registered for the hackathon.",
       });
-    } catch (error) {
+    }else{
+      toast({
+        title: "Registration Failed!",
+        description: "There was an issue with your registration."
+      });
+    }}catch (error) {
       toast({
         variant: "destructive",
         title: "Registration Failed",
@@ -126,6 +141,7 @@ export default function RegistrationForm() {
             </div>
             <Form {...form}>
               <form
+                method="POST"
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="space-y-6 animate-fade-in"
               >

@@ -63,7 +63,7 @@ const Team = () => {
           <div key={index} className="group perspective">
             <div className="relative w-full h-[350px] transition-transform duration-700 transform-style-3d hover:rotate-y-180">
               {/* Front of card */}
-              <div className="absolute w-full h-full backface-hidden rounded-xl overflow-hidden bg-gradient-to-br from-[#181717] via-[#3b3b3b] to-[#1b1a1a] shadow-xl">
+              <div className="absolute w-full h-full backface-hidden rounded-xl overflow-hidden bg-gradient-to-br from-[#181717] via-[#2f2f2f] to-[#1b1a1a] shadow-xl">
                 {/* Glowing accent */}
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-transparent to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
@@ -81,7 +81,7 @@ const Team = () => {
                       />
                     </div>
                     {/* Decorative elements */}
-                    <div className="absolute -bottom-2 -right-2 w-32 h-32 rounded-2xl border-2 border-white -z-10 transform -rotate-3 group-hover:rotate-0 transition-all duration-300" />
+                    <div className="absolute -bottom-2 -right-2 w-32 h-32 rounded-2xl border-2 border-white/50 -z-10 transform -rotate-3 group-hover:rotate-0 transition-all duration-300" />
                   </div>
                   <h3 className="text-2xl text-white font-bold mb-2 tracking-tight">{member.name}</h3>
                   <p className="text-teal-400 font-medium px-4 py-1 rounded-full bg-teal-500/10 border border-teal-500/20">

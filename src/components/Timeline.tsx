@@ -40,13 +40,12 @@ const Timeline: React.FC = () => {
   ];
 
   return (
-    <div className="relative"> {/* Added relative to limit timeline height */}
-      <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-2">
+    <div className="relative">
+      <h2 className="text-4xl font-bold text-white mb-14 mt-6 flex justify-center items-center gap-2">
         <Calendar className="text-teal-400" /> Event Timeline
       </h2>
 
-      {/* Adjusted timeline height to be within event container */}
-      <div className="absolute left-[26px] md:left-1/2 w-0.5 bg-teal-800 top-0 bottom-0 md:translate-x-[-1px] h-full"></div>
+      <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-teal-800 top-[75px] bottom-0 h-full"></div>
 
       <div className="space-y-8">
         {timelineItems.map((item, index) => (
@@ -58,14 +57,15 @@ const Timeline: React.FC = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            {/* Adjusted dot position */}
-            <div className="absolute left-[26px] md:left-1/2 w-3 h-3 rounded-full bg-teal-500 transform -translate-x-1/2 mt-4 animate-pulse"></div>
+            <div className="absolute left-1/2 w-3 h-3 rounded-full bg-teal-500 transform -translate-x-1/2 mt-4 animate-pulse"></div>
+
+            {/* Timeline item content */}
             <div className={`${index % 2 === 0 ? "ml-12 md:ml-0 md:mr-[50%] md:pr-8" : "ml-12 md:ml-[50%] md:pl-8"}`}>
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 onClick={() => {
                   if (activeItem === item.title) {
-                    setActiveItem(null); 
+                    setActiveItem(null);
                     setActiveDescription(null);
                   } else {
                     setActiveItem(item.title);
@@ -82,7 +82,7 @@ const Timeline: React.FC = () => {
         ))}
       </div>
 
-      {/* Display Detailed Description in Modal */}
+      {/* Detailed Description Modal */}
       {activeItem && activeDescription && (
         <div
           className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50"
@@ -95,7 +95,6 @@ const Timeline: React.FC = () => {
             transition={{ duration: 0.4 }}
             className="bg-gray-900 text-white p-6 rounded-lg border border-cyan-400 relative w-96 max-h-96 overflow-y-auto"
           >
-            {/* Close Button */}
             <button
               onClick={() => setActiveDescription(null)}
               className="absolute top-2 right-2 text-cyan-400 hover:text-white"
@@ -103,13 +102,11 @@ const Timeline: React.FC = () => {
               &times;
             </button>
 
-            {/* Heading */}
             <h3 className="text-lg font-bold text-white mb-4">
-              {activeItem} {/* Display the active item's title */}
+              {activeItem} {/* Display active item's title */}
             </h3>
 
-            {/* Detailed Description */}
-            <p className="text-sm mb-4">{activeDescription}</p> {/* Display the detailed description */}
+            <p className="text-sm mb-4">{activeDescription}</p> {/* Display detailed description */}
           </motion.div>
         </div>
       )}

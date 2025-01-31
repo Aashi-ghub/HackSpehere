@@ -21,11 +21,13 @@ const Sponsors = () => {
               key={index} 
               className="relative px-20 py-10 rounded-3xl bg-secondary/20 backdrop-blur-sm border border-white/5"
             >
-              <img
-                src={sponsor.logo}
-                alt={sponsor.name}
-                className="w-[100%]  rounded-[100%]  h-80 md:h-40 opacity-90 transition-all duration-300 ease-in-out hover:opacity-100 hover:scale-105 hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]"
-              />
+               <a href="https://www.linkedin.com/company/hackwithindia/?originalSubdomain=in" target="_blank" rel="noopener noreferrer">
+                <img
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  className="w-[100%] rounded-[100%] h-80 md:h-40 opacity-90 transition-all duration-300 ease-in-out hover:opacity-100 hover:scale-105 hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]"
+                />
+              </a>
             </div>
           ))}
         </div>

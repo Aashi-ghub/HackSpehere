@@ -90,7 +90,7 @@ export default function RegistrationForm() {
     try {
       console.log("Form data:", data);
       // Send form data to backend
-      const res= await fetch('/auth/register',{
+      const res= await fetch('http://localhost:3000/auth/register',{
         method:"POST",
         headers:{
           "Content-type":"application/json"
@@ -141,7 +141,7 @@ export default function RegistrationForm() {
             </div>
             <Form {...form}>
               <form
-                method="POST"
+                 method="POST"
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="space-y-6 animate-fade-in"
               >
@@ -435,7 +435,7 @@ export default function RegistrationForm() {
                       Next
                     </Button>
                   ) : (
-                    <Button type="submit" className="w-24 ml-auto">
+                    <Button type="submit"  className="w-24 ml-auto">
                       Submit
                     </Button>
                   )}

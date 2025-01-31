@@ -14,7 +14,8 @@ export default function RegistrationForm() {
   const { toast } = useToast();
   const [step, setStep] = useState(1);
   const [teamSize, setTeamSize] = useState(3);
-  
+  const [loading, setLoading] = useState(false); // Prevent multiple submissions
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -36,33 +37,43 @@ export default function RegistrationForm() {
   });
 
   const onSubmit = async (data: FormValues) => {
-    console.log("Hello");
+    setLoading(true);
     try {
-      console.log("Form data:", data);
-      // Send form data to backend
-      const res= await fetch('http://localhost:3000/auth/register',{
-        method:"POST",
-        headers:{
-          "Content-type":"application/json"
-        },
-        body:JSON.stringify(data)
+      // Ensure teamSize is a number
+      const formattedData = {
+        ...data,
+        teamSize: Number(data.teamSize),
+        members: data.members.slice(0, Number(data.teamSize)), // Only keep required members
+      };
+
+      console.log("Submitting data:", formattedData);
+
+      const res = await fetch("http://localhost:3000/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formattedData),
       });
-      if(res.ok){
+
+      const result = await res.json(); // Get JSON response
+
+      if (res.ok) {
         toast({
-        title: "Registration Successful!",
-        description: "Your team has been registered for the hackathon.",
-      });
-    }else{
-      toast({
-        title: "Registration Failed!",
-        description: "There was an issue with your registration."
-      });
-    }}catch (error) {
+          title: "Registration Successful!",
+          description: "Your team has been registered for the hackathon.",
+        });
+        form.reset(); // Reset form after successful submission
+        setStep(1); // Go back to first step
+      } else {
+        throw new Error(result?.message || "Registration failed.");
+      }
+    } catch (error) {
       toast({
         variant: "destructive",
         title: "Registration Failed",
-        description: "Please try again later.",
+        description: error.message || "Please try again later.",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -71,7 +82,6 @@ export default function RegistrationForm() {
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
-      {/* Background Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,200,0.1),rgba(0,0,0,0))]" />
       
       <Navigation />
@@ -85,8 +95,7 @@ export default function RegistrationForm() {
             <p className="text-gray-400">
               Join us in building the future! Register your team below.
             </p>
-            
-            {/* Progress indicator */}
+
             <div className="w-full bg-teal-500/10 h-2 rounded-full overflow-hidden">
               <div
                 className="h-full bg-teal-500 transition-all duration-300"
@@ -96,7 +105,7 @@ export default function RegistrationForm() {
 
             <Form {...form}>
               <form
-                 method="POST"
+                method="POST"
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="space-y-8 animate-fade-in"
               >
@@ -119,6 +128,7 @@ export default function RegistrationForm() {
                       variant="outline"
                       onClick={prevStep}
                       className="w-28 border-teal-500/30 hover:bg-teal-500/10 text-teal-400"
+                      disabled={loading}
                     >
                       Previous
                     </Button>
@@ -128,15 +138,17 @@ export default function RegistrationForm() {
                       type="button"
                       onClick={nextStep}
                       className="w-28 ml-auto bg-teal-500 hover:bg-teal-400 text-black"
+                      disabled={loading}
                     >
                       Next
                     </Button>
                   ) : (
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       className="w-28 ml-auto bg-teal-500 hover:bg-teal-400 text-black"
+                      disabled={loading}
                     >
-                      Submit
+                      {loading ? "Submitting..." : "Submit"}
                     </Button>
                   )}
                 </div>

@@ -11,7 +11,7 @@ interface MemberFormProps {
 
 export const MemberForm = ({ form, index }: MemberFormProps) => {
   return (
-    <div className="p-6 bg-black/30 border border-teal-500/20 rounded-lg space-y-4">
+    <div className="p-6 bg-black/30 border text border-teal-500/20 rounded-lg space-y-4">
       <h3 className="text-lg font-semibold text-teal-400">
         Team Member {index + 1}
       </h3>

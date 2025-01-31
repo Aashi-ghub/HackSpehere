@@ -12,7 +12,7 @@ interface TeamInfoFormProps {
 
 export const TeamInfoForm = ({ form, setTeamSize }: TeamInfoFormProps) => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 text-white">
       <FormField
         control={form.control}
         name="teamName"
@@ -40,7 +40,7 @@ export const TeamInfoForm = ({ form, setTeamSize }: TeamInfoFormProps) => {
               <Textarea
                 placeholder="Brief description of your team"
                 {...field}
-                className="bg-black/50 border-teal-500/20 focus:border-teal-500/50 min-h-[100px]"
+                className="bg-black border-teal-500/20 focus:border-teal-500/50 min-h-[100px]"
               />
             </FormControl>
             <FormMessage />
@@ -61,7 +61,7 @@ export const TeamInfoForm = ({ form, setTeamSize }: TeamInfoFormProps) => {
               defaultValue={field.value}
             >
               <FormControl>
-                <SelectTrigger className="bg-black/50 border-teal-500/20">
+                <SelectTrigger className="bg-black/50 text-white border-teal-500/20">
                   <SelectValue placeholder="Select team size" />
                 </SelectTrigger>
               </FormControl>

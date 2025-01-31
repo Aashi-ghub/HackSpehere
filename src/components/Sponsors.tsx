@@ -24,7 +24,7 @@ const Sponsors = () => {
               <img
                 src={sponsor.logo}
                 alt={sponsor.name}
-                className="w-auto h-80 md:h-40 opacity-90 transition-all duration-300 ease-in-out hover:opacity-100 hover:scale-105 hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]"
+                className="w-[100%]  rounded-[100%]  h-80 md:h-40 opacity-90 transition-all duration-300 ease-in-out hover:opacity-100 hover:scale-105 hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]"
               />
             </div>
           ))}

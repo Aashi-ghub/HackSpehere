@@ -1,16 +1,17 @@
 import { Users } from "lucide-react";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useState } from "react";
 import { Linkedin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 const Team = () => {
   const [activeTeam, setActiveTeam] = useState("organizing");
  
   const teamCategories = {
     organizing: [
-      { name: "Shridhar Kumar", role: "Lead Organizer", image: "/1705691561997.jpeg", linkedin: "https://www.linkedin.com/in/shridhar-kumar-65143824a/" },
-      { name: "Siddharth Rishab", role: "Co-Organizer", image: "/1724743115009.jpeg", linkedin: "https://www.linkedin.com/in/siddharth-rishabh-a8a18b274/" },
-      { name: "Aryan Shrivastava", role: "Event Manager", image: "/1719437893743.jpeg", linkedin: "https://www.linkedin.com/in/aryan-srivastava-cgc2237354/" },
-      { name: "Yash Rajput", role: "Event Manager", image: "/1705141588146.jpeg", linkedin: "https://www.linkedin.com/in/yash4823/" },
+      { name: "Shridhar Kumar", role: "Lead ", image: "/sb.jpg", linkedin: "https://www.linkedin.com/in/shridhar-kumar-65143824a/" },
+      { name: "Siddharth Rishabh", role: "Lead", image: "/sd.jpg", linkedin: "https://www.linkedin.com/in/siddharth-rishabh-a8a18b274/" },
+      { name: "Aryan Shrivastava", role: "Lead", image: "/ab.jpg", linkedin: "https://www.linkedin.com/in/aryan-srivastava-cgc2237354/" },
+      { name: "Yash Rajput", role: "Lead", image: "/1705141588146.jpeg", linkedin: "https://www.linkedin.com/in/yash4823/" },
     ],
     technical: [
       { name: "Kanan", role: "Frontend Developer", image: "/kanan.jpg", linkedin: "https://www.linkedin.com/in/kanan-kango-16499b282/" },
@@ -19,7 +20,7 @@ const Team = () => {
       { name: "Aashi Raghuwanshi", role: "Tech", image: "https://i.pravatar.cc/150?img=12", linkedin: "https://www.linkedin.com/in/aashi-raghuwanshi/" },
     ],
     design: [
-      { name: "Kamakshi", role: "Design Lead", image: "https://i.pravatar.cc/150?img=7", linkedin: "https://linkedin.com/in/kamakshi" },
+      { name: "Kamakshi", role: "Design Lead", image: "https://i.pravatar.cc/150?img=7", linkedin: "https://www.linkedin.com/in/kamakshi-sachdeva-3318a7325/" },
       { name: "Arushi", role: "Designer", image: "https://i.pravatar.cc/150?img=8", linkedin: "https://linkedin.com/in/arushi" },
       { name: "Devendra", role: "Designer", image: "https://i.pravatar.cc/150?img=9", linkedin: "https://linkedin.com/in/devendra" },
       { name: "Sania", role: "Designer", image: "https://i.pravatar.cc/150?img=12", linkedin: "https://linkedin.com/in/sania" },
@@ -31,79 +32,92 @@ const Team = () => {
       { name: "Unnati", role: "Content Creator", image: "https://i.pravatar.cc/150?img=12", linkedin: "https://linkedin.com/in/unnati" },
     ],
   };
+
   return (
-    <section className="py-16 animate-fade-in" id="team">
+    <section className="py-10 animate-fade-in " id="team">
       <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-2">
         <Users className="text-teal-500" />
         Team
       </h2>
-      {/* Team Toggle Group */}
-      <div className="mb-8 flex justify-center">
-        <ToggleGroup
-          type="single"
-          value={activeTeam}
-          onValueChange={(value) => value && setActiveTeam(value)}
-          className="justify-center bg-white/10 p-1 rounded-lg"
-        >
-          <ToggleGroupItem 
-            value="organizing" 
-            className="capitalize data-[state=on]:bg-teal-400 data-[state=on]:text-black text-white hover:text-black"
+      
+      <div className="mb-8 flex flex-wrap justify-center gap-4">
+        {Object.keys(teamCategories).map((category) => (
+          <Button
+            key={category}
+            onClick={() => setActiveTeam(category)}
+            variant={activeTeam === category ? "default" : "outline"}
+            className={`
+              px-6 py-2 rounded-full transition-all duration-300 capitalize
+              ${activeTeam === category 
+                ? 'bg-teal-500 text-black hover:bg-teal-600' 
+                : 'bg-transparent text-white hover:bg-teal-500/20'}
+            `}
           >
-            Organizing Team
-          </ToggleGroupItem>
-          <ToggleGroupItem 
-            value="technical" 
-            className="capitalize data-[state=on]:bg-teal-500 data-[state=on]:text-black text-white hover:text-black"
-          >
-            Technical Team
-          </ToggleGroupItem>
-          <ToggleGroupItem 
-            value="design" 
-            className="capitalize data-[state=on]:bg-teal-600 data-[state=on]:text-black text-white hover:text-black"
-          >
-            Design Team
-          </ToggleGroupItem>
-          <ToggleGroupItem 
-            value="pr" 
-            className="capitalize data-[state=on]:bg-teal-700 data-[state=on]:text-black text-white hover:text-black"
-          >
-            PR Team
-          </ToggleGroupItem>
-        </ToggleGroup>
+            {category} Team
+          </Button>
+        ))}
       </div>
-      {/* Team Members Grid */}
+      
       <div className="grid md:grid-cols-4 gap-6">
         {teamCategories[activeTeam as keyof typeof teamCategories].map((member, index) => (
           <div key={index} className="group perspective">
-            <div className="relative w-full h-[300px] transition-transform duration-700 transform-style-3d hover:rotate-y-180">
+            <div className="relative w-full h-[350px] transition-transform duration-700 transform-style-3d hover:rotate-y-180">
               {/* Front of card */}
-              <div className="absolute w-full h-full backface-hidden bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg p-8 rounded-xl border border-teal-500/20 hover:border-teal-500/60 transition-all duration-300 text-center">
-                <div className="relative z-10">
-                  <div className="relative mb-6">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-28 h-28 rounded-full mx-auto border-2 border-teal-500 transition-transform duration-300 shadow-lg"
-                    />
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-teal-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute w-full h-full backface-hidden rounded-xl overflow-hidden bg-gradient-to-br from-[#181717] via-[#2f2f2f] to-[#1b1a1a] shadow-xl">
+                {/* Glowing accent */}
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-transparent to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                {/* Glass effect top bar */}
+                <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm" />
+                
+                {/* Content */}
+                <div className="h-full p-8 flex flex-col items-center justify-center relative z-10">
+                  <div className="relative mb-6 group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-32 h-32 mx-auto rounded-2xl overflow-hidden border-2 border-teal-500/50 shadow-lg shadow-teal-700/30 transform rotate-3 group-hover:rotate-0 transition-all duration-300">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    {/* Decorative elements */}
+                    <div className="absolute -bottom-2 -right-2 w-32 h-32 rounded-2xl border-2 border-white/50 -z-10 transform -rotate-3 group-hover:rotate-0 transition-all duration-300" />
                   </div>
-                  <h3 className="text-2xl text-white font-bold mb-2">{member.name}</h3>
-                  <p className="text-teal-400 font-medium">{member.role}</p>
+                  <h3 className="text-2xl text-white font-bold mb-2 tracking-tight">{member.name}</h3>
+                  <p className="text-teal-400 font-medium px-4 py-1 rounded-full bg-teal-500/10 border border-teal-500/20">
+                    {member.role}
+                  </p>
                 </div>
               </div>
               {/* Back of card */}
-              <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-teal-900/90 to-teal-800/90 backdrop-blur-lg p-8 rounded-xl border border-teal-500/20 flex flex-col items-center justify-center">
-                <h3 className="text-2xl text-white font-bold mb-4">{member.name}</h3>
-                <p className="text-teal-300 mb-6">{member.role}</p>
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full transition-all duration-300 hover:scale-105"
-                >
-                  <Linkedin className="w-5 h-5" />
-                  Connect on LinkedIn
-                </a>
+              <div className="absolute w-full h-full backface-hidden rotate-y-180 rounded-xl overflow-hidden bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] shadow-xl">
+                {/* Animated gradient border */}
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-950 via-white to-teal-500 opacity-20" />
+                
+                {/* Content */}
+                <div className="relative h-full flex flex-col">
+                  <div className="flex-1 bg-gradient-to-b from-teal-950 via-black/50 to-teal-600 flex items-center justify-center p-8">
+                    <div className="relative">
+                      <h3 className="text-3xl font-bold text-white uppercase tracking-widest text-center">
+                        Hack Sphere
+                      </h3>
+                      <div className="absolute -inset-1 bg-white/20 blur-lg -z-10" />
+                    </div>
+                  </div>
+                  
+                  <div className="p-8 backdrop-blur-sm bg-black/20 flex flex-col items-center justify-center gap-4">
+                    <h3 className="text-2xl text-white font-bold">{member.name}</h3>
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 bg-gradient-to-r from-teal-950 to-teal-400 hover:from-teal-400 hover:to-teal-500 text-black px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-teal-500/25"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                      Connect on LinkedIn
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -112,4 +126,5 @@ const Team = () => {
     </section>
   );
 };
+
 export default Team;

@@ -8,10 +8,10 @@ const Team = () => {
  
   const teamCategories = {
     organizing: [
-      { name: "Shridhar Kumar", role: "Lead Organizer", image: "/1705691561997.jpeg", linkedin: "https://www.linkedin.com/in/shridhar-kumar-65143824a/" },
-      { name: "Siddharth Rishab", role: "Event Manager", image: "/1724743115009.jpeg", linkedin: "https://www.linkedin.com/in/siddharth-rishabh-a8a18b274/" },
-      { name: "Aryan Shrivastava", role: "Co-Organizer", image: "/1719437893743.jpeg", linkedin: "https://www.linkedin.com/in/aryan-srivastava-cgc2237354/" },
-      { name: "Yash Rajput", role: "Event Manager", image: "/1705141588146.jpeg", linkedin: "https://www.linkedin.com/in/yash4823/" },
+      { name: "Shridhar Kumar", role: "Lead ", image: "/sb.jpg", linkedin: "https://www.linkedin.com/in/shridhar-kumar-65143824a/" },
+      { name: "Siddharth Rishabh", role: "Lead", image: "/sd.jpg", linkedin: "https://www.linkedin.com/in/siddharth-rishabh-a8a18b274/" },
+      { name: "Aryan Shrivastava", role: "Lead", image: "/ab.jpg", linkedin: "https://www.linkedin.com/in/aryan-srivastava-cgc2237354/" },
+      { name: "Yash Rajput", role: "Lead", image: "/1705141588146.jpeg", linkedin: "https://www.linkedin.com/in/yash4823/" },
     ],
     technical: [
       { name: "Kanan", role: "Frontend Developer", image: "/kanan.jpg", linkedin: "https://www.linkedin.com/in/kanan-kango-16499b282/" },
@@ -20,7 +20,7 @@ const Team = () => {
       { name: "Aashi Raghuwanshi", role: "Tech", image: "https://i.pravatar.cc/150?img=12", linkedin: "https://www.linkedin.com/in/aashi-raghuwanshi/" },
     ],
     design: [
-      { name: "Kamakshi", role: "Design Lead", image: "https://i.pravatar.cc/150?img=7", linkedin: "https://linkedin.com/in/kamakshi" },
+      { name: "Kamakshi", role: "Design Lead", image: "https://i.pravatar.cc/150?img=7", linkedin: "https://www.linkedin.com/in/kamakshi-sachdeva-3318a7325/" },
       { name: "Arushi", role: "Designer", image: "https://i.pravatar.cc/150?img=8", linkedin: "https://linkedin.com/in/arushi" },
       { name: "Devendra", role: "Designer", image: "https://i.pravatar.cc/150?img=9", linkedin: "https://linkedin.com/in/devendra" },
       { name: "Sania", role: "Designer", image: "https://i.pravatar.cc/150?img=12", linkedin: "https://linkedin.com/in/sania" },
@@ -34,7 +34,7 @@ const Team = () => {
   };
 
   return (
-    <section className="py-10 animate-fade-in bg-[#121212]" id="team">
+    <section className="py-10 animate-fade-in " id="team">
       <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-2">
         <Users className="text-teal-500" />
         Team

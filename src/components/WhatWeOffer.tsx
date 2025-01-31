@@ -21,7 +21,7 @@ const WhatWeOffer = () => {
             key={index}
             initial={{ y: -50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
+            transition={{ duration: 0.5,  }}
             viewport={{ once: true }}
             className="group relative"
           >
@@ -30,7 +30,7 @@ const WhatWeOffer = () => {
               whileHover={{ scale: 1.05, y: -10 }}
               className="bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] p-4 rounded-lg backdrop-blur-sm  border-primary/20 group-hover:border-primary/100 group-hover:shadow-xl group-hover:scale-105 group-hover:translate-y-2 transition-all duration-300"
             >
-              <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-4 transform group-hover:scale-100 transition-transform duration-300">
                 {offering.icon}
               </div>
               <h3 className="text-xl text-white font-semibold mb-2 transition-all duration-300">{offering.title}</h3>
@@ -46,7 +46,7 @@ const WhatWeOffer = () => {
             key={index + 3}  
             initial={{ y: -50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: (index + 3) * 0.2 }}
+            transition={{ duration: 0.5,}}
             viewport={{ once: true }}
             className="group relative"
           >
@@ -55,7 +55,7 @@ const WhatWeOffer = () => {
               className="bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] p-4 rounded-lg backdrop-blur-sm  border-primary/20 group-hover:border-primary/100 group-hover:shadow-xl group-hover:scale-105 group-hover:translate-y-2 transition-all duration-300"
             >
               {/* Icon container with hover effect */}
-              <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-4 transform group-hover:scale-100 transition-transform duration-300">
                 {offering.icon}
               </div>
               <h3 className="text-xl text-white font-semibold mb-2 transition-all duration-300">{offering.title}</h3>

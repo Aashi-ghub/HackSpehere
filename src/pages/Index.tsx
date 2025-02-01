@@ -9,6 +9,7 @@ import TechCards from "../components/Problemstatement";
 import WhatWeOffer from "../components/WhatWeOffer";
 import Footer from "../components/footer";
 import VideoBackground from "../components/videobackground";
+import FAQs from "../components/faqs";
 
 const Index = () => {
   return (
@@ -42,6 +43,7 @@ const Index = () => {
             </div>
             <Team />
             <Sponsors />
+            <FAQs />
           </div>
         </div>
       </div>

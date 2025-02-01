@@ -13,7 +13,7 @@ export function useAuth() {
 
   const fetchUser = async () => {
     try {
-      const res = await fetch("http://localhost:5000/auth/me", {
+      const res = await fetch("http://localhost:5000/auth/user", {
         method: "GET",
         credentials: "include", // Important for session-based auth
       });

@@ -5,6 +5,12 @@ const Sponsors = () => {
     {
       name: "HackWithIndia",
       logo: "/hack-with-india.png",
+      link: "https://hackwithindia.in/",
+    },
+    {
+      name: "D4",
+      logo: "/logo.f712a54e8c4e4371a378.png",
+      link: "https://d4.com/",
     },
   ];
 
@@ -15,17 +21,17 @@ const Sponsors = () => {
           <Award className="text-primary h-8 w-8" />
           Our Sponsors
         </h2>
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-8">
           {sponsors.map((sponsor, index) => (
             <div 
               key={index} 
-              className="relative px-20 py-10 rounded-3xl bg-secondary/20 backdrop-blur-sm border border-white/5"
+              className="flex items-center justify-center w-40 h-40 md:w-80 md:h-80"
             >
-               <a href="https://www.linkedin.com/company/hackwithindia/?originalSubdomain=in" target="_blank" rel="noopener noreferrer">
+              <a href={sponsor.link} target="_blank" rel="noopener noreferrer">
                 <img
                   src={sponsor.logo}
                   alt={sponsor.name}
-                  className="w-[100%] rounded-[100%] h-80 md:h-40 opacity-90 transition-all duration-300 ease-in-out hover:opacity-100 hover:scale-105 hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]"
+                  className="w-full h-full object-contain opacity-90 transition-all duration-300 ease-in-out hover:opacity-100 hover:scale-105 hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]"
                 />
               </a>
             </div>

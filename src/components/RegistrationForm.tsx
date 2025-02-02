@@ -41,7 +41,10 @@ export default function RegistrationForm() {
     },
   });
 
-  const onSubmit = async (data: FormValues) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const data = form.getValues();
+    console.log("checking ")
     if (!user) {
       toast({ variant: "destructive", title: "Error", description: "You must log in to register." });
       return;
@@ -131,7 +134,7 @@ export default function RegistrationForm() {
               {/* Show Registration Form Only if User is Logged In */}
               {user && (
                 <Form {...form}>
-                  <form method="POST" onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 animate-fade-in">
+                  <form method="POST" onSubmit={handleSubmit} className="space-y-8 animate-fade-in">
                     {step === 1 && <TeamInfoForm form={form} setTeamSize={setTeamSize} />}
                     {step === 2 && (
                       <div className="space-y-8">

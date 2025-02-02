@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Lightbulb, Leaf, Heart, Bot ,AlignRight , CircleX } from "lucide-react";
+import { Lightbulb, Leaf, Heart, Bot ,AlignRight , CircleX ,PencilLine} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ThemeList=()=>{
@@ -67,9 +67,9 @@ const ThemeList=()=>{
 
 return(
   <section className="py-20 animate-fade-in " id="team">
-      <h2 className="text-3xl font-bold text-white mb-8 flex items-center justify-center gap-2">
-        <Lightbulb className="text-teal-500" />
-        THEMES
+      <h2 className="text-4xl font-bold text-white mb-8 flex items-center justify-center gap-2">
+        <PencilLine className="text-teal-500 " />
+        Problem Statements
       </h2>
       
       <div className="mb-8 flex flex-wrap justify-center gap-4">
@@ -93,9 +93,9 @@ return(
         <table className="min-w-full bg-[rgb(20,184,166)] rounded-lg shadow-lg">
           <thead>
             <tr>
-              <th className="py-2 px-5 border-b border-r">Sr No</th>
-              <th className="py-2 px-5 border-b border-r">Themes</th>
-              <th className="py-2 px-5 border-b">IDs</th>
+              <th className="py-4 px-5 border-b border-r">S.No.</th>
+              <th className="py-4 px-5 border-b border-r">Problem Statement Title</th>
+              <th className="py-4 px-5 border-b">IDs</th>
             </tr>
           </thead>
           <tbody>

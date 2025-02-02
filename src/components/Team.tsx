@@ -15,7 +15,7 @@ const Team = () => {
     ],
     technical: [
       { name: "Aashi", role: "Tech Lead", image: "/", linkedin: "https://www.linkedin.com/in/aashi-raghuwanshi" },
-      { name: "Jyoti", role: "Backend Developer", image: "/jyoti.jpg", linkedin: "https://www.linkedin.com/in/jyoti-khetwal-543731262" },
+      { name: "Jyoti", role: "Backend Developer", image: "/Jyoti.jpeg", linkedin: "https://www.linkedin.com/in/jyoti-khetwal-543731262" },
       { name: "Gautam Dhiman", role: "Frontend Developer", image: "/gautam.jpg", linkedin: "https://www.linkedin.com/in/gautam-dhiman-585b0b313" },
       { name: "Kanan", role: "Frontend Developer", image: "/kanan.jpg", linkedin: "https://www.linkedin.com/in/kanan-kango-16499b282/" },
     ],

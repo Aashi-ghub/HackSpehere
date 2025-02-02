@@ -1,4 +1,5 @@
 import { Lightbulb, Leaf, Heart, Bot } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Themes = () => {
   const themes = [
@@ -32,6 +33,7 @@ const Themes = () => {
       </h2>
       <div className="grid md:grid-cols-2 gap-6 perspective-1000">
         {themes.map((theme, index) => (
+        <Link to="/themesList">
           <div
             key={index}
             className="group bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-teal-700 
@@ -64,6 +66,7 @@ const Themes = () => {
               {theme.description}
             </p>
           </div>
+          </Link>
         ))}
       </div>
     </section>

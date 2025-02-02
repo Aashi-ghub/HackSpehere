@@ -35,7 +35,7 @@ const ThemeList=()=>{
        "Health & Wellness":{
         // icon: <Heart className="w-6 h-6 text-primary" />,
         questions: [
-         {id:1, tiltle:"	AI Stress Detection via Typing Patterns : A tool that monitors typing patterns or screen time to detect stress levels and offers personalized relief strategies."},
+         {id:1, title:"	AI Stress Detection via Typing Patterns : A tool that monitors typing patterns or screen time to detect stress levels and offers personalized relief strategies."},
           {id:2, title:"	Fitness for Gamers : Develop a game that integrates physical activity (like jumping or squats) with gameplay, promoting fitness among gamers."},
           {id:3, title:"	Community Wellness Ecosystem : A platform connecting students with local fitness groups, yoga classes, or mental health workshops."},
           {id:4, title:"	AR-Powered Fitness Mirror : Create an augmented reality mirror that acts as a virtual trainer, correcting form and posture in real time."},

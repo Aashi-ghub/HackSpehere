@@ -9,9 +9,10 @@ const Team = () => {
   const teamCategories = {
     organizing: [
       { name: "Shridhar Kumar", role: "Lead ", image: "/sb.jpg", linkedin: "https://www.linkedin.com/in/shridhar-kumar-65143824a/" },
-      { name: "Siddharth Rishabh", role: "Lead", image: "/sd.jpg", linkedin: "https://www.linkedin.com/in/siddharth-rishabh-a8a18b274/" },
       { name: "Aryan Shrivastava", role: "Lead", image: "/ab.jpg", linkedin: "https://www.linkedin.com/in/aryan-srivastava-cgc2237354/" },
+      { name: "Siddharth Karn", role: "Lead", image: "/sd.jpg", linkedin: "https://www.linkedin.com/in/siddharth-rishabh-a8a18b274/" },
       { name: "Yash Rajput", role: "Lead", image: "/yash.jpg", linkedin: "https://www.linkedin.com/in/yash4823/" },
+     
     ],
     technical: [
       { name: "Aashi", role: "Tech Lead", image: "/", linkedin: "https://www.linkedin.com/in/aashi-raghuwanshi" },

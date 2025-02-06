@@ -1,0 +1,178 @@
+/* src/components/Form.css */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111; /* Darker background */
+    animation: fadeIn 1s ease-out; /* Fade-in animation for the whole container */
+  }
+  
+  .form-box {
+    background: #222; /* Darker form background */
+    padding: 2rem;
+    width: 500px; /* Larger width for rectangle */
+    height: 500px; /* Adjusted height */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    border: 1px solid #06b6d4; /* Vivid cyan border */
+    text-align: center;
+    border-radius: 0; /* Rectangle shape */
+    transform: translateY(20px);
+    opacity: 0;
+    animation: formBoxSlideIn 1s ease-out forwards; /* Slide-in animation for the form */
+  }
+  
+  .logo {
+    width: 60px;
+    margin: 0 auto 1rem;
+    animation: logoBounce 1s ease infinite; /* Bounce animation for the logo */
+  }
+  
+  .form-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease-out; /* Fade-in and slide-up animation for the title */
+  }
+  
+  .login-method-selector {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards; /* Fade-in animation with delay for the method buttons */
+  }
+  
+  .method-button {
+    background: #333;
+    color: white;
+    border: 1px solid #06b6d4;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    transform: scale(0.95);
+    animation: scaleUp 0.5s ease-out 1.5s forwards; /* Scale-up animation with delay for method buttons */
+  }
+  
+  .method-button:hover {
+    background: #06b6d4;
+  }
+  
+  .method-button.active {
+    background: #06b6d4;
+    color: black;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    background: #333;
+    border: none;
+    color: white;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 2s forwards; /* Fade-in animation with delay for input fields */
+  }
+  
+  .form-input:focus {
+    box-shadow: 0 0 8px #06b6d4;
+  }
+  
+  .error-message {
+    color: #f87171;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #06b6d4;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    transform: scale(0.95);
+    opacity: 0;
+    animation: scaleUp 0.5s ease-out 2.5s forwards; /* Scale-up animation with delay for the button */
+  }
+  
+  .form-button:hover {
+    background: #22d3ee;
+  }
+  
+  .form-footer {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 3s forwards; /* Fade-in animation with delay for footer */
+  }
+  
+  .form-link {
+    color: #06b6d4;
+    text-decoration: none;
+  }
+  
+  .form-link:hover {
+    text-decoration: underline;
+  }
+  
+  .github-login-msg {
+    color: #06b6d4;
+    font-size: 1rem;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes formBoxSlideIn {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes logoBounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes scaleUp {
+    0% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  

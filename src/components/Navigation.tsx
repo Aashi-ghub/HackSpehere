@@ -5,7 +5,7 @@ import axios from "axios";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "Themes", path: "/themeslist" },
+  { name: "Themes", path: "/themeslist/all" },
   { name: "Timeline", path: "/#timeline" },
 ];
 

@@ -4,12 +4,12 @@ const Sponsors = () => {
   const sponsors = [
     {
       name: "HackWithIndia",
-      logo: "/hack-with-india.png",
+      logo: "/hack-with-india.jpeg",
       link: "https://hackwithindia.in/",
     },
     {
       name: "D4",
-      logo: "/logo.f712a54e8c4e4371a378.png",
+      logo: "/logo.jpeg",
       link: "https://d4.com/",
     },
   ];

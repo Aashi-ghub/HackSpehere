@@ -14,10 +14,10 @@ const Team = () => {
       { name: "Siddharth Rishabh", role: "Lead", image: "/sd.jpeg", linkedin: "https://www.linkedin.com/in/siddharth-rishabh-a8a18b274/" },
     ],
     technical: [
-      { name: "Aashi", role: "Tech Lead", image: "/", linkedin: "https://www.linkedin.com/in/aashi-raghuwanshi" },
+      { name: "Aashi", role: "Tech Lead", image: "/Aashi.jpeg", linkedin: "https://www.linkedin.com/in/aashi-raghuwanshi" },
       { name: "Jyoti", role: "Backend Developer", image: "/Jyoti.jpeg", linkedin: "https://www.linkedin.com/in/jyoti-khetwal-543731262" },
-      { name: "Gautam Dhiman", role: "Frontend Developer", image: "/gautam.jpg", linkedin: "https://www.linkedin.com/in/gautam-dhiman-585b0b313" },
-      { name: "Kanan", role: "Frontend Developer", image: "/kanan.jpg", linkedin: "https://www.linkedin.com/in/kanan-kango-16499b282/" },
+      { name: "Gautam Dhiman", role: "Frontend Developer", image: "/gautam.jpeg", linkedin: "https://www.linkedin.com/in/gautam-dhiman-585b0b313" },
+      { name: "Kanan", role: "Frontend Developer", image: "/kanan.jpeg", linkedin: "https://www.linkedin.com/in/kanan-kango-16499b282/" },
     ],
     design: [
       { name: "Devendra", role: "Media Head", image: "/devendra.jpeg", linkedin: "https://www.linkedin.com/in/devender-kumar-5207ab34a" },

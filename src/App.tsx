@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import RegistrationPage from "./pages/register";
 import ThemesPage from "./pages/ThemesPage";
 import ThemeList from "./components/ThemeList";
+import LoginForm from "./components/LoginForm";
 
 
 const queryClient = new QueryClient();
@@ -19,6 +20,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/login" element={<LoginForm/>}></Route>
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/themeslist/:theme" element={<ThemesPage/>} />
         </Routes>

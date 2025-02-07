@@ -44,7 +44,7 @@ export default function RegistrationForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = form.getValues();
-    console.log("checking ")
+    // console.log("checking ")
     if (!user) {
       toast({ variant: "destructive", title: "Error", description: "You must log in to register." });
       return;

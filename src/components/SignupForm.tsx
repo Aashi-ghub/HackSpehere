@@ -44,7 +44,7 @@ const SignupForm: React.FC = () => {
           className="form-input"
         />
         {error && <p className="error-message">{error}</p>}
-        <button onClick={handleSignup} className="form-button">Sign Up</button>
+        <button onClick={handleSignup} type="submit" className="form-button">Sign Up</button>
         <p className="form-footer">
           Already have an account?{' '}
           <Link to="/" className="form-link">Sign In</Link>

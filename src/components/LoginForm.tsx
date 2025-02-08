@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
 import { Github, ArrowRight } from 'lucide-react';
-import { useToast } from "@/hooks/use-toast";
-import { useNavigate } from 'react-router-dom';
 import Login from './Login';
 import SignUp from './SignUp';
 import GithubAuth from './GithubAuth';
@@ -13,8 +11,6 @@ function LoginForm() {
   const [authMethod, setAuthMethod] = useState<'form' | 'github'>('form');
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const [githubCredentials, setGithubCredentials] = useState({ username: '', password: '' });
-  const { toast } = useToast();
-  const navigate =useNavigate();
 
   const toggleForm = () => {
     setIsAnimating(true);
@@ -32,41 +28,8 @@ function LoginForm() {
     e.preventDefault();
     // Handle email/password authentication here
     console.log('Credentials:', credentials);
-    try{
-    const res = await fetch("http://localhost:5000/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include", // Ensure authentication session is included
-      body: JSON.stringify(credentials),
-    });
-    const result = await res.json();
-    if (res.ok) {
-      toast({
-        title: result.message,
-        description: "You have been logged in.",
-      });
-      setTimeout(() => {
-        navigate("/"); // Redirect to home page after 3 seconds
-      }, 3000);
-    } 
-    else {
-       toast({
-      variant: "destructive",
-      title: result.message,
-      description:"Please try Again ",
-      });
-    }
-  }
-  catch (error) {
-    toast({
-      variant: "destructive",
-      title: error.message,
-     description: error.message || "Please try again later.",
-    });
-  }
-
-
-  };
+ 
+};
 
   const handleGithubSubmit = (e: React.FormEvent) => {
     e.preventDefault();

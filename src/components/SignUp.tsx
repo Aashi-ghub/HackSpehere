@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Github } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import { useNavigate } from 'react-router-dom';
 
 interface SignUpProps {
   onToggleForm: () => void;
@@ -7,11 +9,46 @@ interface SignUpProps {
 }
 
 function SignUp({ onToggleForm, onAuthMethodChange }: SignUpProps) {
-  const [credentials, setCredentials] = useState({ email: '', password: '' });
+    const [credentials, setCredentials] = useState({ email: '', password: '' });
+    const { toast } = useToast();
+    const navigate =useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('SignUp credentials:', credentials);
+    try{
+      const res = await fetch("http://localhost:5000/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include", // Ensure authentication session is included
+        body: JSON.stringify(credentials),
+      });
+      const result = await res.json();
+      console.log(result)
+      if (res.ok) {
+        toast({
+          title: result.message,
+          description: "Your account is successfully created.",
+        });
+        setTimeout(() => {
+          navigate("/"); // Redirect to home page after 3 seconds
+        }, 3000);
+      } 
+      else {
+         toast({
+        variant: "destructive",
+        title: result.message,
+        description:"Please try Again ",
+        });
+      }
+    }
+    catch (error) {
+      toast({
+        variant: "destructive",
+        title: error.message,
+       description: error.message || "Please try again later.",
+      });
+    }
   };
 
   return (

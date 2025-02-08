@@ -9,6 +9,8 @@ import ThemesPage from "./pages/ThemesPage";
 import ThemeList from "./components/ThemeList";
 import LoginForm from "./components/LoginForm";
 
+import LoginForm from "./components/LoginForm";
+
 
 const queryClient = new QueryClient();
 

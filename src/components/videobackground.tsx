@@ -10,7 +10,7 @@ const VideoBackground = () => {
         playsInline
         className="absolute w-full h-full object-cover opacity-100"
       >
-        <source src="/12421439_3840_2160_30fps.mp4" type="video/mp4" />
+        <source src="/12421439_3840_2160_30fps.webm" type="video/webm" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-[#051011] opacity-80" />
     </div>

@@ -7,6 +7,9 @@ import Index from "./pages/Index";
 import RegistrationPage from "./pages/register";
 import ThemesPage from "./pages/ThemesPage";
 import ThemeList from "./components/ThemeList";
+import LoginForm from "./components/LoginForm";
+
+
 
 
 const queryClient = new QueryClient();
@@ -21,6 +24,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/themeslist" element={<ThemesPage/>} />
+        {/*<Route path="/" element={<LoginForm />} />*/}
+        <Route path="/" element={<Index/>} />
+        <Route path="/register" element={<RegistrationPage/>} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
@@ -28,3 +34,4 @@ const App = () => (
 );
 
 export default App;
+

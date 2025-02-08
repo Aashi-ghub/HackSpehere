@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import CountdownTimer from "./CountdownTimer";
 import { motion } from "framer-motion";
+import React from "react";
 
 const Hero = () => {
   const title = "Hack Sphere";

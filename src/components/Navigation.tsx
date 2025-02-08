@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import axios from "axios";
+import React from "react";
 
 const navLinks = [
   { name: "Home", path: "/" },

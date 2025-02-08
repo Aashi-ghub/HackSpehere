@@ -1,17 +1,18 @@
 import { Users } from "lucide-react";
 import { useState } from "react";
 import { Linkedin } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
+import React from "react";
 
 const Team = () => {
   const [activeTeam, setActiveTeam] = useState("organizing");
  
   const teamCategories = {
     organizing: [
-      { name: "Aryan Srivastava", role: "Lead", image: "/ab.jpeg", linkedin: "https://www.linkedin.com/in/aryan-srivastava-cgc2237354/" },
-      { name: "Shridhar Kumar", role: "Lead ", image: "/sb.jpeg", linkedin: "https://www.linkedin.com/in/shridhar-kumar-65143824a/" },
+      { name: "Aryan Srivastava", role: "Event Lead", image: "/ab.jpeg", linkedin: "https://www.linkedin.com/in/aryan-srivastava-cgc2237354/" },
+      { name: "Shridhar Kumar", role: "Event Lead ", image: "/sb.jpeg", linkedin: "https://www.linkedin.com/in/shridhar-kumar-65143824a/" },
       { name: "Siddharth Karn", role: "Event Lead", image: "/sd.jpeg", linkedin: "https://www.linkedin.com/in/siddharth-rishabh-a8a18b274/" },
-      { name: "Yash Rajput", role: "Lead", image: "/yash.jpeg", linkedin: "https://www.linkedin.com/in/yash4823/" },
+      { name: "Yash Rajput", role: "Event Lead", image: "/yash.jpeg", linkedin: "https://www.linkedin.com/in/yash4823/" },
     ],
     technical: [
       { name: "Aashi", role: "Tech Lead", image: "/Aashi.jpeg", linkedin: "https://www.linkedin.com/in/aashi-raghuwanshi" },

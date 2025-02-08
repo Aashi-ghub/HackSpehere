@@ -1,5 +1,6 @@
 import { Github, Instagram, Mail, ArrowUp, Copyright } from "lucide-react";
 import { Button } from "./ui/button";
+import React from "react";
 
 const Footer = () => {
   const scrollToTop = () => {

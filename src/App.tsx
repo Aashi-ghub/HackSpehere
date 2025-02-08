@@ -8,12 +8,8 @@ import RegistrationPage from "./pages/register";
 import ThemesPage from "./pages/ThemesPage";
 import ThemeList from "./components/ThemeList";
 import LoginForm from "./components/LoginForm";
-<<<<<<< HEAD
 import SignupForm from "./components/SignupForm"
-=======
-import React from "react";
-
->>>>>>> 3e94cf7b6d97074ea6cfae8b2f713b7c29acbbcd
+import React from "react"
 
 
 

@@ -5,7 +5,7 @@ const Faqs: React.FC = () => {
 
     const faqs = [
         {
-            question: 'What is HackSphere?',
+            question: 'What is InceptionX?',
             answer: 'A hackathon is an event where participants collaborate to create innovative projects, usually within a limited time (e.g., 24-48 hours). Teams work on software, hardware, or other tech solutions based on a given theme or challenge.'
         },
         {

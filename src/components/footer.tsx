@@ -1,5 +1,6 @@
 import { Github, Instagram, Mail, ArrowUp, Copyright } from "lucide-react";
 import { Button } from "./ui/button";
+import React from "react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -52,7 +53,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="h-5 w-5 text-primary" />
-                <span>contact@hacksphere.dev</span>
+                <span>inceptionx.contact@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -84,7 +85,7 @@ const Footer = () => {
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Copyright className="h-4 w-4 text-primary" />
-              <p>2025 HackSphere. All rights reserved.</p>
+              <p>2025 InceptionX. All rights reserved.</p>
             </div>
             <div>
               <Button

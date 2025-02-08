@@ -1,26 +1,20 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD
+
 import { Github, ArrowRight } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from 'react-router-dom';
-
-=======
 import Login from './Login';
 import SignUp from './SignUp';
 import GithubAuth from './GithubAuth';
->>>>>>> a5817a02d27c389a8178ec8d6763321f3c095adb
 
 function LoginForm() {
   const [isLogin, setIsLogin] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
   const [authMethod, setAuthMethod] = useState<'form' | 'github'>('form');
-<<<<<<< HEAD
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const [githubCredentials, setGithubCredentials] = useState({ username: '', password: '' });
   const { toast } = useToast();
   const navigate =useNavigate();
-=======
->>>>>>> a5817a02d27c389a8178ec8d6763321f3c095adb
 
   const toggleForm = () => {
     setIsAnimating(true);
@@ -34,7 +28,6 @@ function LoginForm() {
     setAuthMethod(method);
   };
 
-<<<<<<< HEAD
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Handle email/password authentication here
@@ -80,9 +73,6 @@ function LoginForm() {
     // Handle GitHub authentication here
     console.log('GitHub credentials:', githubCredentials);
   };
-
-=======
->>>>>>> a5817a02d27c389a8178ec8d6763321f3c095adb
   return (
     <div className="min-h-screen bg-gray-950 relative flex items-center justify-center p-4 overflow-hidden">
       {/* Animated background gradients */}

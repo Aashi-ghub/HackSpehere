@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import React from "react";
 
 const Hero = () => {
-  const title = "Hack Sphere";
+  const title = "InceptionX";
   const subtitle = "Join the ultimate tech innovation challenge. Transform your ideas into reality.";
 
   return (

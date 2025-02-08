@@ -78,7 +78,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/">
             <span className="bg-gradient-to-r from-[#00FFA3] to-[#00A3FF] font-bold bg-clip-text text-transparent">
-              Hack Sphere
+              InceptionX
             </span>
           </Link>
 

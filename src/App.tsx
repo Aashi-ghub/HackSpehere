@@ -22,16 +22,13 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/login" element={<LoginForm/>}></Route>
           <Route path="/register" element={<RegistrationPage />} />
-          <Route path="/themeslist" element={<ThemesPage/>} />
-        {/*<Route path="/" element={<LoginForm />} />*/}
-        <Route path="/" element={<Index/>} />
-        <Route path="/register" element={<RegistrationPage/>} />
+          <Route path="/themeslist/:theme" element={<ThemesPage/>} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
-  </QueryClientProvider>
+    </QueryClientProvider>
 );
-
 export default App;
 

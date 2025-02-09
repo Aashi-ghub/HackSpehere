@@ -58,7 +58,7 @@ export default function RegistrationForm() {
         members: data.members.slice(0, Number(data.teamSize)), // Only keep required members
       };
 
-      const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+      const API_BASE_URL = import.meta.env.VITE_API_URL ;
 
       const res = await fetch(`${API_BASE_URL}/team/register`, {
         method: "POST",

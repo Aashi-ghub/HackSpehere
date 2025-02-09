@@ -7,34 +7,50 @@ interface AuthPageProps {
   onAuthSuccess?: () => void;
 }
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 const AuthPage = ({ onAuthSuccess }: AuthPageProps = {}) => {
   const [user, setUser] = useState<{ username: string; avatar: string } | null>(null);
   const { toast } = useToast();
 
   // Fetch logged-in user data
   useEffect(() => {
+    if (user) return; // Avoid unnecessary calls
+
     const fetchUser = async () => {
       try {
-        const response = await fetch("http://localhost:5000/auth/user", {
+        const response = await fetch(`${API_BASE_URL}/auth/user`, {
           credentials: "include",
         });
         const data = await response.json();
-        console.log("Fetched User:", data); // Debugging
+        console.log("Fetched User:", data);
 
         if (response.ok) {
           setUser(data);
-          if (onAuthSuccess) onAuthSuccess();
+          onAuthSuccess?.();
         }
       } catch (error) {
         console.error("Error fetching user:", error);
+        toast({ title: "Error", description: "Failed to fetch user", variant: "destructive" });
       }
     };
 
     fetchUser();
-  }, [onAuthSuccess]);
+  }, [onAuthSuccess, user, toast]);
 
   const handleGitHubAuth = () => {
-    window.location.href = "http://localhost:5000/auth/github";
+    window.location.href = `${API_BASE_URL}/auth/github`;
+  };
+
+  const handleLogout = async () => {
+    try {
+      await fetch(`${API_BASE_URL}/auth/logout`, { credentials: "include" });
+      setUser(null);
+      toast({ title: "Logged out", description: "You have been logged out successfully" });
+    } catch (error) {
+      console.error("Logout error:", error);
+      toast({ title: "Error", description: "Failed to log out", variant: "destructive" });
+    }
   };
 
   return (
@@ -45,6 +61,9 @@ const AuthPage = ({ onAuthSuccess }: AuthPageProps = {}) => {
             <h1 className="text-3xl font-bold">Welcome, {user.username}!</h1>
             <img src={user.avatar} alt="GitHub Avatar" className="w-16 h-16 rounded-full mx-auto mt-4" />
             <p className="mt-2 text-gray-300">You're logged in with GitHub</p>
+            <Button className="mt-4 bg-red-600 hover:bg-red-700 text-white w-full" onClick={handleLogout}>
+              Logout
+            </Button>
           </div>
         ) : (
           <>

@@ -21,7 +21,9 @@ const handleGitHubLogin = () => {
     e.preventDefault();
     console.log('SignUp credentials:', credentials);
     try{
-      const res = await fetch("http://localhost:5000/auth/signup", {
+      const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+    
+      const res = await fetch(`${API_BASE_URL}/auth/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include", // Ensure authentication session is included

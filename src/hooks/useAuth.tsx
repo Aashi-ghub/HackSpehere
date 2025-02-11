@@ -11,9 +11,12 @@ export function useAuth() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Get API base URL dynamically
+  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
   const fetchUser = async () => {
     try {
-      const res = await fetch("http://localhost:5000/auth/user", {
+      const res = await fetch(`${API_BASE_URL}/auth/user`, {
         method: "GET",
         credentials: "include", // Important for session-based auth
       });
@@ -37,11 +40,11 @@ export function useAuth() {
   }, []);
 
   const loginWithGitHub = () => {
-    window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
+    window.location.href = `${API_BASE_URL}/auth/github`; // Redirect to GitHub login
   };
 
   const logout = async () => {
-    await fetch("http://localhost:5000/auth/logout", { credentials: "include" });
+    await fetch(`${API_BASE_URL}/auth/logout`, { credentials: "include" });
     setUser(null);
   };
 

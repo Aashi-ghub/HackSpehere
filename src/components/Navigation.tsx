@@ -24,10 +24,13 @@ const Navigation = () => {
 
   const [user, setUser] = useState<User | null>(null);
 
+  // Get API base URL dynamically
+  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
   // Fetch user data on load
   useEffect(() => {
     axios
-      .get("http://localhost:5000/auth/user", { withCredentials: true })
+      .get(`${API_BASE_URL}/auth/user`, { withCredentials: true })
       .then((response) => {
         console.log("User Data:", response.data); // Debugging
         setUser(response.data);
@@ -56,12 +59,12 @@ const Navigation = () => {
   }, []);
 
   const handleLogin = () => {
-    window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
+    window.location.href = `${API_BASE_URL}/auth/github`; // Redirect to GitHub login
   };
 
   const handleLogout = () => {
     axios
-      .get("http://localhost:5000/auth/logout", { withCredentials: true })
+      .get(`${API_BASE_URL}/auth/logout`, { withCredentials: true })
       .then(() => {
         setUser(null);
         setDropdownOpen(false); // Close dropdown on logout

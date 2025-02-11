@@ -21,9 +21,12 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Login credentials:', credentials);
-    try{
-      console.log("tryinng")
-      const res = await fetch("http://localhost:5000/auth/login", {
+    try {
+      console.log("Trying to log in...");
+      
+      const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+    
+      const res = await fetch(`${API_BASE_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include", // Ensure authentication session is included

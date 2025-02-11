@@ -9,26 +9,26 @@ const Team = () => {
  
   const teamCategories = {
     organizing: [
-      { name: "Aryan Srivastava", role: "Event Lead", image: "/ab.jpeg", linkedin: "https://www.linkedin.com/in/aryan-srivastava-cgc2237354/" },
+      { name: "Aryan Srivastava", role: "Event Lead", image: "/ab.webp", linkedin: "https://www.linkedin.com/in/aryan-srivastava-cgc2237354/" },
       { name: "Shridhar Kumar", role: "Event Lead ", image: "/sb.jpeg", linkedin: "https://www.linkedin.com/in/shridhar-kumar-65143824a/" },
-      { name: "Siddharth Karn", role: "Event Lead", image: "/sd.jpeg", linkedin: "https://www.linkedin.com/in/siddharth-rishabh-a8a18b274/" },
+      { name: "Siddharth Karn", role: "Event Lead", image: "/sd.webp", linkedin: "https://www.linkedin.com/in/siddharth-rishabh-a8a18b274/" },
       { name: "Yash Rajput", role: "Event Lead", image: "/yash.jpeg", linkedin: "https://www.linkedin.com/in/yash4823/" },
     ],
     technical: [
-      { name: "Aashi", role: "Tech Lead", image: "/Aashi.jpeg", linkedin: "https://www.linkedin.com/in/aashi-raghuwanshi" },
-      { name: "Jyoti", role: "Backend Developer", image: "/Jyoti.jpeg", linkedin: "https://www.linkedin.com/in/jyoti-khetwal-543731262" },
-      { name: "Gautam Dhiman", role: "Frontend Developer", image: "/gautam.jpeg", linkedin: "https://www.linkedin.com/in/gautam-dhiman-585b0b313" },
-      { name: "Kanan", role: "Frontend Developer", image: "/kanan.jpeg", linkedin: "https://www.linkedin.com/in/kanan-kango-16499b282/" },
+      { name: "Aashi", role: "Tech Lead", image: "/aashi.webp", linkedin: "https://www.linkedin.com/in/aashi-raghuwanshi" },
+      { name: "Jyoti", role: "Backend Developer", image: "/Jyoti.webp", linkedin: "https://www.linkedin.com/in/jyoti-khetwal-543731262" },
+      { name: "Gautam Dhiman", role: "Frontend Developer", image: "/gautam.webp", linkedin: "https://www.linkedin.com/in/gautam-dhiman-585b0b313" },
+      { name: "Kanan", role: "Frontend Developer", image: "/kanan.webp", linkedin: "https://www.linkedin.com/in/kanan-kango-16499b282/" },
     ],
     design: [
-      { name: "Devendra", role: "Media Head", image: "/devendra.jpeg", linkedin: "https://www.linkedin.com/in/devender-kumar-5207ab34a" },
-      { name: "Kamakshi", role: "Designer", image: "/kamakshi.jpeg", linkedin: "https://www.linkedin.com/in/kamakshi-sachdeva-3318a7325" },
-      { name: "Arushi", role: "Designer", image: "/arushi.jpeg", linkedin: "https://www.linkedin.com/in/arushi-sharma-40b361314" },
+      { name: "Devendra", role: "Media Head", image: "/devendra.webp", linkedin: "https://www.linkedin.com/in/devender-kumar-5207ab34a" },
+      { name: "Kamakshi", role: "Designer", image: "/kamakshi.webp", linkedin: "https://www.linkedin.com/in/kamakshi-sachdeva-3318a7325" },
+      { name: "Arushi", role: "Designer", image: "/arushi.webp", linkedin: "https://www.linkedin.com/in/arushi-sharma-40b361314" },
       { name: "Piyush", role: "Designer", image: "/piyush.jpeg", linkedin: "https://www.linkedin.com/in/piyush-bajaj18" },
     ],
     pr: [
-      { name: "Sarang", role: "PR Lead", image: "/sarang.jpeg", linkedin: "https://www.linkedin.com/in/sarang-ahlawat" },
-      { name: "Unnati", role: "Content Lead", image: "/unnati.jpeg", linkedin: "https://www.linkedin.com/in/unnati-negi-3714b331b" },
+      { name: "Sarang", role: "PR Lead", image: "/sarang.webp", linkedin: "https://www.linkedin.com/in/sarang-ahlawat" },
+      { name: "Unnati", role: "Content Lead", image: "/unnati.webp", linkedin: "https://www.linkedin.com/in/unnati-negi-3714b331b" },
       { name: "Radhika", role: "Content", image: "/radhika.jpeg", linkedin: "https://www.linkedin.com/in/radhika-7206b9330/" },
       { name: "Abhinav", role: "Content", image: "/abhinav.jpeg", linkedin: "https://linkedin.com/in/unnati" },
     ],

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import axios from "axios";
 import React from "react";
+import path from "path";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -122,12 +123,15 @@ const Navigation = () => {
                 )}
               </div>
             ) : (
+            <Link 
+              key="Login"
+              to="/login"> 
               <button
-                onClick={handleLogin}
                 className="text-white hover:text-[#378f89] transition-colors duration-200 nav-link font-secondary"
               >
                 Login
               </button>
+              </Link>
             )}
           </div>
 

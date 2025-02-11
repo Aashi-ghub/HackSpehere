@@ -13,6 +13,10 @@ function SignUp({ onToggleForm, onAuthMethodChange }: SignUpProps) {
     const { toast } = useToast();
     const navigate =useNavigate();
 
+const handleGitHubLogin = () => {
+      window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('SignUp credentials:', credentials);
@@ -28,7 +32,7 @@ function SignUp({ onToggleForm, onAuthMethodChange }: SignUpProps) {
       if (res.ok) {
         toast({
           title: result.message,
-          description: "Your account is successfully created.",
+          description: "Your account is successfully created. You can Login now.",
         });
         setTimeout(() => {
           navigate("/"); // Redirect to home page after 3 seconds
@@ -102,7 +106,7 @@ function SignUp({ onToggleForm, onAuthMethodChange }: SignUpProps) {
 
         <button
           type="button"
-          onClick={() => onAuthMethodChange('github')}
+          onClick={() =>handleGitHubLogin()}
           className="w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center group border border-gray-700"
         >
           <Github className="mr-2 h-5 w-5" />

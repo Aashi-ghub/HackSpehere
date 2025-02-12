@@ -1,18 +1,19 @@
 import { Users } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Linkedin } from "lucide-react";
 import { Button } from "../components/ui/button";
 import React from "react";
 
 const Team = () => {
   const [activeTeam, setActiveTeam] = useState("organizing");
- 
+  const [loadedImages, setLoadedImages] = useState<string[]>([]);
+
   const teamCategories = {
     organizing: [
       { name: "Aryan Srivastava", role: "Event Lead", image: "/ab.webp", linkedin: "https://www.linkedin.com/in/aryan-srivastava-cgc2237354/" },
-      { name: "Shridhar Kumar", role: "Event Lead ", image: "/sb.jpeg", linkedin: "https://www.linkedin.com/in/shridhar-kumar-65143824a/" },
+      { name: "Shridhar Kumar", role: "Event Lead", image: "/sb.webp", linkedin: "https://www.linkedin.com/in/shridhar-kumar-65143824a/" },
       { name: "Siddharth Karn", role: "Event Lead", image: "/sd.webp", linkedin: "https://www.linkedin.com/in/siddharth-rishabh-a8a18b274/" },
-      { name: "Yash Rajput", role: "Event Lead", image: "/yash.jpeg", linkedin: "https://www.linkedin.com/in/yash4823/" },
+      { name: "Yash Rajput", role: "Event Lead", image: "/yash.webp", linkedin: "https://www.linkedin.com/in/yash4823/" },
     ],
     technical: [
       { name: "Aashi", role: "Tech Lead", image: "/aashi.webp", linkedin: "https://www.linkedin.com/in/aashi-raghuwanshi" },
@@ -24,15 +25,24 @@ const Team = () => {
       { name: "Devendra", role: "Media Head", image: "/devendra.webp", linkedin: "https://www.linkedin.com/in/devender-kumar-5207ab34a" },
       { name: "Kamakshi", role: "Designer", image: "/kamakshi.webp", linkedin: "https://www.linkedin.com/in/kamakshi-sachdeva-3318a7325" },
       { name: "Arushi", role: "Designer", image: "/arushi.webp", linkedin: "https://www.linkedin.com/in/arushi-sharma-40b361314" },
-      { name: "Piyush", role: "Designer", image: "/piyush.jpeg", linkedin: "https://www.linkedin.com/in/piyush-bajaj18" },
+      { name: "Piyush", role: "Designer", image: "/piyush.webp", linkedin: "https://www.linkedin.com/in/piyush-bajaj18" },
     ],
-    pr: [
-      { name: "Sarang", role: "PR Lead", image: "/sarang.webp", linkedin: "https://www.linkedin.com/in/sarang-ahlawat" },
-      { name: "Unnati", role: "Content Lead", image: "/unnati.webp", linkedin: "https://www.linkedin.com/in/unnati-negi-3714b331b" },
-      { name: "Radhika", role: "Content", image: "/radhika.jpeg", linkedin: "https://www.linkedin.com/in/radhika-7206b9330/" },
-      { name: "Abhinav", role: "Content", image: "/abhinav.jpeg", linkedin: "https://linkedin.com/in/unnati" },
+    content: [
+      { name: "Abhinav", role: "Content Lead", image: "/abhinav.webp", linkedin: "https://linkedin.com/in/unnati" },
+      { name: "Unnati", role: "Content", image: "/unnati.webp", linkedin: "https://www.linkedin.com/in/unnati-negi-3714b331b" },
+      { name: "Sarang", role: "PR ", image: "/sarang.webp", linkedin: "https://www.linkedin.com/in/sarang-ahlawat" },
+      { name: "Radhika", role: "Content", image: "/radhika.webp", linkedin: "https://www.linkedin.com/in/radhika-7206b9330/" },
     ],
   };
+  // Preload all images once the component mounts
+  useEffect(() => {
+    const imagesToPreload = Object.values(teamCategories).flat().map((member) => member.image);
+    imagesToPreload.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+      img.onload = () => setLoadedImages((prev) => [...prev, image]);
+    });
+  }, []);
 
   return (
     <section className="py-10 animate-fade-in" id="team">
@@ -40,7 +50,7 @@ const Team = () => {
         <Users className="text-teal-500" />
         Team
       </h2>
-      
+
       <div className="mb-8 flex flex-wrap justify-center gap-4">
         {Object.keys(teamCategories).map((category) => (
           <Button
@@ -48,7 +58,7 @@ const Team = () => {
             onClick={() => setActiveTeam(category)}
             variant={activeTeam === category ? "default" : "outline"}
             className={`
-              px-7 py-2 rounded-full transition-all duration-300 capitalize
+              px-7 py-2 rounded-full transition-all duration-300 capitalize 
               ${activeTeam === category 
                 ? 'bg-teal-500 text-black hover:bg-teal-600' 
                 : 'bg-transparent text-white hover:bg-teal-500/20'}
@@ -58,32 +68,28 @@ const Team = () => {
           </Button>
         ))}
       </div>
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {teamCategories[activeTeam as keyof typeof teamCategories].map((member, index) => (
           <div 
             key={index} 
             className="group relative bg-gradient-to-br from-[#1f1f1f] via-[#1e2323] to-[#000f0f] rounded-xl p-6 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-teal-500/20 hover:scale-[1.02]"
           >
-            {/* Background gradient effect */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#111212] via-[#1e2323] to-[#1f1f1f] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
-            {/* Content container */}
             <div className="relative z-10 h-full flex flex-col items-center transition-all duration-500">
-              {/* Image container */}
               <div className="relative mb-6 group-hover:scale-95 transition-transform duration-300">
                 <div className="w-28 h-28 sm:w-32 font-serif sm:h-32 mx-auto rounded-2xl overflow-hidden border-2 border-teal-500/50 shadow-lg shadow-teal-700/30 transform rotate-3 group-hover:rotate-0 group-hover:rounded-full transition-all duration-300">
                   <img
                     src={member.image}
                     alt={member.name}
+                    loading="lazy" // Added lazy loading
                     className="w-full h-full object-cover"
                   />
                 </div>
-                {/* Decorative element - now only hidden on hover */}
                 <div className="absolute -bottom-2 -right-2 w-28 h-28 sm:w-32 sm:h-32 rounded-2xl border-2 border-white/50 -z-10 transform -rotate-3 opacity-100 group-hover:opacity-0 transition-all duration-300" />
               </div>
 
-              {/* Text content */}
               <div className="text-center transition-all duration-500 mb-6">
                 <h3 className="text-xl sm:text-2xl text-white font-bold mb-2 tracking-tight">{member.name}</h3>
                 <div className="inline-block min-w-[140px]">
@@ -93,7 +99,6 @@ const Team = () => {
                 </div>
               </div>
 
-              {/* LinkedIn button */}
               <div className="mt-auto">
                 <a
                   href={member.linkedin}

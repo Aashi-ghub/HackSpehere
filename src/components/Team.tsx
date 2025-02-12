@@ -12,7 +12,7 @@ const Team = () => {
       { name: "Aryan Srivastava", role: "Event Lead", image: "/ab.webp", linkedin: "https://www.linkedin.com/in/aryan-srivastava-cgc2237354/" },
       { name: "Shridhar Kumar", role: "Event Lead", image: "/sb.jpeg", linkedin: "https://www.linkedin.com/in/shridhar-kumar-65143824a/" },
       { name: "Siddharth Karn", role: "Event Lead", image: "/sd.webp", linkedin: "https://www.linkedin.com/in/siddharth-rishabh-a8a18b274/" },
-      { name: "Yash Rajput", role: "Event Lead", image: "/yash.jpeg", linkedin: "https://www.linkedin.com/in/yash4823/" },
+      { name: "Yash Rajput", role: "Event Lead", image: "/yash.webp", linkedin: "https://www.linkedin.com/in/yash4823/" },
     ],
     technical: [
       { name: "Aashi", role: "Tech Lead", image: "/aashi.webp", linkedin: "https://www.linkedin.com/in/aashi-raghuwanshi" },
@@ -24,13 +24,13 @@ const Team = () => {
       { name: "Devendra", role: "Media Head", image: "/devendra.webp", linkedin: "https://www.linkedin.com/in/devender-kumar-5207ab34a" },
       { name: "Kamakshi", role: "Designer", image: "/kamakshi.webp", linkedin: "https://www.linkedin.com/in/kamakshi-sachdeva-3318a7325" },
       { name: "Arushi", role: "Designer", image: "/arushi.webp", linkedin: "https://www.linkedin.com/in/arushi-sharma-40b361314" },
-      { name: "Piyush", role: "Designer", image: "/piyush.jpeg", linkedin: "https://www.linkedin.com/in/piyush-bajaj18" },
+      { name: "Piyush", role: "Designer", image: "/piyush.webp", linkedin: "https://www.linkedin.com/in/piyush-bajaj18" },
     ],
     pr: [
       { name: "Sarang", role: "PR Lead", image: "/sarang.webp", linkedin: "https://www.linkedin.com/in/sarang-ahlawat" },
       { name: "Unnati", role: "Content Lead", image: "/unnati.webp", linkedin: "https://www.linkedin.com/in/unnati-negi-3714b331b" },
-      { name: "Radhika", role: "Content", image: "/radhika.jpeg", linkedin: "https://www.linkedin.com/in/radhika-7206b9330/" },
-      { name: "Abhinav", role: "Content", image: "/abhinav.jpeg", linkedin: "https://linkedin.com/in/unnati" },
+      { name: "Radhika", role: "Content", image: "/radhika.webp", linkedin: "https://www.linkedin.com/in/radhika-7206b9330/" },
+      { name: "Abhinav", role: "Content", image: "/abhinav.webp", linkedin: "https://linkedin.com/in/unnati" },
     ],
   };
 

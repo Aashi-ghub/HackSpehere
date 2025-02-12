@@ -47,6 +47,6 @@ export function useAuth() {
     await fetch(`${API_BASE_URL}/auth/logout`, { credentials: "include" });
     setUser(null);
   };
-
+  
   return { user, loading, loginWithGitHub, logout };
 }

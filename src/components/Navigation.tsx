@@ -61,13 +61,22 @@ const Navigation = () => {
   const handleLogin = () => {
     window.location.href = `${API_BASE_URL}/auth/github`; // Redirect to GitHub login
   };
-
+  
   const handleLogout = () => {
-    axios
-      .get(`${API_BASE_URL}/auth/logout`, { withCredentials: true })
-      .then(() => {
-        setUser(null);
-        setDropdownOpen(false); // Close dropdown on logout
+    //console.log("loggingOut")
+    fetch(`http://localhost:5000/auth/logout`, {
+      method: "GET",
+      credentials: "include",
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log(response);
+          setUser(null);
+          setDropdownOpen(false); // Close dropdown on logout
+            window.location.href = "/";
+        } else {
+          console.error("Logout failed",response);
+        }
       })
       .catch((error) => console.error("Logout error:", error));
   };

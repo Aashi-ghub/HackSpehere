@@ -1,11 +1,12 @@
 import { Users } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Linkedin } from "lucide-react";
 import { Button } from "../components/ui/button";
 import React from "react";
 
 const Team = () => {
   const [activeTeam, setActiveTeam] = useState("organizing");
+  const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
   const teamCategories = {
     organizing: [
@@ -26,13 +27,22 @@ const Team = () => {
       { name: "Arushi", role: "Designer", image: "/arushi.webp", linkedin: "https://www.linkedin.com/in/arushi-sharma-40b361314" },
       { name: "Piyush", role: "Designer", image: "/piyush.webp", linkedin: "https://www.linkedin.com/in/piyush-bajaj18" },
     ],
-    Content: [
+    content: [
       { name: "Abhinav", role: "Content Lead", image: "/abhinav.webp", linkedin: "https://linkedin.com/in/unnati" },
       { name: "Unnati", role: "Content", image: "/unnati.webp", linkedin: "https://www.linkedin.com/in/unnati-negi-3714b331b" },
       { name: "Sarang", role: "PR ", image: "/sarang.webp", linkedin: "https://www.linkedin.com/in/sarang-ahlawat" },
       { name: "Radhika", role: "Content", image: "/radhika.webp", linkedin: "https://www.linkedin.com/in/radhika-7206b9330/" },
     ],
   };
+  // Preload all images once the component mounts
+  useEffect(() => {
+    const imagesToPreload = Object.values(teamCategories).flat().map((member) => member.image);
+    imagesToPreload.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+      img.onload = () => setLoadedImages((prev) => [...prev, image]);
+    });
+  }, []);
 
   return (
     <section className="py-10 animate-fade-in" id="team">

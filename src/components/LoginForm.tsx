@@ -38,7 +38,6 @@ function LoginForm() {
   };
   return (
     <div className="min-h-screen bg-gray-950 relative flex items-center justify-center p-4 overflow-hidden">
-
       {/* Animated background gradients */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -inset-[10px] opacity-50">

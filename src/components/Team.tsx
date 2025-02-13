@@ -27,10 +27,11 @@ const Team = () => {
       { name: "Piyush", role: "Designer", image: "/piyush.jpeg", linkedin: "https://www.linkedin.com/in/piyush-bajaj18" },
     ],
     pr: [
-      { name: "Sarang", role: "PR Lead", image: "/sarang.webp", linkedin: "https://www.linkedin.com/in/sarang-ahlawat" },
-      { name: "Unnati", role: "Content Lead", image: "/unnati.webp", linkedin: "https://www.linkedin.com/in/unnati-negi-3714b331b" },
+      { name: "Abhinav", role: "Content Lead", image: "/Abhinav.webp", linkedin: "https://www.linkedin.com/in/abhinav-kumar-3b238a28a" },
+      { name: "Unnati", role: "Content", image: "/unnati.webp", linkedin: "https://www.linkedin.com/in/unnati-negi-3714b331b" },
+      { name: "Sarang", role: "PR", image: "/sarang.webp", linkedin: "https://www.linkedin.com/in/sarang-ahlawat" },
       { name: "Radhika", role: "Content", image: "/radhika.jpeg", linkedin: "https://www.linkedin.com/in/radhika-7206b9330/" },
-      { name: "Abhinav", role: "Content", image: "/abhinav.jpeg", linkedin: "https://linkedin.com/in/unnati" },
+      ,
     ],
   };
 

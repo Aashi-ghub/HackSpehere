@@ -45,7 +45,8 @@ const Timeline: React.FC = () => {
         <Calendar className="text-teal-400" /> Event Timeline
       </h2>
 
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-teal-800 top-[75px] bottom-0 h-full"></div>
+      {/* Timeline Vertical Line */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-teal-800 top-[50px] bottom-0 h-full"></div>
 
       <div className="space-y-8">
         {timelineItems.map((item, index) => (
@@ -55,28 +56,31 @@ const Timeline: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative flex flex-col items-center md:block"
           >
+            {/* Timeline Circle */}
             <div className="absolute left-1/2 w-3 h-3 rounded-full bg-teal-500 transform -translate-x-1/2 mt-4 animate-pulse"></div>
 
-            {/* Timeline item content */}
-            <div className={`${index % 2 === 0 ? "ml-12 md:ml-0 md:mr-[50%] md:pr-8" : "ml-12 md:ml-[50%] md:pl-8"}`}>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                onClick={() => {
-                  if (activeItem === item.title) {
-                    setActiveItem(null);
-                    setActiveDescription(null);
-                  } else {
-                    setActiveItem(item.title);
-                    setActiveDescription(item.detailedDescription);
-                  }
-                }}
-                className={`bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] p-4 rounded-xl backdrop-blur-sm border transition cursor-pointer ${activeItem === item.title ? "border-teal-300 shadow-teal-400 shadow-lg" : "border-transparent"}`}
-              >
-                <h3 className="text-lg font-bold text-white">{item.title}</h3>
-                <p className="text-sm text-gray-400">{item.description}</p>
-              </motion.div>
+            {/* Timeline Item */}
+            <div
+              className={`
+                bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] p-4 rounded-xl backdrop-blur-sm border transition cursor-pointer
+                ${activeItem === item.title ? "border-teal-300 shadow-teal-400 shadow-lg" : "border-transparent"}
+                w-full max-w-[90%] md:max-w-[48%] text-center md:text-left 
+                ${index % 2 === 0 ? "md:mr-[52%] md:pr-8" : "md:ml-[52%] md:pl-8"}
+              `}
+              onClick={() => {
+                if (activeItem === item.title) {
+                  setActiveItem(null);
+                  setActiveDescription(null);
+                } else {
+                  setActiveItem(item.title);
+                  setActiveDescription(item.detailedDescription);
+                }
+              }}
+            >
+              <h3 className="text-lg font-bold text-white">{item.title}</h3>
+              <p className="text-sm text-gray-400">{item.description}</p>
             </div>
           </motion.div>
         ))}
@@ -86,7 +90,7 @@ const Timeline: React.FC = () => {
       {activeItem && activeDescription && (
         <div
           className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50"
-          onClick={() => setActiveDescription(null)} 
+          onClick={() => setActiveDescription(null)}
         >
           <motion.div
             initial={{ x: "100%", opacity: 0 }}
@@ -102,11 +106,8 @@ const Timeline: React.FC = () => {
               &times;
             </button>
 
-            <h3 className="text-lg font-bold text-white mb-4">
-              {activeItem} {/* Display active item's title */}
-            </h3>
-
-            <p className="text-sm mb-4">{activeDescription}</p> {/* Display detailed description */}
+            <h3 className="text-lg font-bold text-white mb-4">{activeItem}</h3>
+            <p className="text-sm mb-4">{activeDescription}</p>
           </motion.div>
         </div>
       )}
@@ -115,4 +116,3 @@ const Timeline: React.FC = () => {
 };
 
 export default Timeline;
-

@@ -25,12 +25,13 @@ const Navigation = () => {
   const [user, setUser] = useState<User | null>(null);
 
   // Get API base URL dynamically
-  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  // const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  const API_BASE_URL ="https://inceptionx-production.onrender.com"
 
   // Fetch user data on load
   useEffect(() => {
     axios
-      .get(`${API_BASE_URL}/auth/user`, { withCredentials: true })
+      .post(`${API_BASE_URL}/auth/user`, { withCredentials: true })
       .then((response) => {
         console.log("User Data:", response.data); // Debugging
         setUser(response.data);

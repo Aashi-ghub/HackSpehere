@@ -113,31 +113,32 @@ export default function RegistrationForm() {
               <p className="text-gray-300 mt-4">Redirecting to the home page...</p>
             </div>
           ) : (
-            <>
-              {/* Authentication UI */}
-              <div className="flex justify-between items-center">
-                {loading ? (
-                  <p className="text-gray-400">Checking login status...</p>
-                ) : user ? (
-                  <div className="flex items-center space-x-4">
-                    <img src={user.avatar} alt="User Avatar" className="w-10 h-10 rounded-full" />
-                    <span className="text-gray-300">{user.username}</span>
-                    <button onClick={logout} className="text-teal-400">Logout</button>
-                  </div>
-                ) : (
-                  <div className="text-center w-full">
-                    <p className="text-gray-300">You must be logged in to register.</p>
-                   <Link key="Login" to="/login"> 
-                    <button className="mt-4 text-teal-400 bg-gray-800 px-4 py-2 rounded hover:bg-gray-700">
-                       Login 
-                    </button>
-                    </Link>
-                  </div>
-                )}
-              </div>
+            //  <>
+          //     {/* Authentication UI */}
+          //     <div className="flex justify-between items-center">
+          //       {loading ? (
+          //         <p className="text-gray-400">Checking login status...</p>
+          //       ) : user ? (
+          //         <div className="flex items-center space-x-4">
+          //           <img src={user.avatar} alt="User Avatar" className="w-10 h-10 rounded-full" />
+          //           <span className="text-gray-300">{user.username}</span>
+          //           <button onClick={logout} className="text-teal-400">Logout</button>
+          //         </div>
+          //       ) : (
+          //         <div className="text-center w-full">
+          //           <p className="text-gray-300">You must be logged in to register.</p>
+          //          <Link key="Login" to="/login"> 
+          //           <button className="mt-4 text-teal-400 bg-gray-800 px-4 py-2 rounded hover:bg-gray-700">
+          //              Login 
+          //           </button>
+          //           </Link>
+          //         </div>
+          //       )}
+          //     </div>
 
-              {/* Show Registration Form Only if User is Logged In */}
-              {user && (
+              // {/* Show Registration Form Only if User is Logged In */}
+              // {user && (
+
                 <Form {...form}>
                   <form method="POST" onSubmit={handleSubmit} className="space-y-8 animate-fade-in">
                     {step === 1 && <TeamInfoForm form={form} setTeamSize={setTeamSize} />}
@@ -169,10 +170,10 @@ export default function RegistrationForm() {
                   </form>
                 </Form>
               )}
-            </>
-          )}
+            {/* </> */}
+          {/* )} */}
         </div>
       </div>
-    </div>
+  </div>    
   );
 }

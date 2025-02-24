@@ -66,30 +66,8 @@ const Navigation = () => {
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  const handleLogin = () => {
-    window.location.href = `${API_BASE_URL}/auth/github`; // Redirect to GitHub login
   };
-  
-  const handleLogout = () => {
-    //console.log("loggingOut")
-    fetch(`http://localhost:5000/auth/logout`, {
-      method: "GET",
-      credentials: "include",
-    })
-      .then((response) => {
-        if (response.ok) {
-          console.log(response);
-          setUser(null);
-          setDropdownOpen(false); // Close dropdown on logout
-            window.location.href = "/";
-        } else {
-          console.error("Logout failed",response);
-        }
-      })
-      .catch((error) => console.error("Logout error:", error));
-  };
-
-  return (
+    return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-[#0D1117]/90 backdrop-blur-lg" : "bg-[#0D1117]/60 backdrop-blur-md"} navbar font-primary`}>    
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">

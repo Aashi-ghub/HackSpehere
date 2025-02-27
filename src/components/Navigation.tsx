@@ -69,7 +69,7 @@ const Navigation = () => {
         }
       })
       .catch((error) => console.error("Logout error:", error));
-=======
+
   // Function for smooth scrolling
   const handleSmoothScroll = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,

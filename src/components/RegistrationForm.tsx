@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom"; // For redirecting after success
@@ -127,11 +126,9 @@ export default function RegistrationForm() {
                 ) : (
                   <div className="text-center w-full">
                     <p className="text-gray-300">You must be logged in to register.</p>
-                   <Link key="Login" to="/login"> 
-                    <button className="mt-4 text-teal-400 bg-gray-800 px-4 py-2 rounded hover:bg-gray-700">
-                       Login 
+                    <button onClick={loginWithGitHub} className="mt-4 text-teal-400 bg-gray-800 px-4 py-2 rounded hover:bg-gray-700">
+                      Login with GitHub
                     </button>
-                    </Link>
                   </div>
                 )}
               </div>

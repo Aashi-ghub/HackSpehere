@@ -27,11 +27,12 @@ const Team = () => {
       { name: "Arushi", role: "Designer", image: "/arushi.webp", linkedin: "https://www.linkedin.com/in/arushi-sharma-40b361314" },
       { name: "Piyush", role: "Designer", image: "/piyush.webp", linkedin: "https://www.linkedin.com/in/piyush-bajaj18" },
     ],
-    content: [
-      { name: "Abhinav", role: "Content Lead", image: "/abhinav.webp", linkedin: "https://linkedin.com/in/unnati" },
+    pr: [
+      { name: "Abhinav", role: "Content Lead", image: "/Abhinav.webp", linkedin: "https://www.linkedin.com/in/abhinav-kumar-3b238a28a" },
       { name: "Unnati", role: "Content", image: "/unnati.webp", linkedin: "https://www.linkedin.com/in/unnati-negi-3714b331b" },
-      { name: "Sarang", role: "PR ", image: "/sarang.webp", linkedin: "https://www.linkedin.com/in/sarang-ahlawat" },
-      { name: "Radhika", role: "Content", image: "/radhika.webp", linkedin: "https://www.linkedin.com/in/radhika-7206b9330/" },
+      { name: "Sarang", role: "PR", image: "/sarang.webp", linkedin: "https://www.linkedin.com/in/sarang-ahlawat" },
+      { name: "Radhika", role: "Content", image: "/radhika.jpeg", linkedin: "https://www.linkedin.com/in/radhika-7206b9330/" },
+      ,
     ],
   };
   // Preload all images once the component mounts

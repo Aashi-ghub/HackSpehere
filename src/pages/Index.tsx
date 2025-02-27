@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import Timeline from "../components/Timeline";
 import Themes from "../components/Themes";
 import Team from "../components/Team";
+import TechAmigosPage from "../components/TechAmigosPage"
 import Sponsors from "../components/Sponsors";
 import TechCards from "../components/Problemstatement";
 import WhatWeOffer from "../components/WhatWeOffer";
@@ -42,6 +43,7 @@ const Index = () => {
               <TechCards />
             </div>
             <Team />
+            <TechAmigosPage></TechAmigosPage>
             <Sponsors />
             <FAQs />
           </div>

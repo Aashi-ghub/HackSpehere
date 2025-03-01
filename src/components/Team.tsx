@@ -47,7 +47,7 @@ const Team = () => {
 
   return (
     <section className="py-10 animate-fade-in" id="team">
-      <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-2">
+      <h2 className="text-3xl font-bold font-orbitron text-white mb-8 flex items-center gap-2">
         <Users className="text-teal-500" />
         Team
       </h2>
@@ -65,10 +65,11 @@ const Team = () => {
                 : 'bg-transparent text-white hover:bg-teal-500/20'}
             `}
           >
-            {category} Team
+            {category} Team 
           </Button>
-        ))}
+        ))}  
       </div>
+      
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {teamCategories[activeTeam as keyof typeof teamCategories].map((member, index) => (

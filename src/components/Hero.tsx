@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import React from "react";
 
 const Hero = () => {
-  const title = "InceptionX";
+  const title = "INCEPTION X";
   const subtitle = "Join the ultimate tech innovation challenge. Transform your ideas into reality.";
 
   return (
@@ -27,34 +27,17 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-block mb-4 px-4 py-1.5 bg-[#00FFA3]/10 text-[#e0ecec] rounded-full text-sm font-medium"
+          className="inline-block my-8 px-4 py-1.5 bg-[#00FFA3]/10 text-[#e0ecec] rounded-full text-sm font-medium"
         >
-          A COUNTDOWN TO INCEPTIONX STARTS
+          COUNTDOWN TO INCEPTIONX STARTS
         </motion.div>
         {/* Title */}
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-wider">
-          <span className="bg-gradient-to-r from-[#00FFA3] to-[#00A3FF] bg-clip-text text-transparent inline-block">
-            {title.split(" ").map((word, index) => (
-              <span key={index} className="inline-block mr-2">
-                {word.split("").map((char, charIndex) => (
-                  <motion.span
-                    key={charIndex}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: index * 0.3 + charIndex * 0.05,
-                      type: "spring",
-                      stiffness: 100
-                    }}
-                    className="inline-block"
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-              </span>
-            ))}
+        <h1 className="text-5xl md:text-7xl font-extrabold text-white my-6 leading-tight tracking-wider">
+          <span className="bg-gradient-to-r  from-[#e9ebeb] via-[#a9b1ae] to-[#46b1b7]  
+ font-orbitron bg-clip-text text-transparent inline-block">
+            {title.split(" ")[0]} {/* "INCEPTION" */}
           </span>
+          <span className="text-white text-7xl font-orbitron font-extrabold ml-3 inline-block">  X</span> {/* "X" in white */}
         </h1>
         {/* Subtitle with Typewriter Effect */}
         <div className="text-white text-lg md:text-xl mb-12 max-w-2xl mx-auto overflow-hidden tracking-wide">
@@ -84,13 +67,13 @@ const Hero = () => {
         >
           <Link
             to="/register"
-            className="group relative inline-flex items-center px-8 py-4 bg-[#39a5ad] text-white rounded-full transition-all duration-300 transform hover:scale-105 font-medium overflow-hidden"
+            className="group relative inline-flex items-center px-8 py-4 bg-[#49adaa] text-white rounded-full transition-all duration-300 transform hover:scale-105 font-medium overflow-hidden"
           >
             <span className="relative z-10">
               REGISTER NOW
               <ArrowRight className="ml-2 inline-block transition-transform group-hover:translate-x-1" />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#00FFA3] to-[#00A3FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#51cec8] to-[#22bb90] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </Link>
         </motion.div>
         {/* Countdown Timer */}

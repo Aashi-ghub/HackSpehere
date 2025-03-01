@@ -27,7 +27,7 @@ const pages = [
         title: "Scavanger Hunt 2024",
         subtitle: "Event 3",
         content:
-          "The Scavenger Hunt at Parivartan 2024 challenged participants to decode clues and hunt for company names hidden across the campus. As teams progressed, they had to unlock different mystery boxes, each containing hints to the final treasure. Solving puzzles and accessing various locked rooms, they showcased problem-solving, teamwork, and strategic thinking in a thrilling, fast-paced environment. Organized by Tech Amigos, the event created an atmosphere of excitement, learning, and collaboration. It was a huge success, leaving participants thrilled and eager for more!",
+          "The Scavenger Hunt at Parivartan 2024 challenged participants to decode clues and hunt for company names hidden across the campus. As teams progressed, they had to unlock different mystery boxes, each containing hints to the final treasure. Solving puzzles and accessing various locked rooms, they showcased problem-solving, teamwork, and strategic thinking in a thrilling, fast-paced environment. Organized by Tech Amigos, the event created an atmosphere of excitement, learning, and collaboration. It was a huge success, leaving participants thrilled and eager for more!",
         images: ["/sh1.webp", "/sh2.webp", "/sh3.webp"],
       },
       {

@@ -11,8 +11,8 @@ const ProblemStatements = () => {
 
   return (
     <section className="py-12 animate-fade-in" id="problem-statements">
-      <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-2">
-        <Target className="text-teal-400" />
+      <h2 className="text-3xl font-bold text-white font-orbitron mb-8 flex items-center gap-2">
+        <Target className="text-teal-400 " />
         Problem Statements
       </h2>
       <div className="grid gap-6 px-5">

@@ -10,8 +10,6 @@ import ThemeList from "./components/ThemeList";
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm"
 
-
-
 const queryClient = new QueryClient();
 
 const App = () => (

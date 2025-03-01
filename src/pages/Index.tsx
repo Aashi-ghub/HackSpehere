@@ -40,7 +40,7 @@ const Index = () => {
 
             {/* TechCards Section (moved above Team) */}
             <div className="mt-16 mx-6">
-              <TechCards />
+             
             </div>
             <Team />
             <TechAmigos />

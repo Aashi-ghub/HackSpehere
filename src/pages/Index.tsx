@@ -11,17 +11,21 @@ import WhatWeOffer from "../components/WhatWeOffer";
 import Footer from "../components/footer";
 import VideoBackground from "../components/videobackground";
 import FAQs from "../components/faqs";
+import ExcitingPrizes from "@/components/Prizes";
+
 
 const Index = () => {
   return (
     <div className="min-h-screen relative overflow-hidden">
+
       {/* Video background with gradient overlay */}
       <VideoBackground />
-
+      
       <Navigation />
-
+     
       <div className="relative z-10">
         <div className="container mx-auto px-0">
+
           {/* Main content */}
           <div className="flex flex-col justify-center items-center">
             <Hero />
@@ -32,6 +36,10 @@ const Index = () => {
             {/* Add IDs for scroll navigation */}
             <div id="timeline">
               <Timeline />
+            </div>
+
+            <div id="ExicitingPrizes">
+              <ExcitingPrizes />
             </div>
 
             <div id="themes">

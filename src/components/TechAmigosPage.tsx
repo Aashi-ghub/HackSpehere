@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import MobileTechAmigos from "./MobileTechAmigos";
 
 const pages = [
   {
@@ -59,6 +60,8 @@ const TechAmigos: React.FC = () => {
   };
 
   return (
+    <div>
+    <div className="hidden md:block">
     <div className="relative h-auto w-full text-white flex flex-col p-10 px-14 rounded-lg shadow-lg overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#1E3C3D] to-[#212121] opacity-50 rounded-lg"></div>
@@ -75,6 +78,7 @@ const TechAmigos: React.FC = () => {
           >
             {currentPage === 0 ? (
               <>
+                {/* Reduced Logo Size */}
                 <img
                   src={pages[currentPage].images[0]}
                   alt="Tech Amigos Logo"
@@ -126,7 +130,6 @@ const TechAmigos: React.FC = () => {
         </AnimatePresence>
       </div>
 
-      {/* Navigation Buttons with Adjusted Margins */}
       <button
         onClick={prevPage}
         className="absolute left-6 lg:left-8 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 p-3 rounded-full hover:bg-opacity-80 transition"
@@ -141,6 +144,11 @@ const TechAmigos: React.FC = () => {
         <ChevronRight className="w-6 h-6 text-white" />
       </button>
     </div>
+  </div>
+  <div className="block md:hidden">
+        <MobileTechAmigos />
+      </div>
+  </div>    
   );
 };
 

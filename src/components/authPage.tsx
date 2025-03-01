@@ -8,6 +8,7 @@ interface AuthPageProps {
 }
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+// const API_BASE_URL="https://inceptionx-production.onrender.com"
 
 const AuthPage = ({ onAuthSuccess }: AuthPageProps = {}) => {
   const [user, setUser] = useState<{ username: string; avatar: string } | null>(null);
@@ -15,11 +16,15 @@ const AuthPage = ({ onAuthSuccess }: AuthPageProps = {}) => {
 
   // Fetch logged-in user data
   useEffect(() => {
-    if (user) return; // Avoid unnecessary calls
+    if (user) {
+      console.log("fetch:",user)
+      return}; // Avoid unnecessary calls
 
     const fetchUser = async () => {
       try {
         const response = await fetch(`${API_BASE_URL}/auth/user`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
           credentials: "include",
         });
         const data = await response.json();

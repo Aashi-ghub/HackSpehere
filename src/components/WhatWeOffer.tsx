@@ -13,7 +13,7 @@ const WhatWeOffer = () => {
 
   return (
     <section className="py-16 animate-fade-in" id="offerings">
-      <h2 className="text-4xl font-bold text-white mb-12 text-center">What We Offer</h2>
+      <h2 className="text-4xl font-bold font-orbitron text-white mb-12 text-center">What We Offer</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {offerings.slice(0, 3).map((offering, index) => (

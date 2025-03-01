@@ -23,13 +23,26 @@ const Navigation = () => {
 
   const [user, setUser] = useState<User | null>(null);
 
-  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  // Get API base URL dynamically
+    const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  //  const API_BASE_URL ="https://inceptionx-production.onrender.com"
 
   useEffect(() => {
     axios
-      .get(`${API_BASE_URL}/auth/user`, { withCredentials: true })
-      .then((response) => setUser(response.data))
-      .catch(() => setUser(null));
+      .get(`${API_BASE_URL}/auth/user`, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        withCredentials: true,
+      })
+      .then((response) => {
+        console.log("User Data:", response.data); // Debugging
+        setUser(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching user:", error);
+        setUser(null);
+      });
+   
   }, []);
 
   useEffect(() => {
@@ -48,28 +61,6 @@ const Navigation = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleLogin = () => {
-    window.location.href = `${API_BASE_URL}/auth/github`; // Redirect to GitHub login
-  };
-  
-  const handleLogout = () => {
-    //console.log("loggingOut")
-    fetch(`http://localhost:5000/auth/logout`, {
-      method: "GET",
-      credentials: "include",
-    })
-      .then((response) => {
-        if (response.ok) {
-          console.log(response);
-          setUser(null);
-          setDropdownOpen(false); // Close dropdown on logout
-            window.location.href = "/";
-        } else {
-          console.error("Logout failed",response);
-        }
-      })
-      .catch((error) => console.error("Logout error:", error));
-=======
   // Function for smooth scrolling
   const handleSmoothScroll = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -80,15 +71,13 @@ const Navigation = () => {
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-
   };
-
-  return (
+    return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-[#0D1117]/90 backdrop-blur-lg" : "bg-[#0D1117]/60 backdrop-blur-md"} navbar font-primary`}>    
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-            <span className="bg-gradient-to-r from-[#00FFA3] to-[#00A3FF] font-bold bg-clip-text text-transparent">InceptionX</span>
+            <span className="bg-gradient-to-r  from-[#dbe2e2] via-[#b3beba] to-[#4fd1d7]   font-bold font-orbitron bg-clip-text text-transparent">InceptionX</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -99,7 +88,7 @@ const Navigation = () => {
                   key={link.name}
                   href={link.path}
                   onClick={(e) => handleSmoothScroll(e, link.name.toLowerCase())}
-                  className="text-white hover:text-[#378f89] transition-colors duration-200 font-secondary"
+                  className="text-white font-quicksand hover:text-[#378f89] transition-colors duration-200 font-secondary"
                 >
                   {link.name}
                 </a>
@@ -115,9 +104,25 @@ const Navigation = () => {
               )
             ))}
             {user ? (
-              <button onClick={() => setUser(null)} className="text-white hover:text-[#378f89] transition-colors duration-200">
-                Logout
-              </button>
+              <div className="relative">
+                <img
+                  src={user.avatar}
+                  alt={user.username}
+                  className="w-8 h-8 rounded-full cursor-pointer"
+                  onClick={() => setIsOpen(!isOpen)}
+                />
+                {isOpen && (
+                  <div className="absolute right-0 mt-2 w-48 bg-[#0D1117]/80 backdrop-blur-xl shadow-lg rounded-lg p-2 text-white flex flex-col space-y-2">
+                    <span className="block px-4 py-2 text-sm">{user.username}</span>
+                    <button
+                      onClick={() => setUser(null)}
+                      className="block text-left px-4 py-2 text-sm text-red-400 hover:bg-red-500 hover:text-white rounded"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
             ) : (
             <Link 
               key="Login"

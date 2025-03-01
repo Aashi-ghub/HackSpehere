@@ -5,20 +5,16 @@ const Faqs: React.FC = () => {
 
     const faqs = [
         {
-            question: 'What is InceptionX?',
-            answer: 'A hackathon is an event where participants collaborate to create innovative projects, usually within a limited time (e.g., 24-48 hours). Teams work on software, hardware, or other tech solutions based on a given theme or challenge.'
+            question: 'What is InceptionX ?',
+            answer: 'InceptionX is an innovative 3-day event organized to bring together creative minds to solve real-world challenges.'
         },
         {
-            question: 'How do I participate in a hackathon?',
-            answer: 'You can participate by registering on our website and joining an upcoming event.'
+            question: 'What is the aim of InceptionX ?',
+            answer:'The event aims is to promote teamwork, technical expertise, and problem-solving skills through collaboration and mentorship.'
         },
         {
             question: 'What are the benefits of participating?',
-            answer: 'Participants can improve their skills, network with others, and win prizes. You get to apply coding, designing, and problem-solving skills in a real-world scenario.Connect with fellow programmers, designers, and business enthusiasts.'
-        },{
-        question:'Who can participate in a hackathon?',
-        answer: 'Hackathons are open to students, professionals, and tech enthusiasts. Some may be limited to certain age groups, university students, or specific skill levels. Always check the eligibility criteria for the event.'
-        
+            answer: 'Participating in InceptionX offers portfolio building, networking opportunities, and exposure to new technologies, enhancing both skills and career growth.'
         }
     ];
   

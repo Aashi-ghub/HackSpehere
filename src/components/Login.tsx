@@ -29,7 +29,7 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
       console.log("Trying to log in...");
       
       // production API URL
-      const API_BASE_URL="https://inceptionx-production.onrender.com"
+       const API_BASE_URL="https://inceptionx-production.onrender.com"
 
       // development API URL
       // const API_BASE_URL="http://localhost:5000"

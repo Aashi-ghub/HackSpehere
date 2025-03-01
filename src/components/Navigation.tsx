@@ -24,12 +24,16 @@ const Navigation = () => {
   const [user, setUser] = useState<User | null>(null);
 
   // Get API base URL dynamically
-  // const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
-  const API_BASE_URL ="https://inceptionx-production.onrender.com"
+    const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  //  const API_BASE_URL ="https://inceptionx-production.onrender.com"
 
   useEffect(() => {
     axios
-      .post(`${API_BASE_URL}/auth/user`, { withCredentials: true })
+      .get(`${API_BASE_URL}/auth/user`, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        withCredentials: true,
+      })
       .then((response) => {
         console.log("User Data:", response.data); // Debugging
         setUser(response.data);
@@ -38,6 +42,7 @@ const Navigation = () => {
         console.error("Error fetching user:", error);
         setUser(null);
       });
+   
   }, []);
 
   useEffect(() => {
@@ -99,9 +104,25 @@ const Navigation = () => {
               )
             ))}
             {user ? (
-              <button onClick={() => setUser(null)} className="text-white hover:text-[#378f89] transition-colors duration-200">
-                Logout
-              </button>
+              <div className="relative">
+                <img
+                  src={user.avatar}
+                  alt={user.username}
+                  className="w-8 h-8 rounded-full cursor-pointer"
+                  onClick={() => setIsOpen(!isOpen)}
+                />
+                {isOpen && (
+                  <div className="absolute right-0 mt-2 w-48 bg-[#0D1117]/80 backdrop-blur-xl shadow-lg rounded-lg p-2 text-white flex flex-col space-y-2">
+                    <span className="block px-4 py-2 text-sm">{user.username}</span>
+                    <button
+                      onClick={() => setUser(null)}
+                      className="block text-left px-4 py-2 text-sm text-red-400 hover:bg-red-500 hover:text-white rounded"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
             ) : (
             <Link 
               key="Login"

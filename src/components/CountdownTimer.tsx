@@ -10,7 +10,7 @@ const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date("2025-03-01T00:00:00").getTime();
+    const targetDate = new Date("2025-03-31T00:00:00").getTime();
 
     const updateTimer = () => {
       const now = new Date().getTime();
@@ -39,7 +39,7 @@ const CountdownTimer = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="grid grid-cols-4 gap-4 max-w-3xl mx-auto"
+      className="grid grid-cols-4 font-orbitron gap-4 max-w-3xl mx-auto"
     >
       {Object.entries(timeLeft).map(([unit, value], index) => (
         <motion.div

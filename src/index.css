@@ -92,15 +92,17 @@
     0 0 60px rgba(0, 255, 163, 0.1);
 }
 .border-input{
-  border-color: var(--border-color);
+  border-color:#1c242e;
   color:white;
 }
 .text-foreground{
   color:white;
 }
 .border{
-   border-color: #14b8a6;
+   border-color:#1c242e;
 }
+
+
 @layer utilities {
   .perspective {
     perspective: 1000px;

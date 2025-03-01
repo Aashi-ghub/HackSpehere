@@ -102,8 +102,8 @@ export default function RegistrationForm() {
       
       <Navigation />
 
-      <div className="relative z-10 max-w-3xl mx-auto px-4 py-12 my-10">
-        <div className="glass-card rounded-xl p-8 space-y-8 bg-black/50 backdrop-blur-sm border border-teal-500/20">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 py-12 my-10">
+        <div className="glass-card rounded-xl p-8 space-y-8 bg-black/50 backdrop-blur-sm border border-[#1c242e]">
           
           {/* Show success message if registration is completed */}
           {/* {success ? (
@@ -151,7 +151,7 @@ export default function RegistrationForm() {
 
                     <div className="flex justify-between pt-8">
                       {step > 1 && (
-                        <Button type="button" variant="outline" onClick={prevStep} className="w-28 border-teal-500/30 hover:bg-teal-500/10 text-teal-400" disabled={formLoading}>
+                        <Button type="button" variant="outline" onClick={prevStep} className="w-28 border-teal-500/30 hover:bg-teal-500/10 text-white" disabled={formLoading}>
                           Previous
                         </Button>
                       )}

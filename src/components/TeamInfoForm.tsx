@@ -13,20 +13,22 @@ interface TeamInfoFormProps {
 
 export const TeamInfoForm = ({ form, setTeamSize }: TeamInfoFormProps) => {
   return (
-    <div className="space-y-6 text-white mt-[60px] ">
-    <div className="text-white font-xl">Register for <span className="bg-gradient-to-r from-[#00FFA3] to-[#00A3FF] font-bold bg-clip-text text-transparent">InceptionX</span></div>
+    <div className="space-y-6 text-white mt-[20px] ">
+    <div className="text-white  text-center text-4xl">Register for <span className="bg-gradient-to-r from-[#00FFA3] to-[#00A3FF] font-bold bg-clip-text text-transparent">InceptionX</span><br/>
+    <div className="text-[#8d8f92] text-lg text-center  font-stretch-extra-condensed">Secure your spot in the most exciting Event of the year!</div>
+    </div>
       <FormField
         control={form.control}
         name="teamName"
         render={({ field }) => (
           <FormItem>
-            <FormLabel className="text-teal-400 ml-5">Team Name</FormLabel>
+            <FormLabel className="text-white  text-lg">Team Name</FormLabel>
             <FormControl>
             <div className="relative">
                 <Input
                   placeholder="Enter Team Name"
                   {...field}
-                  className=" border-teal-500/20  focus:shadow-lg focus:shadow-teal-500/50"
+                  className="border-[#1c242e] focus:border-2"
                 />
               </div>
             </FormControl>
@@ -39,13 +41,13 @@ export const TeamInfoForm = ({ form, setTeamSize }: TeamInfoFormProps) => {
         name="teamDescription"
         render={({ field }) => (
           <FormItem>
-            <FormLabel className="text-teal-400">Team Description (Optional)</FormLabel> 
+            <FormLabel className="text-[#ececed] text-lg">Team Description (Optional)</FormLabel> 
             <FormControl>
             <div className="relative">
                 <Textarea
                   placeholder="Breif Description (Optional)"
                   {...field}
-                  className=" border-teal-500/20 focus:shadow-lg focus:shadow-teal-500/50 min-h-[100px]  "
+                  className=" border-[#1c242e] focus:border-2 min-h-[100px]  "
                 />
               </div>
             </FormControl>
@@ -58,7 +60,7 @@ export const TeamInfoForm = ({ form, setTeamSize }: TeamInfoFormProps) => {
         name="teamSize"
         render={({ field }) => (
           <FormItem>
-            <FormLabel className="text-teal-400">Team Size</FormLabel>
+            <FormLabel className="text-[#ececed] text-lg">Team Size</FormLabel>
             <Select
               onValueChange={(value) => {
                 field.onChange(value);
@@ -69,8 +71,8 @@ export const TeamInfoForm = ({ form, setTeamSize }: TeamInfoFormProps) => {
 
               <FormControl>
                 <div className="relative">
-                <SelectTrigger className=" text-white border-teal-500/20  focus:shadow-lg focus:shadow-teal-500/50 ">
-                  <SelectValue placeholder="Select team size" />
+                <SelectTrigger className=" text-white border-[#1c242e]  focus:border-2">
+                  <SelectValue placeholder="Select team size" className="placeholder-shown:text-[#1c242e]" />
                 </SelectTrigger>
                 </div>
               </FormControl>

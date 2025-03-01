@@ -135,7 +135,8 @@ export default function RegistrationForm() {
 
               {/* Show Registration Form Only if User is Logged In */}
               {/* {user && ( */}
-
+                  
+ 
                 <Form {...form}>
                   <form method="POST" onSubmit={handleSubmit} className="space-y-8 animate-fade-in">
                     {step === 1 && <TeamInfoForm form={form} setTeamSize={setTeamSize} />}

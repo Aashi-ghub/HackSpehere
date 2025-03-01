@@ -24,7 +24,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* About Section */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">HackSphere</h3>
+            <h3 className="text-lg font-bold text-primary">InceptionX</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Join us in shaping the future of technology through innovation and collaboration.
             </p>

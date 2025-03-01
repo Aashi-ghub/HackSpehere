@@ -33,9 +33,9 @@ const Timeline: React.FC = () => {
       detailedDescription: "Pitch Deck Submission requires teams to submit a presentation that showcases their solution, the technology used, and the potential impact of their project."
     },
     {
-      title: "Hackathon Day (Final day)",
+      title: "Final Day",
       description: "Final stretch, last code push—let’s finish strong!",
-      detailedDescription: "The final day of the hackathon will be intense as teams finalize their projects, debug, and make their final presentations to the judges."
+      detailedDescription: "The final day  will be intense as teams finalize their projects, debug, and make their final presentations to the judges."
     },
   ];
 

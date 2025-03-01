@@ -14,6 +14,7 @@ interface TeamInfoFormProps {
 export const TeamInfoForm = ({ form, setTeamSize }: TeamInfoFormProps) => {
   return (
     <div className="space-y-6 text-white mt-[60px] ">
+    <div className="text-white font-xl">Register for <span className="bg-gradient-to-r from-[#00FFA3] to-[#00A3FF] font-bold bg-clip-text text-transparent">InceptionX</span></div>
       <FormField
         control={form.control}
         name="teamName"

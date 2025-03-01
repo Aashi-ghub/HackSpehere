@@ -29,7 +29,7 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="inline-block mb-4 px-4 py-1.5 bg-[#00FFA3]/10 text-[#e0ecec] rounded-full text-sm font-medium"
         >
-          A COUNTDOWN TO HACKATHON STARTS
+          A COUNTDOWN TO INCEPTIONX STARTS
         </motion.div>
         {/* Title */}
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-wider">

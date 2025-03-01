@@ -18,6 +18,14 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        kanit: ["Kanit", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+        nunito: ["Nunito Sans", "sans-serif"],
+        orbitron: ["Orbitron", "sans-serif"],
+        quicksand: ["Quicksand", "sans-serif"],
+        raleway: ["Raleway", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

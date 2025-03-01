@@ -27,7 +27,7 @@ const Themes = () => {
 
   return (
     <section className="py-12 animate-fade-in" id="themes">
-      <h2 className="text-4xl font-bold text-white mb-8 flex items-center gap-2 justify-center">
+      <h2 className="text-3xl font-bold text-white mb-8 flex font-orbitron items-center gap-2">
         <Lightbulb className="text-teal-300" />
         Themes
       </h2>

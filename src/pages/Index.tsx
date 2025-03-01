@@ -11,6 +11,7 @@ import WhatWeOffer from "../components/WhatWeOffer";
 import Footer from "../components/footer";
 import VideoBackground from "../components/videobackground";
 import FAQs from "../components/faqs";
+import TechAmigos from "@/components/TechAmigos";
 import ExcitingPrizes from "@/components/Prizes";
 
 
@@ -51,7 +52,6 @@ const Index = () => {
               <TechCards />
             </div>
             <Team />
-            <TechAmigosPage></TechAmigosPage>
             <Sponsors />
             <FAQs />
           </div>

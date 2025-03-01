@@ -102,19 +102,19 @@ export default function RegistrationForm() {
       
       <Navigation />
 
-      <div className="relative z-10 max-w-3xl mx-auto px-4 py-12">
-        <div className="glass-card rounded-xl p-8 space-y-8 bg-black/50 backdrop-blur-sm border border-teal-500/20">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 py-12 my-10">
+        <div className="glass-card rounded-xl p-8 space-y-8 bg-black/50 backdrop-blur-sm border border-[#1c242e]">
           
           {/* Show success message if registration is completed */}
-          {success ? (
+          {/* {success ? (
             <div className="text-center">
               <h2 className="text-2xl font-bold text-teal-400">🎉 Registration Successful!</h2>
               <p className="text-gray-300 mt-4">Redirecting to the home page...</p>
             </div>
-          ) : (
+          ) : ( */}
             <>
               {/* Authentication UI */}
-              <div className="flex justify-between items-center">
+              {/* <div className="flex justify-between items-center">
                 {loading ? (
                   <p className="text-gray-400">Checking login status...</p>
                 ) : user ? (
@@ -131,10 +131,12 @@ export default function RegistrationForm() {
                     </button>
                   </div>
                 )}
-              </div>
+              </div> */}
 
               {/* Show Registration Form Only if User is Logged In */}
-              {user && (
+              {/* {user && ( */}
+                  
+ 
                 <Form {...form}>
                   <form method="POST" onSubmit={handleSubmit} className="space-y-8 animate-fade-in">
                     {step === 1 && <TeamInfoForm form={form} setTeamSize={setTeamSize} />}
@@ -149,7 +151,7 @@ export default function RegistrationForm() {
 
                     <div className="flex justify-between pt-8">
                       {step > 1 && (
-                        <Button type="button" variant="outline" onClick={prevStep} className="w-28 border-teal-500/30 hover:bg-teal-500/10 text-teal-400" disabled={formLoading}>
+                        <Button type="button" variant="outline" onClick={prevStep} className="w-28 border-teal-500/30 hover:bg-teal-500/10 text-white" disabled={formLoading}>
                           Previous
                         </Button>
                       )}
@@ -165,11 +167,11 @@ export default function RegistrationForm() {
                     </div>
                   </form>
                 </Form>
-              )}
-            </>
-          )}
-        </div>
+              {/* )} */}
+           </> 
+           {/* )}  */}
       </div>
-    </div>
+     </div>  
+  </div>  
   );
 }

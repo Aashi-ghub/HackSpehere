@@ -29,10 +29,11 @@
     --border-color: #14b8a6; /* teal-500 */
     --ring-color: #14b8a6; /* teal-500 */
     --text-color: #14b8a6; /* teal-500 */
-    --font-primary: "Kanit", sans-serif;
+    --font-primary: "Quicksand", sans-serif;
     --font-secondary: "Montserrat", sans-serif;
     --font-tertiary: "Nunito Sans", sans-serif;
     --font-quaternary: "Raleway", sans-serif;
+    --font-orbitron: "Orbitron", sans-serif;
     	
     --sidebar-background: 0 0% 98%;
  
@@ -91,15 +92,17 @@
     0 0 60px rgba(0, 255, 163, 0.1);
 }
 .border-input{
-  border-color: var(--border-color);
+  border-color:#1c242e;
   color:white;
 }
 .text-foreground{
   color:white;
 }
 .border{
-   border-color: #14b8a6;
+   border-color:#1c242e;
 }
+
+
 @layer utilities {
   .perspective {
     perspective: 1000px;

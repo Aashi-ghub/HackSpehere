@@ -47,7 +47,7 @@ const Team = () => {
 
   return (
     <section className="py-10 animate-fade-in" id="team">
-      <h2 className="text-4xl font-bold text-white mb-8 flex items-center gap-2 justify-center">
+      <h2 className="text-3xl font-bold font-orbitron text-white mb-8 flex items-center gap-2">
         <Users className="text-teal-500" />
         Team
       </h2>

@@ -14,7 +14,11 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
     const navigate =useNavigate();
 
   const handleGitHubLogin = () => {
-      window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
+      // Production API 
+     const  GITHUB_API="https://inceptionx-production.onrender.com/auth/github";
+      //Development API
+      // const GITHUB_API="http://localhost:5000/auth/github" 
+      window.location.href = GITHUB_API; // Redirect to GitHub login
   };
 
 
@@ -24,8 +28,12 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
     try {
       console.log("Trying to log in...");
       
-      const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
-    
+      // production API URL
+       const API_BASE_URL="https://inceptionx-production.onrender.com"
+
+      // development API URL
+      // const API_BASE_URL="http://localhost:5000"
+
       const res = await fetch(`${API_BASE_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -21,7 +21,10 @@ const handleGitHubLogin = () => {
     e.preventDefault();
     console.log('SignUp credentials:', credentials);
     try{
-      const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+      // production API URL
+      const API_BASE_URL="https://inceptionx-production.onrender.com"
+      // development API URL
+      // const API_BASE_URL="http://localhost:5000"
     
       const res = await fetch(`${API_BASE_URL}/auth/signup`, {
         method: "POST",

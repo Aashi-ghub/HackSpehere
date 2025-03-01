@@ -4,6 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { UseFormReturn } from "react-hook-form";
 import { FormValues } from "./types";
+import { Users , ScrollText, SquareUserRound} from "lucide-react";
 
 interface TeamInfoFormProps {
   form: UseFormReturn<FormValues>;
@@ -12,19 +13,21 @@ interface TeamInfoFormProps {
 
 export const TeamInfoForm = ({ form, setTeamSize }: TeamInfoFormProps) => {
   return (
-    <div className="space-y-6 text-white">
+    <div className="space-y-6 text-white mt-[60px] ">
       <FormField
         control={form.control}
         name="teamName"
         render={({ field }) => (
           <FormItem>
-            <FormLabel className="text-teal-400">Team Name</FormLabel>
+            <FormLabel className="text-teal-400 ml-5">Team Name</FormLabel>
             <FormControl>
-              <Input 
-                placeholder="Enter team name" 
-                {...field}
-                className="bg-black/50 border-teal-500/20 focus:border-teal-500/50"
-              />
+            <div className="relative">
+                <Input
+                  placeholder="Enter Team Name"
+                  {...field}
+                  className=" border-teal-500/20  focus:shadow-lg focus:shadow-teal-500/50"
+                />
+              </div>
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -35,13 +38,15 @@ export const TeamInfoForm = ({ form, setTeamSize }: TeamInfoFormProps) => {
         name="teamDescription"
         render={({ field }) => (
           <FormItem>
-            <FormLabel className="text-teal-400">Team Description (Optional)</FormLabel>
+            <FormLabel className="text-teal-400">Team Description (Optional)</FormLabel> 
             <FormControl>
-              <Textarea
-                placeholder="Brief description of your team"
-                {...field}
-                className="bg-black border-teal-500/20 focus:border-teal-500/50 min-h-[100px]"
-              />
+            <div className="relative">
+                <Textarea
+                  placeholder="Breif Description (Optional)"
+                  {...field}
+                  className=" border-teal-500/20 focus:shadow-lg focus:shadow-teal-500/50 min-h-[100px]  "
+                />
+              </div>
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -58,12 +63,15 @@ export const TeamInfoForm = ({ form, setTeamSize }: TeamInfoFormProps) => {
                 field.onChange(value);
                 setTeamSize(parseInt(value));
               }}
-              defaultValue={field.value}
+              defaultValue=""
             >
+
               <FormControl>
-                <SelectTrigger className="bg-black/50 text-white border-teal-500/20">
+                <div className="relative">
+                <SelectTrigger className=" text-white border-teal-500/20  focus:shadow-lg focus:shadow-teal-500/50 ">
                   <SelectValue placeholder="Select team size" />
                 </SelectTrigger>
+                </div>
               </FormControl>
               <SelectContent>
                 {[3, 4].map((size) => (
@@ -78,5 +86,6 @@ export const TeamInfoForm = ({ form, setTeamSize }: TeamInfoFormProps) => {
         )}
       />
     </div>
+  
   );
 };

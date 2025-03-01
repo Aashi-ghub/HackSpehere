@@ -3,6 +3,8 @@ import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/comp
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { FormValues } from "./types";
+import { motion } from "framer-motion";
+import { Users } from "lucide-react";
 
 interface FinalDetailsFormProps {
   form: UseFormReturn<FormValues>;
@@ -15,6 +17,10 @@ export const FinalDetailsForm: React.FC<FinalDetailsFormProps> = ({ form }) => {
   return (
     <div className="space-y-6">
       {/* Theme Selection */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}>
       <FormField
         control={form.control}
         name="theme"
@@ -23,9 +29,11 @@ export const FinalDetailsForm: React.FC<FinalDetailsFormProps> = ({ form }) => {
             <FormLabel className="text-teal-400">Theme</FormLabel>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
+                <div className="relative">
                 <SelectTrigger className="bg-black/50 border-teal-500/20">
                   <SelectValue placeholder="Select theme" />
                 </SelectTrigger>
+                </div>
               </FormControl>
               <SelectContent>
                 {themes.map((theme) => (
@@ -92,7 +100,7 @@ export const FinalDetailsForm: React.FC<FinalDetailsFormProps> = ({ form }) => {
         )}
       />
 
-     
+     </motion.div>
     </div>
   );
 };

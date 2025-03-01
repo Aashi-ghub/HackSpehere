@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Github } from "lucide-react";
 import { UseFormReturn } from "react-hook-form";
 import { FormValues } from "./types";
+import { motion } from "framer-motion";
 
 interface MemberFormProps {
   form: UseFormReturn<FormValues>;
@@ -12,6 +13,11 @@ interface MemberFormProps {
 export const MemberForm = ({ form, index }: MemberFormProps) => {
   return (
     <div className="p-6 bg-black/30 border text border-teal-500/20 rounded-lg space-y-4">
+       <motion.div
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5 }}
+                    >
       <h3 className="text-lg font-semibold text-teal-400">
         Team Member {index + 1}
       </h3>
@@ -92,6 +98,7 @@ export const MemberForm = ({ form, index }: MemberFormProps) => {
           )}
         />
       </div>
+      </motion.div>
     </div>
   );
 };

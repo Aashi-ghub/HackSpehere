@@ -65,10 +65,11 @@ const Team = () => {
                 : 'bg-transparent text-white hover:bg-teal-500/20'}
             `}
           >
-            {category} Team
+            {category} Team 
           </Button>
-        ))}
+        ))}  
       </div>
+      
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {teamCategories[activeTeam as keyof typeof teamCategories].map((member, index) => (

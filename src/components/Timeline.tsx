@@ -120,7 +120,7 @@ const Timeline: React.FC = () => {
 
   return (
     <div className="relative px-4 md:px-8">
-      <h2 className="text-3xl md:text-4xl font-bold text-white mb-10 mt-6 flex justify-center items-center gap-2">
+      <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-white mb-10 mt-6 flex justify-center items-center gap-2">
         <Calendar className="text-teal-400" /> Event Timeline
       </h2>
   

@@ -20,16 +20,19 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
      navigate('/')
     }
   },[]);  
+//Extract Token from github Athentication
+function getTokenFromUrl(){
+  const urlParams = new URLSearchParams(window.location.search);
+   return  urlParams.get('token');
+}
 
-  const handleGitHubLogin = () => {
+// Login with GitHub
+const handleGitHubLogin = () => {
     // window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
     window.location.href="https://inceptionx-production.onrender.com/auth/github" // Redirect to GitHub login
 }
-function getTokenFromUrl(){
-   const urlParams = new URLSearchParams(window.location.search);
-    return  urlParams.get('token');
-}
 
+// Handle form submission and login with Email/Password
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Login credentials:', credentials);

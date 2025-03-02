@@ -140,9 +140,7 @@ const Timeline: React.FC = () => {
           >
             {day}
           </button>
-        ))}
-      </div>
-      {/* Timeline Vertical Line */}
+            {/* Timeline Vertical Line */}
 <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-0.5 bg-teal-800 top-[220px] md:h-[calc(100%-180px)] h-full"></div>
 
 <div className="space-y-8 px-4 md:px-0">
@@ -208,8 +206,7 @@ const Timeline: React.FC = () => {
       <p className="text-sm mb-4">{activeDescription}</p>
     </motion.div>
   </div>
-)}        
-      )}
+)}
     </div>
   );
 };

@@ -121,7 +121,7 @@ const Timeline: React.FC = () => {
   return (
     <div className="relative">
       <h2 className="text-4xl font-bold text-white mb-14 mt-6 flex justify-center items-center gap-2">
-        <Calendar className="text-teal-400" /> Event Timeline
+        <Calendar className="text-teal-400 font-orbitron" /> Event Timeline
       </h2>
       
       
@@ -129,7 +129,7 @@ const Timeline: React.FC = () => {
 
 
       {/* Tabs for Day Selection */}
-      <div className="flex justify-center space-x-4 mb-8">
+      <div className="flex justify-center space-x-4 mb-10">
         {Object.keys(timelineData).map((day) => (
           <button
             key={day}

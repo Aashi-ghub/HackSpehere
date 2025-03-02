@@ -32,13 +32,13 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
        const API_BASE_URL="https://inceptionx-production.onrender.com"
 
       // development API URL
-      // const API_BASE_URL="http://localhost:5000"
+        //  const API_BASE_URL="http://localhost:5000"
 
-      const res = await fetch(`${API_BASE_URL}/auth/login`, {
+       const res = await fetch(`${API_BASE_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include", // Ensure authentication session is included
-        body: JSON.stringify(credentials),
+        // body: JSON.stringify(credentials),
       });
       const result = await res.json();
       console.log(result);

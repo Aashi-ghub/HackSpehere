@@ -95,7 +95,7 @@ const Navigation = () => {
                   key={link.name}
                   href={link.path}
                   onClick={(e) => handleSmoothScroll(e, link.name.toLowerCase())}
-                  className="text-white font-quicksand hover:text-[#378f89] transition-colors duration-200 font-secondary"
+                  className="text-white font-orbitron hover:text-[#378f89] transition-colors duration-200 font-secondary"
                 >
                   {link.name}
                 </a>

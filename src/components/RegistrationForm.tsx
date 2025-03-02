@@ -109,7 +109,7 @@ export default function RegistrationForm() {
           {/* Show success message if registration is completed */}
           {success ? (
             <div className="text-center">
-              <h2 className="text-2xl font-bold text-teal-400">🎉 Registration Successful!</h2>
+              <h2 className="text-2xl font-bold font-orbitron text-teal-400">🎉 Registration Successful!</h2>
               <p className="text-gray-300 mt-4">Redirecting to the home page...</p>
             </div>
           ) : (

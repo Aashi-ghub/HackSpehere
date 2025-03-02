@@ -13,7 +13,7 @@ interface TeamInfoFormProps {
 
 export const TeamInfoForm = ({ form, setTeamSize }: TeamInfoFormProps) => {
   return (
-    <div className="space-y-6 text-white mt-[20px] ">
+    <div className="space-y-6 font-orbitron text-white mt-[20px] ">
     <div className="text-white  text-center text-4xl">Register for <span className="bg-gradient-to-r  from-[#dbe2e2] via-[#b3beba] to-[#4fd1d7]  font-bold font-orbitron bg-clip-text text-transparent">InceptionX</span><br/>
     <div className="text-[#8d8f92] text-lg text-center  font-stretch-extra-condensed">Secure your spot in the most exciting Event of the year!</div>
     </div>

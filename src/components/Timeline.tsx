@@ -119,22 +119,22 @@ const Timeline: React.FC = () => {
   };
 
   return (
-    <div className="relative px-4 md:px-8">
-      <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-white mb-10 mt-6 flex justify-center items-center gap-2">
+    <div className="relative">
+      <h2 className="text-4xl font-bold text-white mb-14 mt-6 flex justify-center items-center gap-2">
         <Calendar className="text-teal-400" /> Event Timeline
       </h2>
-  
-      <p className="max-w-3xl mx-auto text-gray-300 text-base md:text-lg mb-8 text-center">
-        Mark your calendar and prepare for an exciting journey of innovation and creativity.
-      </p>
-  
+      
+      
+      <p className="max-w-3xl mx-auto text-gray-300 text-lg mb-12 text-center">Mark your calendar and prepare for an exciting journey of innovation and creativity.</p>
+
+
       {/* Tabs for Day Selection */}
-      <div className="flex flex-wrap justify-center gap-3 mb-6">
+      <div className="flex justify-center space-x-4 mb-8">
         {Object.keys(timelineData).map((day) => (
           <button
             key={day}
             onClick={() => setActiveTab(day)}
-            className={`px-4 py-2 rounded-full text-sm md:text-base text-white font-semibold transition ${
+            className={`px-6 py-2 rounded-full text-white font-semibold transition ${
               activeTab === day ? "bg-teal-500" : "bg-gray-700 hover:bg-teal-600"
             }`}
           >
@@ -142,12 +142,11 @@ const Timeline: React.FC = () => {
           </button>
         ))}
       </div>
-  
+
       {/* Timeline Vertical Line */}
       <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-teal-800 top-[220px] h-[calc(100%-180px)]"></div>
 
-  
-      <div className="space-y-6 md:space-y-8">
+      <div className="space-y-8">
         {timelineData[activeTab].map((item, index) => (
           <motion.div
             key={index}
@@ -158,14 +157,14 @@ const Timeline: React.FC = () => {
             className="relative flex flex-col items-center md:block"
           >
             {/* Timeline Circle */}
-            <div className="absolute left-1/2 w-3 h-3 rounded-full bg-teal-500 transform -translate-x-1/2 mt-4 animate-pulse hidden md:block"></div>
-  
+            <div className="absolute left-1/2 w-3 h-3 rounded-full bg-teal-500 transform -translate-x-1/2 mt-4 animate-pulse"></div>
+
             {/* Timeline Item */}
             <div
-              className={`bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] p-6 md:p-10 rounded-xl backdrop-blur-sm border transition cursor-pointer
+              className={`bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] p-10 rounded-xl backdrop-blur-sm border transition cursor-pointer
                 ${activeItem === item.title ? "border-teal-300 shadow-teal-400 shadow-lg" : "border-transparent"}
-                w-full max-w-[90%] md:max-w-[48%] text-center md:text-left h-auto md:h-40
-                ${index % 2 === 0 ? "md:mr-[52%] md:pr-6" : "md:ml-[52%] md:pl-6"}`}
+                w-full max-w-[90%] md:max-w-[48%] text-center md:text-left h-40 
+                ${index % 2 === 0 ? "md:mr-[52%] md:pr-8" : "md:ml-[52%] md:pl-8"}`}
               onClick={() => {
                 if (activeItem === item.title) {
                   setActiveItem(null);
@@ -176,18 +175,21 @@ const Timeline: React.FC = () => {
                 }
               }}
             >
+              <div>
               <h3 className="text-lg font-bold text-white">{item.title.split("(")[0]}</h3>
               <span className="text-sm text-cyan-400 block">{item.title.match(/\((.*?)\)/)?.[0]}</span>
               <p className="text-sm text-gray-400">{item.description}</p>
+              </div>
+
             </div>
           </motion.div>
         ))}
       </div>
-  
+
       {/* Detailed Description Modal */}
       {activeItem && activeDescription && (
         <div
-          className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50 px-4"
+          className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50 "
           onClick={() => setActiveDescription(null)}
         >
           <motion.div
@@ -203,13 +205,14 @@ const Timeline: React.FC = () => {
             >
               &times;
             </button>
-  
+
             <h3 className="text-lg font-bold text-white mb-4">{activeItem}</h3>
             <p className="text-sm mb-4">{activeDescription}</p>
           </motion.div>
         </div>
       )}
-      </div>
-    );
-  };
-  export default Timeline;
+    </div>
+  );
+};
+
+export default Timeline;

@@ -7,8 +7,8 @@ interface AuthPageProps {
   onAuthSuccess?: () => void;
 }
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
-// const API_BASE_URL="https://inceptionx-production.onrender.com"
+// const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+ const API_BASE_URL="https://inceptionx-production.onrender.com"
 
 const AuthPage = ({ onAuthSuccess }: AuthPageProps = {}) => {
   const [user, setUser] = useState<{ username: string; avatar: string } | null>(null);
@@ -21,10 +21,17 @@ const AuthPage = ({ onAuthSuccess }: AuthPageProps = {}) => {
       return}; // Avoid unnecessary calls
 
     const fetchUser = async () => {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        console.error('No token found');
+        return;
+      }
       try {
         const response = await fetch(`${API_BASE_URL}/auth/user`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
+          method: "GET",
+          headers: {
+            'authorization': `Bearer ${token}`,
+          },
           credentials: "include",
         });
         const data = await response.json();

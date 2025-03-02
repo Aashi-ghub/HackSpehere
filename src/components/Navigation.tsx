@@ -24,14 +24,21 @@ const Navigation = () => {
   const [user, setUser] = useState<User | null>(null);
 
   // Get API base URL dynamically
-    const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
-  //  const API_BASE_URL ="https://inceptionx-production.onrender.com"
+      //  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+     const API_BASE_URL ="https://inceptionx-production.onrender.com";
 
   useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      console.error('No token found');
+      return;
+    }
     axios
       .get(`${API_BASE_URL}/auth/user`, {
         method: "GET",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          'authorization': `Bearer ${token}`,
+        },
         withCredentials: true,
       })
       .then((response) => {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowRight, Github } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from 'react-router-dom';
@@ -13,15 +13,26 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
     const { toast } = useToast();
     const navigate =useNavigate();
 
-  const handleGitHubLogin = () => {
-      // Production API 
-     const  GITHUB_API="https://inceptionx-production.onrender.com/auth/github";
-      //Development API
-      // const GITHUB_API="http://localhost:5000/auth/github" 
-      window.location.href = GITHUB_API; // Redirect to GitHub login
-  };
+  useEffect(() =>{
+    const token = getTokenFromUrl();
+    if(token){
+      localStorage.setItem('token', token);
+     navigate('/')
+    }
+  },[]);  
+//Extract Token from github Athentication
+function getTokenFromUrl(){
+  const urlParams = new URLSearchParams(window.location.search);
+   return  urlParams.get('token');
+}
 
+// Login with GitHub
+const handleGitHubLogin = () => {
+    // window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
+    window.location.href="https://inceptionx-production.onrender.com/auth/github" // Redirect to GitHub login
+}
 
+// Handle form submission and login with Email/Password
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Login credentials:', credentials);
@@ -29,20 +40,21 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
       console.log("Trying to log in...");
       
       // production API URL
-       const API_BASE_URL="https://inceptionx-production.onrender.com"
+      const API_BASE_URL="https://inceptionx-production.onrender.com"
 
       // development API URL
-      // const API_BASE_URL="http://localhost:5000"
+          // const API_BASE_URL="http://localhost:5000"
 
-      const res = await fetch(`${API_BASE_URL}/auth/login`, {
+       const response = await fetch(`${API_BASE_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include", // Ensure authentication session is included
-        body: JSON.stringify(credentials),
+         body: JSON.stringify(credentials),
       });
-      const result = await res.json();
-      console.log(result);
-      if (res.ok) {
+      const result = await response.json();
+      console.log(result.token);
+      if (response.ok) {
+        localStorage.setItem('token', result.Token);
         toast({
           title: result.message,
           description: "You have been logged in.",

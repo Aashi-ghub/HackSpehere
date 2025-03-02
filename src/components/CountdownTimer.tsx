@@ -39,7 +39,7 @@ const CountdownTimer = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="grid grid-cols-4 font-orbitron gap-4 max-w-3xl mx-auto"
+      className="grid grid-cols-2 sm:grid-cols-4 font-orbitron gap-4 max-w-md sm:max-w-3xl mx-auto p-4"
     >
       {Object.entries(timeLeft).map(([unit, value], index) => (
         <motion.div
@@ -51,7 +51,7 @@ const CountdownTimer = () => {
             stiffness: 100,
             delay: index * 0.1,
           }}
-          className="bg-teal-600/10 backdrop-blur-sm p-4 rounded-lg shadow-lg text-center relative overflow-hidden group"
+          className="bg-teal-600/10 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-lg text-center relative overflow-hidden group w-full"
         >
           <motion.div
             className="absolute inset-0 bg-gradient-to-r from-teal-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -72,7 +72,7 @@ const CountdownTimer = () => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="text-4xl font-bold text-[#eff4f4] mb-2"
+                className="text-3xl sm:text-4xl font-bold text-[#eff4f4] mb-2"
               >
                 {value.toString().padStart(2, "0")}
               </motion.div>
@@ -81,7 +81,7 @@ const CountdownTimer = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-gray-400 uppercase text-sm"
+              className="text-gray-400 uppercase text-xs sm:text-sm"
             >
               {unit}
             </motion.div>

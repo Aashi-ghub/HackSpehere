@@ -144,7 +144,8 @@ const Timeline: React.FC = () => {
       </div>
   
       {/* Timeline Vertical Line */}
-      <div className="absolute left-[calc(50%-1px)]  w-[2px] bg-teal-800 top-[200px] h-[calc(100%-50px)] hidden md:block"></div>
+      <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-teal-800 top-[220px] h-[calc(100%-180px)]"></div>
+
   
       <div className="space-y-6 md:space-y-8">
         {timelineData[activeTab].map((item, index) => (

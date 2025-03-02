@@ -47,7 +47,7 @@ const PrizeCard = ({ title, amount, perks, icon }) => (
 );
 
 const ExcitingPrizes = () => (
-  <section className="text-center py-12 bg-transparent text-white mt-[calc(100vh-400px)]">
+  <section className="text-center py-12 bg-transparent text-white mt-16">
     <h2 className="text-4xl font-orbitron font-bold mb-4">
       Exciting <span className="text-white">Prizes</span>
     </h2>

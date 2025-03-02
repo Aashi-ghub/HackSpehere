@@ -14,7 +14,8 @@ function SignUp({ onToggleForm, onAuthMethodChange }: SignUpProps) {
     const navigate =useNavigate();
 
 const handleGitHubLogin = () => {
-      window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
+      // window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
+      window.location.href="https://inceptionx-production.onrender.com/auth/github"
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -35,9 +36,10 @@ const handleGitHubLogin = () => {
       const result = await res.json();
       console.log(result)
       if (res.ok) {
+        localStorage.setItem('token', result.Token);
         toast({
           title: result.message,
-          description: "Your account is successfully created. You can Login now.",
+          description: "Your account is successfully created.",
         });
         setTimeout(() => {
           navigate("/"); // Redirect to home page after 3 seconds

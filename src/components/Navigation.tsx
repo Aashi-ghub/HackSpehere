@@ -24,25 +24,32 @@ const Navigation = () => {
   const [user, setUser] = useState<User | null>(null);
 
   // Get API base URL dynamically
-      // const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
-    const API_BASE_URL ="https://inceptionx-production.onrender.com";
+      //  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+     const API_BASE_URL ="https://inceptionx-production.onrender.com";
 
   useEffect(() => {
-    const res= fetch(`${API_BASE_URL}/auth/user`, {
-       method: "GET",
-       headers: {
-          "Content-Type": "application/json",
+    const token = localStorage.getItem('token');
+    if (!token) {
+      console.error('No token found');
+      return;
+    }
+    axios
+      .get(`${API_BASE_URL}/auth/user`, {
+        method: "GET",
+        headers: {
+          'authorization': `Bearer ${token}`,
         },
-        credentials: "include",
+        withCredentials: true,
+      })
+      .then((response) => {
+        console.log("User Data:", response.data); // Debugging
+        setUser(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching user:", error);
+        setUser(null);
       });
-      res
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.user) {
-            setUser(data.user);
-          }
-        })
-        .catch((err) => console.error(err));
+   
   }, []);
 
   useEffect(() => {

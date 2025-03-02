@@ -194,7 +194,7 @@ const Timeline: React.FC = () => {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "100%", opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="bg-gray-900 text-white p-6 rounded-lg border border-cyan-400 relative w-full max-w-md max-h-96 overflow-y-auto"
+            className="bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] text-white p-6 rounded-lg border border-cyan-400 relative w-96 max-h-96 overflow-y-auto"
           >
             <button
               onClick={() => setActiveDescription(null)}

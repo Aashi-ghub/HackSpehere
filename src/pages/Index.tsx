@@ -52,6 +52,7 @@ const Index = () => {
              
             </div>
             <Team />
+            <TechAmigos />
             <Sponsors />
             <FAQs />
           </div>

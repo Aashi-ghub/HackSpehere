@@ -30,7 +30,7 @@ const prizeData = [
 ];
 
 const PrizeCard = ({ title, amount, perks, icon }) => (
-  <Card className="w-[600px] max-w-full bg-transparent bg-opacity-60 border-2 border-[#14b8a6] rounded-lg shadow-lg p-6">
+  <Card className="w-[600px] max-w-full mt-4 bg-transparent bg-opacity-60 border-2 border-[#14b8a6] rounded-lg shadow-lg p-6">
     <CardContent className="flex flex-col items-center">
       {icon}
       <h2 className="text-4xl text-[#5eead4] font-semibold mt-3">{title}</h2>
@@ -47,7 +47,7 @@ const PrizeCard = ({ title, amount, perks, icon }) => (
 );
 
 const ExcitingPrizes = () => (
-  <section className="text-center py-12 bg-transparent text-white mt-10">
+  <section className="text-center py-12 bg-transparent text-white mt-[calc(100vh-400px)]">
     <h2 className="text-4xl font-bold mb-4">
       Exciting <span className="text-white">Prizes</span>
     </h2>

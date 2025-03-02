@@ -1,4 +1,4 @@
-import { Github, Instagram, Mail, ArrowUp, Copyright } from "lucide-react";
+import { Github, Instagram, Mail, ArrowUp, Copyright, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
 import React from "react";
 
@@ -63,8 +63,9 @@ const Footer = () => {
             <h3 className="text-lg font-bold text-primary">Follow Us</h3>
             <div className="flex space-x-5">
               {[
-                { icon: Github, href: "https://github.com" },
-                { icon: Instagram, href: "https://instagram.com" },
+                { icon: Github, href: "https://github.com/InceptionX-hack" },
+                { icon: Instagram, href: "https://www.instagram.com/techamigosclub.dsw" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/techamigos-cgc-landran-214626284" },
               ].map(({ icon: Icon, href }, index) => (
                 <a
                   key={index}

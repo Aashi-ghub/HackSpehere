@@ -163,7 +163,7 @@ const Timeline: React.FC = () => {
             <div
               className={`bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] p-10 rounded-xl backdrop-blur-sm border transition cursor-pointer
                 ${activeItem === item.title ? "border-teal-300 shadow-teal-400 shadow-lg" : "border-transparent"}
-                w-full max-w-[90%] md:max-w-[48%] text-center md:text-left h-40 
+                w-full max-w-[90%] md:max-w-[48%] text-center md:text-left max-h-[80vh]
                 ${index % 2 === 0 ? "md:mr-[52%] md:pr-8" : "md:ml-[52%] md:pl-8"}`}
               onClick={() => {
                 if (activeItem === item.title) {

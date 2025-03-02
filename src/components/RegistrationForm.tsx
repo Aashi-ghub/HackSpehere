@@ -59,7 +59,7 @@ export default function RegistrationForm() {
         members: data.members.slice(0, Number(data.teamSize)), // Only keep required members
       };
 
-      const API_BASE_URL = import.meta.env.VITE_API_URL;
+      const API_BASE_URL = "https://inceptionx-production.onrender.com";
 
       const res = await fetch(`${API_BASE_URL}/team/register`, {
         method: "POST",

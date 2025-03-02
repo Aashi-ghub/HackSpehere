@@ -16,7 +16,7 @@ export function useAuth() {
   const PROD_API_BASE_URL = "https://inceptionx-production.onrender.com";
   const LOCAL_API_BASE_URL = "http://localhost:5000"; // For local testing
   // const API_BASE_URL = PROD_API_BASE_URL; // Use this for production
-  const API_BASE_URL = PROD_API_BASE_URL; // Switch between LOCAL_API_BASE_URL and PROD_API_BASE_URL as needed
+  const API_BASE_URL = "https://inceptionx-production.onrender.com"; // Switch between LOCAL_API_BASE_URL and PROD_API_BASE_URL as needed
 
   const fetchUser = async () => {
     try {

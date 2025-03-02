@@ -24,7 +24,7 @@ const Navigation = () => {
   const [user, setUser] = useState<User | null>(null);
 
   // Get API base URL dynamically
-      //  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+      //  const API_BASE_URL =  "http://localhost:5000";
      const API_BASE_URL ="https://inceptionx-production.onrender.com";
 
   useEffect(() => {

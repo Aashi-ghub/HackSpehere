@@ -9,6 +9,7 @@ import { TeamInfoForm } from "./TeamInfoForm";
 import { MemberForm } from "./MemberForm";
 import { FinalDetailsForm } from "./FinalDetailsForm";
 import Navigation from "./Navigation";
+import { Link } from "react-router-dom";
 import { formSchema, FormValues } from "./types";
 import { useAuth } from "../hooks/useAuth"; // Import authentication hook
 
@@ -126,9 +127,13 @@ export default function RegistrationForm() {
                 ) : (
                   <div className="text-center w-full">
                     <p className="text-gray-300">You must be logged in to register.</p>
-                    <button onClick={loginWithGitHub} className="mt-4 text-teal-400 bg-gray-800 px-4 py-2 rounded hover:bg-gray-700">
-                      Login with GitHub
+                    <Link 
+                      key="Login"
+                      to="/login"> 
+                    <button className="mt-4 text-teal-400 bg-gray-800 px-4 py-2 rounded hover:bg-gray-700">
+                      Login
                     </button>
+                    </Link>
                   </div>
                 )}
               </div>

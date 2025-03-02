@@ -142,74 +142,73 @@ const Timeline: React.FC = () => {
           </button>
         ))}
       </div>
-
       {/* Timeline Vertical Line */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-teal-800 top-[220px] h-[calc(100%-180px)]"></div>
+<div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-0.5 bg-teal-800 top-[220px] md:h-[calc(100%-180px)] h-full"></div>
 
-      <div className="space-y-8">
-        {timelineData[activeTab].map((item, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            viewport={{ once: true }}
-            className="relative flex flex-col items-center md:block"
-          >
-            {/* Timeline Circle */}
-            <div className="absolute left-1/2 w-3 h-3 rounded-full bg-teal-500 transform -translate-x-1/2 mt-4 animate-pulse"></div>
+<div className="space-y-8 px-4 md:px-0">
+  {timelineData[activeTab].map((item, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, x: 100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
+      viewport={{ once: true }}
+      className="relative flex flex-col items-center md:block"
+    >
+      {/* Timeline Circle */}
+      <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-teal-500 transform -translate-x-1/2 mt-4 animate-pulse"></div>
 
-            {/* Timeline Item */}
-            <div
-              className={`bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] p-10 rounded-xl backdrop-blur-sm border transition cursor-pointer
-                ${activeItem === item.title ? "border-teal-300 shadow-teal-400 shadow-lg" : "border-transparent"}
-                w-full max-w-[90%] md:max-w-[48%] text-center md:text-left h-40 
-                ${index % 2 === 0 ? "md:mr-[52%] md:pr-8" : "md:ml-[52%] md:pl-8"}`}
-              onClick={() => {
-                if (activeItem === item.title) {
-                  setActiveItem(null);
-                  setActiveDescription(null);
-                } else {
-                  setActiveItem(item.title);
-                  setActiveDescription(item.detailedDescription);
-                }
-              }}
-            >
-              <div>
-              <h3 className="text-lg font-bold text-white">{item.title.split("(")[0]}</h3>
-              <span className="text-sm text-cyan-400 block">{item.title.match(/\((.*?)\)/)?.[0]}</span>
-              <p className="text-sm text-gray-400">{item.description}</p>
-              </div>
-
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Detailed Description Modal */}
-      {activeItem && activeDescription && (
-        <div
-          className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50 "
-          onClick={() => setActiveDescription(null)}
-        >
-          <motion.div
-            initial={{ x: "100%", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: "100%", opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] text-white p-6 rounded-lg border border-cyan-400 relative w-96 max-h-96 overflow-y-auto"
-          >
-            <button
-              onClick={() => setActiveDescription(null)}
-              className="absolute top-2 right-2 text-cyan-400 hover:text-white"
-            >
-              &times;
-            </button>
-
-            <h3 className="text-lg font-bold text-white mb-4">{activeItem}</h3>
-            <p className="text-sm mb-4">{activeDescription}</p>
-          </motion.div>
+      {/* Timeline Item */}
+      <div
+        className={`bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] p-6 md:p-10 rounded-xl backdrop-blur-sm border transition cursor-pointer
+          ${activeItem === item.title ? "border-teal-300 shadow-teal-400 shadow-lg" : "border-transparent"}
+          w-full max-w-full md:max-w-[48%] text-center md:text-left min-h-40
+          ${index % 2 === 0 ? "md:mr-[52%] md:pr-8" : "md:ml-[52%] md:pl-8"}`}
+        onClick={() => {
+          if (activeItem === item.title) {
+            setActiveItem(null);
+            setActiveDescription(null);
+          } else {
+            setActiveItem(item.title);
+            setActiveDescription(item.detailedDescription);
+          }
+        }}
+      >
+        <div>
+          <h3 className="text-lg font-bold text-white">{item.title.split("(")[0]}</h3>
+          <span className="text-sm text-cyan-400 block">{item.title.match(/\((.*?)\)/)?.[0]}</span>
+          <p className="text-sm text-gray-400">{item.description}</p>
         </div>
+      </div>
+    </motion.div>
+  ))}
+</div>
+
+{/* Detailed Description Modal */}
+{activeItem && activeDescription && (
+  <div
+    className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50 px-4"
+    onClick={() => setActiveDescription(null)}
+  >
+    <motion.div
+      initial={{ x: "100%", opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: "100%", opacity: 0 }}
+      transition={{ duration: 0.4 }}
+      className="bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] text-white p-6 rounded-lg border border-cyan-400 relative w-full max-w-[90%] md:max-w-md max-h-[80vh] overflow-y-auto"
+    >
+      <button
+        onClick={() => setActiveDescription(null)}
+        className="absolute top-2 right-2 text-cyan-400 hover:text-white"
+      >
+        &times;
+      </button>
+
+      <h3 className="text-lg font-bold text-white mb-4">{activeItem}</h3>
+      <p className="text-sm mb-4">{activeDescription}</p>
+    </motion.div>
+  </div>
+)}        
       )}
     </div>
   );

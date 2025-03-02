@@ -20,7 +20,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/login" element={<LoginForm/>}></Route>
+          <Route path="/login/" element={<LoginForm/>}></Route>
           <Route path="/signup" element={<SignupForm/>}></Route>
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/themeslist/:theme" element={<ThemesPage/>} />

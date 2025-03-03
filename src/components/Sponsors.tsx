@@ -17,7 +17,7 @@ const Sponsors = () => {
   return (
     <section className="container mx-auto px-4 py-24" id="sponsors">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-12 flex items-center gap-3 justify-center">
+        <h2 className="text-3xl font-bold text-white font-orbitron mb-12 flex items-center gap-3 justify-center">
           <Award className="text-primary h-8 w-8" />
           Our Sponsors
         </h2>

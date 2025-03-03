@@ -31,8 +31,7 @@ const Team = () => {
       { name: "Abhinav", role: "Content Lead", image: "/Abhinav.webp", linkedin: "https://www.linkedin.com/in/abhinav-kumar-3b238a28a" },
       { name: "Unnati", role: "Content", image: "/unnati.webp", linkedin: "https://www.linkedin.com/in/unnati-negi-3714b331b" },
       { name: "Sarang", role: "PR", image: "/sarang.webp", linkedin: "https://www.linkedin.com/in/sarang-ahlawat" },
-      { name: "Radhika", role: "Content", image: "/radhika.jpeg", linkedin: "https://www.linkedin.com/in/radhika-7206b9330/" },
-      ,
+      { name: "Radhika", role: "Content", image: "/radhika.jpeg", linkedin: "https://www.linkedin.com/in/radhika-7206b9330/" }
     ],
   };
   // Preload all images once the component mounts
@@ -47,7 +46,7 @@ const Team = () => {
 
   return (
     <section className="py-10 animate-fade-in" id="team">
-      <h2 className="text-3xl font-bold font-orbitron text-white mb-8 flex items-center gap-2">
+      <h2 className="text-3xl font-bold font-orbitron justify-center text-white mb-8 flex items-center gap-2">
         <Users className="text-teal-500" />
         Team
       </h2>

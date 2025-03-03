@@ -62,7 +62,7 @@ const TechAmigos: React.FC = () => {
   return (
     <div>
     <div className="hidden md:block">
-    <div className="relative h-auto w-full text-white flex flex-col p-10 px-14 rounded-lg shadow-lg overflow-hidden">
+    <div className="relative h-auto mt-20 w-full text-white flex flex-col p-10 px-14 rounded-lg shadow-lg overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#1E3C3D] to-[#212121] opacity-50 rounded-lg"></div>
 

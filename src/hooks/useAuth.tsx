@@ -12,8 +12,11 @@ export function useAuth() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Get API base URL dynamically
-  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  // API base URLs
+  const PROD_API_BASE_URL = "https://inceptionx-production.onrender.com";
+  const LOCAL_API_BASE_URL = "http://localhost:5000"; // For local testing
+  // const API_BASE_URL = PROD_API_BASE_URL; // Use this for production
+  const API_BASE_URL = "https://inceptionx-production.onrender.com"; // Switch between LOCAL_API_BASE_URL and PROD_API_BASE_URL as needed
 
   const fetchUser = async () => {
     try {
@@ -41,7 +44,7 @@ export function useAuth() {
   }, []);
 
   const loginWithGitHub = () => {
-    window.location.href = `${API_BASE_URL}/auth/github`; // Redirect to GitHub login
+    window.location.href = `${API_BASE_URL}/auth/github`;
   };
 
   const loginWithEmail = async (email: string, password: string) => {
@@ -110,4 +113,3 @@ export function useAuth() {
     logout,
   };
 }
-

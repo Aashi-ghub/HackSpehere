@@ -24,7 +24,7 @@ const Navigation = () => {
   const [user, setUser] = useState<User | null>(null);
 
   // Get API base URL dynamically
-      //  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+      //  const API_BASE_URL =  "http://localhost:5000";
      const API_BASE_URL ="https://inceptionx-production.onrender.com";
 
   useEffect(() => {
@@ -81,7 +81,7 @@ const Navigation = () => {
   };
     return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-[#0D1117]/90 backdrop-blur-lg" : "bg-[#0D1117]/60 backdrop-blur-md"} navbar font-primary`}>    
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
             <span className="bg-gradient-to-r  from-[#dbe2e2] via-[#b3beba] to-[#4fd1d7]   font-bold font-orbitron bg-clip-text text-transparent">InceptionX</span>
@@ -95,7 +95,7 @@ const Navigation = () => {
                   key={link.name}
                   href={link.path}
                   onClick={(e) => handleSmoothScroll(e, link.name.toLowerCase())}
-                  className="text-white font-quicksand hover:text-[#378f89] transition-colors duration-200 font-secondary"
+                  className="text-white font-orbitron hover:text-[#378f89] transition-colors duration-200 font-secondary"
                 >
                   {link.name}
                 </a>
@@ -104,7 +104,7 @@ const Navigation = () => {
                   key={link.name}
                   to={link.path}
                   onClick={() => link.name === "Home" && window.scrollTo({ top: 0, behavior: "smooth" })}
-                  className="text-white hover:text-[#378f89] transition-colors duration-200 font-secondary"
+                  className="text-white font-orbitron hover:text-[#378f89] transition-colors duration-200 font-secondary"
                 >
                   {link.name}
                 </Link>
@@ -135,7 +135,7 @@ const Navigation = () => {
               key="Login"
               to="/login"> 
               <button
-                className="text-white hover:text-[#378f89] transition-colors duration-200 nav-link font-secondary"
+                className="text-white font-orbitron hover:text-[#378f89] transition-colors duration-200 nav-link font-secondary"
               >
                 Login
               </button>

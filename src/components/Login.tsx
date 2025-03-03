@@ -105,7 +105,7 @@ const handleGitHubLogin = () => {
             value={credentials.password}
             onChange={(e) => setCredentials(prev => ({ ...prev, password: e.target.value }))}
             className="w-full px-4 py-2 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
-            placeholder="••••••••"
+            placeholder="password"
           />
         </div>
 

@@ -14,13 +14,13 @@ function SignUp({ onToggleForm, onAuthMethodChange }: SignUpProps) {
     const navigate =useNavigate();
   
   // Extract Token From GITHUBLogin-URL if exist  
-  useEffect(() =>{
-    const token = getTokenFromUrl();
-    if(token){
-      localStorage.setItem('token', token);
-     navigate('/')
-    }
-  },[]);  
+  // useEffect(() =>{
+  //   const token = getTokenFromUrl();
+  //   if(token){
+  //     localStorage.setItem('token', token);
+  //    navigate('/')
+  //   }
+  // },[]);  
 
 // Login with GitHub
 const handleGitHubLogin = () => {
@@ -29,10 +29,10 @@ const handleGitHubLogin = () => {
   };
 
 //Extract Token from github Athentication
-function getTokenFromUrl(){
-    const urlParams = new URLSearchParams(window.location.search);
-     return  urlParams.get('token');
- }
+// function getTokenFromUrl(){
+//     const urlParams = new URLSearchParams(window.location.search);
+//      return  urlParams.get('token');
+//  }
 
  // Handle form submission and login with Email/Password
   const handleSubmit = async (e: React.FormEvent) => {

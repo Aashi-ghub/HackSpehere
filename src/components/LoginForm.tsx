@@ -21,7 +21,7 @@ function LoginForm() {
         localStorage.setItem('token', token);
         navigate("/");
     }
-    },[]);
+    },[navigate]);
   //Extract Token from github Athentication
   function getTokenFromUrl(){
     const urlParams = new URLSearchParams(window.location.search);

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Github } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom';
 
 interface LoginProps {
   onToggleForm: () => void;
@@ -9,7 +9,7 @@ interface LoginProps {
 }
 
 function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
-  const [credentials, setCredentials] = useState({ email: '', password: '' });
+    const [credentials, setCredentials] = useState({ email: '', password: '' });
     const { toast } = useToast();
     const navigate =useNavigate();
 
@@ -17,9 +17,9 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
     const token = getTokenFromUrl();
     if(token){
       localStorage.setItem('token', token);
-     navigate('/')
-    }
-  },[]);  
+      navigate("/");
+  }
+  },[]);
 //Extract Token from github Athentication
 function getTokenFromUrl(){
   const urlParams = new URLSearchParams(window.location.search);

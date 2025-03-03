@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect } from 'react';
 
 import { Github, ArrowRight } from 'lucide-react';
 import Login from './Login';
 import SignUp from './SignUp';
+import { useNavigate } from 'react-router-dom';
 import GithubAuth from './GithubAuth';
 
 function LoginForm() {
@@ -11,6 +12,20 @@ function LoginForm() {
   const [authMethod, setAuthMethod] = useState<'form' | 'github'>('form');
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const [githubCredentials, setGithubCredentials] = useState({ username: '', password: '' });
+  const navigate = useNavigate();
+
+    useEffect(() =>{
+      const token = getTokenFromUrl();
+      if(token){
+        localStorage.setItem('token', token);
+        navigate("/");
+    }
+    },[]);
+  //Extract Token from github Athentication
+  function getTokenFromUrl(){
+    const urlParams = new URLSearchParams(window.location.search);
+     return  urlParams.get('token');
+  }
 
   const toggleForm = () => {
     setIsAnimating(true);

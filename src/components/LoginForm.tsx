@@ -16,6 +16,7 @@ function LoginForm() {
 
     useEffect(() =>{
       const token = getTokenFromUrl();
+      console.log("loginToken:",token);
       if(token){
         localStorage.setItem('token', token);
         navigate("/");

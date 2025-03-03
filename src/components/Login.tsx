@@ -15,6 +15,7 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
 
   useEffect(() =>{
     const token = getTokenFromUrl();
+    console.log("login:",token);
     if(token){
       localStorage.setItem('token', token);
       navigate("/");

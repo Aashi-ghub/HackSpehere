@@ -33,11 +33,11 @@ const Navigation = () => {
       console.error('No token found');
       return;
     }
-    axios
+    axios    
       .get(`${API_BASE_URL}/auth/user`, {
         method: "GET",
         headers: {
-          'authorization': `Bearer ${token}`,
+          'authorization': token ? `Bearer ${token}`: '',
         },
         withCredentials: true,
       })

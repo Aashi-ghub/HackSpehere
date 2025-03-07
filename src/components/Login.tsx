@@ -28,15 +28,33 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
 // }
 
 // Login with GitHub
-const handleGitHubLogin = () => {
+const handleGitHubLogin = async () => {
     // window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
-    window.location.href="https://inceptionx-production.onrender.com/auth/github" // Redirect to GitHub login
-}
+    //  window.location.href="https://inceptionx-production.onrender.com/auth/github" // Redirect to GitHub login
+    const response = await fetch("https://inceptionx-production.onrender.com/auth/github", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include", // Ensure authentication session is included
+       body: JSON.stringify(credentials),
+    });
+    const result = await response.json();
+    console.log(result.token);
+    if(response.ok){
+      toast({
+        title: result.message,
+        description: "You have been logged in.",
+      });
+      setTimeout(() => {
+        navigate("/"); // Redirect to home page after 3 seconds
+      }, 3000);
+    } 
+  }
 
 // Handle form submission and login with Email/Password
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Login credentials:', credentials);
+
     try {
       console.log("Trying to log in...");
       

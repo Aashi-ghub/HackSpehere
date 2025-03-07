@@ -32,7 +32,7 @@ const handleGitHubLogin = async () => {
     // window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
     //  window.location.href="https://inceptionx-production.onrender.com/auth/github" // Redirect to GitHub login
     const response = await fetch("https://inceptionx-production.onrender.com/auth/github", {
-      method: "POST",
+      method: "GET",
       headers: { "Content-Type": "application/json" },
       credentials: "include", // Ensure authentication session is included
        body: JSON.stringify(credentials),

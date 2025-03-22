@@ -7,28 +7,28 @@
 @layer base {
   :root {
     --background: 0 0% 0%;
-    --foreground: 142 100% 50%;
+    --foreground: 0 84.2% 60.2%;
     --card: 0 0% 0%;
-    --card-foreground: 142 100% 50%;
+    --card-foreground: 0 84.2% 60.2%;
     --popover: 0 0% 0%;
-    --popover-foreground: 142 100% 50%;
-    --primary: 142 100% 50%;
+    --popover-foreground:  0 84.2% 60.2%;
+    --primary: 0 84.2% 60.2%;
     --primary-foreground: 0 0% 0%;
     --secondary: 0 0% 10%;
-    --secondary-foreground: 142 100% 50%;
-    --muted: 142 100% 30%;
+    --secondary-foreground:  0 84.2% 60.2%;
+    --muted: 0 84.2% 40%;
     --muted-foreground: 0 0% 100%;
     --accent: 142 100% 40%;
     --accent-foreground: 0 0% 0%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 0%;
-    --border: 142 100% 30%;
+    --border: 0 84.2% 40%;
     --input: 142 100% 30%;
     --ring: 142 100% 50%;
     --radius: 0.75rem;
-    --border-color: #14b8a6; /* teal-500 */
-    --ring-color: #14b8a6; /* teal-500 */
-    --text-color: #14b8a6; /* teal-500 */
+    --border-color: #ab2d0d; /* teal-500 */
+    --ring-color: #ab2d0d; /* teal-500 */
+    --text-color: #ab2d0d; /* teal-500 */
     --font-primary: "Quicksand", sans-serif;
     --font-secondary: "Montserrat", sans-serif;
     --font-tertiary: "Nunito Sans", sans-serif;

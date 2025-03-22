@@ -17,30 +17,7 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
 // Login with GitHub
 const handleGitHubLogin = async () => {
     // window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
-      // window.location.href="https://inceptionx-production.onrender.com/auth/google" // Redirect to GitHub login
-     
-      const response = await fetch("https://inceptionx-production.onrender.com/auth/google", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include", // Ensure authentication session is included
-      });
-      const result = await response.json();
-      console.log(result.token);
-      if(response.ok){
-        localStorage.setItem('token', result.Token);
-        toast({
-          title: result.message,
-          description: "You have been logged in.",
-        });
-        setTimeout(() => {
-          navigate("/"); // Redirect to home page after 3 seconds
-        }, 3000);
-      } else {
-        toast({
-          variant: "destructive",
-          title: result.message,
-          description:"Please try Again "
-      })};
+     window.location.href="https://inceptionx-production.onrender.com/auth/google" // Redirect to GitHub login
     }    
 
 

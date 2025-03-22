@@ -35,13 +35,17 @@ const Navigation = () => {
       return;
     }
     axios    
-      .get(`${API_BASE_URL}/auth/user`, {
-        method: "GET",
-        headers: {
-          'authorization': token ? `Bearer ${token}`: '',
-        },
-        withCredentials: true,
-      })
+      // .get(`${API_BASE_URL}/auth/user`, {
+      //   method: "GET",
+      //   headers: {
+      //     'authorization': token ? `Bearer ${token}`: '',
+      //   },
+      //   withCredentials: true,
+      // })
+      .get(`${API_BASE_URL}/auth/user`,{
+            method:'GET',
+            withCredentials:true,
+            })
       .then((response) => {
         console.log("User Data:", response.data); // Debugging
         setUser(response.data);

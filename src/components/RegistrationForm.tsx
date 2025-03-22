@@ -115,10 +115,11 @@ export default function RegistrationForm() {
           ) : (
             <>
               {/* Authentication UI */}
-              <div className="flex justify-between items-center">
+              {/* <div className="flex justify-between items-center">
                 {loading ? (
                   <p className="text-gray-400">Checking login status...</p>
-                ) : user ? (
+                ) :
+                 user ? (
                   <div className="flex items-center space-x-4">
                     <img src={user.avatar} alt="User Avatar" className="w-10 h-10 rounded-full" />
                     <span className="text-gray-300">{user.username}</span>
@@ -136,37 +137,25 @@ export default function RegistrationForm() {
                     </Link>
                   </div>
                 )}
-              </div>
+              </div> */}
 
               {/* Show Registration Form Only if User is Logged In */}
               {user && (
                 <Form {...form}>
                   <form method="POST" onSubmit={handleSubmit} className="space-y-8 animate-fade-in">
-                    {step === 1 && <TeamInfoForm form={form} setTeamSize={setTeamSize} />}
-                    {step === 2 && (
-                      <div className="space-y-8">
+                    { <TeamInfoForm form={form} setTeamSize={setTeamSize} />}
+                    { <div className="space-y-8">
                         {Array.from({ length: teamSize }).map((_, index) => (
                           <MemberForm key={index} form={form} index={index} />
                         ))}
                       </div>
-                    )}
-                    {step === 3 && <FinalDetailsForm form={form} />}
+                    }
+                    {<FinalDetailsForm form={form} />}
 
                     <div className="flex justify-between pt-8">
-                      {step > 1 && (
-                        <Button type="button" variant="outline" onClick={prevStep} className="w-28 border-teal-500/30 hover:bg-teal-500/10 text-white" disabled={formLoading}>
-                          Previous
-                        </Button>
-                      )}
-                      {step < 3 ? (
-                        <Button type="button" onClick={nextStep} className="w-28 ml-auto bg-teal-500 hover:bg-teal-400 text-black" disabled={formLoading}>
-                          Next
-                        </Button>
-                      ) : (
                         <Button type="submit" className="w-28 ml-auto bg-teal-500 hover:bg-teal-400 text-black" disabled={formLoading}>
                           {formLoading ? "Submitting..." : "Submit"}
                         </Button>
-                      )}
                     </div>
                   </form>
                 </Form>

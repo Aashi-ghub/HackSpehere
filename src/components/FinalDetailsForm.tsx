@@ -21,7 +21,7 @@ export const FinalDetailsForm: React.FC<FinalDetailsFormProps> = ({ form }) => {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}>
-      <FormField
+      {/* <FormField
         control={form.control}
         name="theme"
         render={({ field }) => (
@@ -46,7 +46,7 @@ export const FinalDetailsForm: React.FC<FinalDetailsFormProps> = ({ form }) => {
             <FormMessage />
           </FormItem>
         )}
-      />
+      /> */}
 
       {/* Participant Type */}
       <FormField

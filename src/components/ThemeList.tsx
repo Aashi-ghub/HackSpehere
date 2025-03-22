@@ -110,7 +110,7 @@ const ThemeList = () => {
       {/* Table Displaying Problem Statements */}
       <div className="overflow-x-auto">
         <div className="flex justify-start min-w-[800px]">
-          <table className="w-full bg-[#e7fcf1] rounded-lg shadow-lg text-black">
+          <table className="w-full bg-[#ffd7d7] rounded-lg shadow-lg text-black">
             <thead>
               <tr>
                 <th className="py-4 px-5 border-red-500 border-b border-r w-1/12">Sr No</th>

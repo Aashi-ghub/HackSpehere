@@ -6,14 +6,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import RegistrationPage from "./pages/register";
 import ThemesPage from "./pages/ThemesPage";
-import ThemeList from "./components/ThemeList";
+import ThemeList from "./components/ThemeList"; 
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm"
-
+  
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
+  <QueryClientProvider client={queryClient}> 
     <TooltipProvider>
       <Toaster />
       <Sonner />

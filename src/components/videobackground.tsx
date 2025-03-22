@@ -8,11 +8,13 @@ const VideoBackground = () => {
         loop
         muted
         playsInline
-        className="absolute w-full h-full object-cover opacity-100"
+        className="absolute w-full h-full object-cover filter hue-rotate-[180deg] saturate-[200%]"
       >
         <source src="/bg.webm" type="video/webm" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-[#051011] opacity-80" />
+
+      {/* Optional: subtle dark gradient to add mood */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-[#051011] opacity-70" />
     </div>
   );
 };

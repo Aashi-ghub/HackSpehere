@@ -41,9 +41,8 @@ const handleGitHubLogin = async () => {
          body: JSON.stringify(credentials),
       });
       const result = await response.json();
-      console.log(result.token);
       if (response.ok) {
-        localStorage.setItem('token', result.Token);
+        console.log("Login result:", result);
         toast({
           title: result.message,
           description: "You have been logged in.",

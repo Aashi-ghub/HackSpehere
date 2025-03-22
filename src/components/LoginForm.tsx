@@ -14,20 +14,6 @@ function LoginForm() {
   const [githubCredentials, setGithubCredentials] = useState({ username: '', password: '' });
   const navigate = useNavigate();
 
-    // useEffect(() =>{
-    //   const token = getTokenFromUrl();
-    //   console.log("loginToken:",token);
-    //   if(token){
-    //     localStorage.setItem('token', token);
-    //     navigate("/");
-    // }
-    // },[navigate]);
-  //Extract Token from github Athentication
-  // function getTokenFromUrl(){
-  //   const urlParams = new URLSearchParams(window.location.search);
-  //    return  urlParams.get('token');
-  // }
-
   const toggleForm = () => {
     setIsAnimating(true);
     setTimeout(() => {

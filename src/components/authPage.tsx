@@ -21,17 +21,9 @@ const AuthPage = ({ onAuthSuccess }: AuthPageProps = {}) => {
       return}; // Avoid unnecessary calls
 
     const fetchUser = async () => {
-      const token = localStorage.getItem('token');
-      if (!token) {
-        console.error('No token found');
-        return;
-      }
       try {
         const response = await fetch(`${API_BASE_URL}/auth/user`, {
           method: "GET",
-          headers: {
-            'authorization': `Bearer ${token}`,
-          },
           credentials: "include",
         });
         const data = await response.json();

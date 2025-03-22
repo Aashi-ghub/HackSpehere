@@ -28,26 +28,13 @@ const Navigation = () => {
      const API_BASE_URL ="https://inceptionx-production.onrender.com";
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    console.log(token);
-    if (!token) {
-      console.error('No token found');
-      return;
-    }
-    axios    
-      // .get(`${API_BASE_URL}/auth/user`, {
-      //   method: "GET",
-      //   headers: {
-      //     'authorization': token ? `Bearer ${token}`: '',
-      //   },
-      //   withCredentials: true,
-      // })
-      .get(`${API_BASE_URL}/auth/user`,{
+    axios.get(`${API_BASE_URL}/auth/user`,{
             method:'GET',
             withCredentials:true,
             })
       .then((response) => {
         console.log("User Data:", response.data); // Debugging
+        console.log(response)
         setUser(response.data);
       })
       .catch((error) => {

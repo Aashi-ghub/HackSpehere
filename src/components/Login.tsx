@@ -13,7 +13,6 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
     const { toast } = useToast();
     const navigate =useNavigate();
 
-
 // Login with GitHub
 const handleGitHubLogin = async () => {
     // window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login

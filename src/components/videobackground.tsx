@@ -8,7 +8,7 @@ const VideoBackground = () => {
         loop
         muted
         playsInline
-        className="absolute w-full h-full object-cover filter hue-rotate-[180deg] saturate-[200%]"
+        className="absolute w-full h-full object-cover filter "
       >
         <source src="/bg.webm" type="video/webm" />
       </video>

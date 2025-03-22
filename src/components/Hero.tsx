@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import React from "react";
 
 const Hero = () => {
-  const title = "XCEPTION";
-  const subtitle = "Join the ultimate tech innovation challenge. Transform your ideas into reality.";
+  const title = "Xception";
+  const subtitle = "BIENG ORDINARY IS NOT AN OPTION";
 
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center relative overflow-hidden px-4">
@@ -32,18 +32,12 @@ const Hero = () => {
           COUNTDOWN TO INCEPTIONX STARTS
         </motion.div>
         {/* Title */}
-        <h1 className="relative text-4xl md:text-6xl lg:text-7xl font-extrabold text-white my-8 leading-tight tracking-wider flex items-center justify-center gap-2">
-  <div className="relative">
-    <img 
-      src="/X[1].webp" 
-      alt="X Logo" 
-      className="w-20 md:w-28 lg:w-32 inline-block -mt-6 md:-mt-10 lg:-mt-12"
-    />
-    <div className="absolute inset-0 w-full h-full rounded-full bg-red-500 blur-2xl opacity-20 z-[-1]"></div>
-  </div>
-  <span className="text-white font-orbitron">CEPTION</span>
-</h1>
-
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white my-4 leading-tight tracking-wider">
+          <span className="bg-gradient-to-r from-[#e9ebeb] via-[#a9b1ae] to-[#46b1b7] font-orbitron bg-clip-text text-transparent inline-block">
+            {title.split(" ")[0]} {/* "INCEPTION" */}
+          </span>
+          <span className="text-white text-5xl md:text-7xl font-orbitron font-extrabold ml-2 inline-block">X</span> {/* "X" in white */}
+        </h1>
         {/* Subtitle with Typewriter Effect */}
         <div className="text-white text-sm md:text-lg lg:text-xl mb-8 max-w-2xl mx-auto overflow-hidden tracking-wide">
           {subtitle.split(" ").map((word, index) => (

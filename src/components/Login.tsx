@@ -13,24 +13,11 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
     const { toast } = useToast();
     const navigate =useNavigate();
 
-  // useEffect(() =>{
-  //   const token = getTokenFromUrl();
-  //   console.log("login:",token);
-  //   if(token){
-  //     localStorage.setItem('token', token);
-  //     navigate("/");
-  // }
-  // },[navigate]);
-//Extract Token from github Athentication
-// function getTokenFromUrl(){
-//   const urlParams = new URLSearchParams(window.location.search);
-//    return  urlParams.get('token');
-// }
 
 // Login with GitHub
 const handleGitHubLogin = async () => {
     // window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
-      window.location.href="https://inceptionx-production.onrender.com/auth/github" // Redirect to GitHub login
+      window.location.href="https://inceptionx-production.onrender.com/auth/google" // Redirect to GitHub login
   }
 
 // Handle form submission and login with Email/Password

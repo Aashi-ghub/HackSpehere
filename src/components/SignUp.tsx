@@ -25,7 +25,7 @@ function SignUp({ onToggleForm, onAuthMethodChange }: SignUpProps) {
 // Login with GitHub
 const handleGitHubLogin = () => {
       // window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
-      window.location.href="https://inceptionx-production.onrender.com/auth/github"
+      window.location.href="https://inceptionx-production.onrender.com/auth/google"
   };
 
 //Extract Token from github Athentication

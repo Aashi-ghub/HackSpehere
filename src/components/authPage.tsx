@@ -51,7 +51,7 @@ const AuthPage = ({ onAuthSuccess }: AuthPageProps = {}) => {
   }, [onAuthSuccess, user, toast]);
 
   const handleGitHubAuth = () => {
-    window.location.href = `${API_BASE_URL}/auth/github`;
+    window.location.href = `${API_BASE_URL}/auth/google`;
   };
 
   const handleLogout = async () => {

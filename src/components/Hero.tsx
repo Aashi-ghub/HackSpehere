@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import React from "react";
 
 const Hero = () => {
-  const title = "INCEPTION X";
-  const subtitle = "Join the ultimate tech innovation challenge. Transform your ideas into reality.";
+  const title = "Xception";
+  const subtitle = "BIENG ORDINARY IS NOT AN OPTION";
 
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center relative overflow-hidden px-4">

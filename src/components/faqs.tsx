@@ -7,7 +7,7 @@ const Faqs: React.FC = () => {
     {
       question: "What is Xception ?",
       answer:
-        "Xception is an innovative 3-day event organized to bring together creative minds to solve real-world challenges.",
+        "Xception is an innovative 2-day event organized to bring together creative minds to solve real-world challenges.",
     },
     {
       question: "What is the aim of Xception ?",

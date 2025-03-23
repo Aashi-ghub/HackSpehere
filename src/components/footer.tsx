@@ -107,7 +107,7 @@ const Footer = () => {
         <div className="mt-10 border-t border-primary/20 pt-6">
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Copyright className="h-4 w-4 text-primary" />
+              <Copyright className="h-4 w-4 text-red-500" />
               <p>2025 Xception. All rights reserved.</p>
             </div>
             <div>

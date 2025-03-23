@@ -25,7 +25,7 @@ const Navigation = () => {
 
   // Get API base URL dynamically
   //  const API_BASE_URL =  "http://localhost:5000";
-  const API_BASE_URL = "https://Xception-production.onrender.com";
+  const API_BASE_URL = "https://inceptionx-production.onrender.com";
 
   useEffect(() => {
     axios

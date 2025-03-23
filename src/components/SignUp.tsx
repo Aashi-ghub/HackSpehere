@@ -19,7 +19,7 @@ function SignUp({ onToggleForm, onAuthMethodChange }: SignUpProps) {
   const handleGoogleLogin = () => {
     // window.location.href = "http://localhost:5000/auth/google"; // Redirect to GitHub login
     window.location.href =
-      "https://Xception-production.onrender.com/auth/google";
+      "https://inceptionx-production.onrender.com/auth/google";
   };
 
   // Handle form submission and login with Email/Password
@@ -27,7 +27,7 @@ function SignUp({ onToggleForm, onAuthMethodChange }: SignUpProps) {
     e.preventDefault();
     console.log("SignUp credentials:", credentials);
     try {
-      const API_BASE_URL = "https://Xception-production.onrender.com";
+      const API_BASE_URL = "https://inceptionx-production.onrender.com";
 
       const res = await fetch(`${API_BASE_URL}/auth/signup`, {
         method: "POST",

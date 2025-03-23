@@ -19,7 +19,7 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
   const handleGoogleLogin = async () => {
     // window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
     window.location.href =
-      "https://Xception-production.onrender.com/auth/google"; // Redirect to GitHub login
+      "https://inceptionx-production.onrender.com/auth/google"; // Redirect to GitHub login
   };
 
   // Handle form submission and login with Email/Password
@@ -31,7 +31,7 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
       console.log("Trying to log in...");
 
       // production API URL
-      const API_BASE_URL = "https://Xception-production.onrender.com";
+      const API_BASE_URL = "https://inceptionx-production.onrender.com";
 
       // development API URL
       // const API_BASE_URL="http://localhost:5000"

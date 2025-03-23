@@ -80,7 +80,7 @@ const ThemeList = () => {
   return (
     <section className="py-20 text-left animate-fade-in px-10" id="team">
       <h2 className="text-4xl font-bold text-white mb-8 flex items-center gap-2">
-        <PencilLine className="text-red-500" />
+        <PencilLine className="text-black" />
         Problem Statements
       </h2>
 
@@ -92,7 +92,7 @@ const ThemeList = () => {
             onClick={() => setActiveTheme(category)}
             variant={activeTheme === category ? "default" : "outline"}
             className={`px-7 py-2 rounded-full transition-all duration-300 capitalize
-              ${activeTheme === category ? 'bg-red-500 text-black hover:bg-red-600' : 'bg-transparent text-white hover:bg-red-500/20'}`}
+              ${activeTheme === category ? 'bg-red-700 text-black hover:bg-red-200' : 'bg-transparent text-white hover:bg-red-500'}`}
           >
             {category}
           </Button>
@@ -110,22 +110,22 @@ const ThemeList = () => {
       {/* Table Displaying Problem Statements */}
       <div className="overflow-x-auto">
         <div className="flex justify-start min-w-[800px]">
-          <table className="w-full bg-[#ffd7d7] rounded-lg shadow-lg text-black">
+          <table className="w-full bg-[#0f0f0f] rounded-lg shadow-lg text-white">
             <thead>
               <tr>
-                <th className="py-4 px-5 border-red-500 border-b border-r w-1/12">Sr No</th>
-                <th className="py-4 px-5 border-red-500 border-b border-r w-1/2">Title</th>
-                <th className="py-4 px-5 border-red-500 border-b border-r w-1/12">PS NUMBER</th>
-                <th className="py-4 px-5 border-red-500 border-b w-1/4">Theme</th>
+                <th className="py-4 px-5 border-white border-b border-r w-1/12">Sr No</th>
+                <th className="py-4 px-5 border-white border-b border-r w-1/2">Title</th>
+                <th className="py-4 px-5 border-white border-b border-r w-1/12">PS NUMBER</th>
+                <th className="py-4 px-5 border-white border-b w-1/4">Theme</th>
               </tr>
             </thead>
             <tbody>
               {displayedQuestions.map((question, index) => (
                 <tr key={question.PS}>
-                  <td className="py-2 px-4 border-red-500 border-b border-r">{index + 1}</td>
-                  <td className="py-2 px-4 border-red-500 border-b border-r">{question.title}</td>
-                  <td className="py-2 px-4 border-red-500 border-b border-r">{question.PS}</td>
-                  <td className="py-2 px-4 border-red-500 border-b">{question.theme}</td>
+                  <td className="py-2 px-4 border-white border-b border-r">{index + 1}</td>
+                  <td className="py-2 px-4 border-white border-b border-r">{question.title}</td>
+                  <td className="py-2 px-4 border-white border-b border-r">{question.PS}</td>
+                  <td className="py-2 px-4 border-white border-b">{question.theme}</td>
                 </tr>
               ))}
             </tbody>

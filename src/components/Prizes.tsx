@@ -30,11 +30,11 @@ const prizeData = [
 ];
 
 const PrizeCard = ({ title, amount, perks, icon }) => (
-  <Card className="w-[600px] max-w-full mt-4 bg-transparent bg-opacity-60 border-2 border-[#14b8a6] rounded-lg shadow-lg p-6">
+  <Card className="w-[600px] max-w-full mt-4 bg-transparent bg-opacity-60 border-2 border-[#ece7e7] rounded-lg shadow-lg p-6">
     <CardContent className="flex flex-col items-center">
       {icon}
-      <h2 className="text-4xl text-[#5eead4] font-semibold mt-3">{title}</h2>
-      <p className="text-[#5eead4] text-lg font-bold">{amount}</p>
+      <h2 className="text-4xl text-[#ea5e5e] font-semibold mt-3">{title}</h2>
+      <p className="text-[#dbbbbbf1] text-lg font-bold">{amount}</p>
       <ul className="mt-3 text-gray-300 text-xl text-left">
         {perks.map((perk, i) => (
           <li key={i} className="flex items-center gap-2">
@@ -51,7 +51,7 @@ const ExcitingPrizes = () => (
     <h2 className="text-4xl font-orbitron font-bold mb-4">
       Exciting <span className="text-white">Prizes</span>
     </h2>
-    <div className="w-24 h-1 bg-gradient-to-r from-[#00f5ff] to-[#14b8a6] mx-auto mb-6"></div>
+    <div className="w-24 h-1 bg-gradient-to-r from-[#8e4242] to-[#77111194] mx-auto mb-6"></div>
 
     <p className="mb-8 text-gray-400 text-lg">
       Compete for these amazing prizes and gain recognition for your innovative solutions.

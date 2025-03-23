@@ -121,7 +121,7 @@ const Timeline: React.FC = () => {
   return (
     <div className="relative">
       <h2 className="text-4xl font-bold text-white font-orbitron mb-14 mt-6 flex justify-center items-center gap-2">
-        <Calendar className="text-teal-400 " /> Event Timeline
+        <Calendar className="text-red-400 " /> Event Timeline
       </h2>
       
       
@@ -134,8 +134,8 @@ const Timeline: React.FC = () => {
           <button
             key={day}
             onClick={() => setActiveTab(day)}
-            className={`px-6 py-2 rounded-full text-white font-semibold transition ${
-              activeTab === day ? "bg-teal-500" : "bg-gray-700 hover:bg-teal-600"
+            className={`px-6 py-2 rounded-full text-black font-semibold transition ${
+              activeTab === day ? "bg-[#ec2a2ae6]" : "bg-white hover:bg-red-400"
             }`}
           >
             {day}
@@ -144,7 +144,7 @@ const Timeline: React.FC = () => {
       </div>
 
       {/* Timeline Vertical Line */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-teal-800 top-[220px] h-[calc(100%-180px)]"></div>
+      <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-white top-[220px] h-[calc(100%-180px)]"></div>
 
       <div className="space-y-8">
         {timelineData[activeTab].map((item, index) => (
@@ -157,12 +157,12 @@ const Timeline: React.FC = () => {
             className="relative flex flex-col items-center md:block"
           >
             {/* Timeline Circle */}
-            <div className="absolute left-1/2 w-3 h-3 rounded-full bg-teal-500 transform -translate-x-1/2 mt-4 animate-pulse"></div>
+            <div className="absolute left-1/2 w-3 h-3 rounded-full bg-white transform -translate-x-1/2 mt-4 animate-pulse"></div>
 
             {/* Timeline Item */}
             <div
-              className={`bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] p-10 rounded-xl backdrop-blur-sm border transition cursor-pointer
-                ${activeItem === item.title ? "border-teal-300 shadow-teal-400 shadow-lg" : "border-transparent"}
+              className={`bg-gradient-to-tr from-[#827574ba]  to-transparent p-10 rounded-xl backdrop-blur-sm border transition cursor-pointer
+                ${activeItem === item.title ? "border-red-300 shadow-white-400 shadow-lg" : "border-transparent"}
                 w-full max-w-[90%] md:max-w-[48%] text-center md:text-left max-h-[80vh]
                 ${index % 2 === 0 ? "md:mr-[52%] md:pr-8" : "md:ml-[52%] md:pl-8"}`}
               onClick={() => {
@@ -177,8 +177,8 @@ const Timeline: React.FC = () => {
             >
               <div>
               <h3 className="text-lg font-bold text-white">{item.title.split("(")[0]}</h3>
-              <span className="text-sm text-cyan-400 block">{item.title.match(/\((.*?)\)/)?.[0]}</span>
-              <p className="text-sm text-gray-400">{item.description}</p>
+              <span className="text-sm text-red-400 block">{item.title.match(/\((.*?)\)/)?.[0]}</span>
+              <p className="text-sm text-white">{item.description}</p>
               </div>
 
             </div>
@@ -201,7 +201,7 @@ const Timeline: React.FC = () => {
           >
             <button
               onClick={() => setActiveDescription(null)}
-              className="absolute top-2 right-2 text-cyan-400 hover:text-white"
+              className="absolute top-2 right-2 text-red-400 hover:text-white"
             >
               &times;
             </button>

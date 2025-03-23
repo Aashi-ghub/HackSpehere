@@ -51,10 +51,10 @@ const CountdownTimer = () => {
             stiffness: 100,
             delay: index * 0.1,
           }}
-          className="bg-teal-600/10 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-lg text-center relative overflow-hidden group w-full"
+          className="bg-white/20 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-lg text-center relative overflow-hidden group w-full"
         >
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-teal-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-cyan-red/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             animate={{
               background: ["rgba(0,0,0,0)", "rgba(20,184,166,0.1)", "rgba(0,0,0,0)"],
             }}

@@ -47,7 +47,7 @@ const Team = () => {
   return (
     <section className="py-10 animate-fade-in" id="team">
       <h2 className="text-3xl font-bold font-orbitron justify-center text-white mb-8 flex items-center gap-2">
-        <Users className="text-teal-500" />
+        <Users className="text-red-500" />
         Team
       </h2>
 
@@ -60,7 +60,7 @@ const Team = () => {
             className={`
               px-7 py-2 rounded-full transition-all duration-300 capitalize 
               ${activeTeam === category 
-                ? 'bg-teal-500 text-black hover:bg-teal-600' 
+                ? 'bg-[#bf2a2a] text-black hover:bg-teal-600' 
                 : 'bg-transparent text-white hover:bg-teal-500/20'}
             `}
           >

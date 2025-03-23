@@ -1,171 +1,193 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useToast } from "@/hooks/use-toast";
-import { useNavigate } from "react-router-dom"; // For redirecting after success
-import { Form } from "@/components/ui/form";
-import { Button } from "@/components/ui/button";
-import { TeamInfoForm } from "./TeamInfoForm";
-import { MemberForm } from "./MemberForm";
-import { FinalDetailsForm } from "./FinalDetailsForm";
-import Navigation from "./Navigation";
-import { Link } from "react-router-dom";
-import { formSchema, FormValues } from "./types";
-import { useAuth } from "../hooks/useAuth"; // Import authentication hook
 
-export default function RegistrationForm() {
-  const { toast } = useToast();
-  const navigate = useNavigate(); // React Router navigation for redirecting
-  const { user, loading, loginWithGitHub, logout } = useAuth();
-  const [step, setStep] = useState(1);
-  const [teamSize, setTeamSize] = useState(3);
-  const [formLoading, setFormLoading] = useState(false);
-  const [success, setSuccess] = useState(false); // Track successful submission
+import React, { useState, useEffect } from "react";
+import { useForm, useFieldArray } from "react-hook-form";
+import { toast } from "sonner";
+import TeamNameInput from "./TeamNameInput";
+import TeamMembersSection from "./TeamMembersSection";
+import PaymentSection from "./PaymentSection";
+import SubmitButton from "./SubmitButton";
+import { FormData, TeamMember } from "./TeamMembersSection";
 
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+const RegistrationForm: React.FC = () => {
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors, isSubmitting },
+    setValue,
+    getValues,
+    watch,
+  } = useForm<FormData>({
     defaultValues: {
       teamName: "",
-      teamSize: "3",
-      members: Array(3).fill({
-        fullName: "",
-        email: "",
-        phone: "",
-        socialLink: "",
-        collge:"",
-      }),
-      source: "",
-      termsAccepted: false,
+      paymentMethod: "credit_card",
+      members: [
+        {
+          fullName: "",
+          phone: "",
+          email: "",
+          github: "",
+          college: "",
+          isLeader: true,
+        },
+        {
+          fullName: "",
+          phone: "",
+          email: "",
+          github: "",
+          college: "",
+          isLeader: false,
+        },
+        {
+          fullName: "",
+          phone: "",
+          email: "",
+          github: "",
+          college: "",
+          isLeader: false,
+        },
+      ],
     },
   });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const data = form.getValues();
-    // console.log("checking ")
-    if (!user) {
-      toast({ variant: "destructive", title: "Error", description: "You must log in to register." });
-      return;
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "members",
+  });
+
+  const members = watch("members");
+  const [submitAnimation, setSubmitAnimation] = useState<boolean>(false);
+
+  // All styling is encapsulated within the component
+  const formStyles = {
+    container: `
+      w-full max-w-3xl mx-auto overflow-hidden relative rounded-xl
+      before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-br 
+      before:from-rose-900/20 before:via-red-800/10 before:to-pink-900/15 
+      before:rounded-xl before:-z-10 before:blur-xl
+      after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-tr 
+      after:from-rose-500/5 after:via-red-400/5 after:to-pink-500/10 
+      after:rounded-xl after:-z-10
+    `,
+    form: `
+      space-y-6 animate-[fadeIn_0.5s_ease-in-out] p-6
+      bg-gradient-to-b from-[#1A1A1A]/90 to-[#1A1A1A]/95
+      border-[1px] border-white/50 rounded-xl
+      backdrop-blur-sm
+    `,
+    inputField: `
+      w-full bg-[#1E1E1E]/70 border-[1px] border-white/40 rounded-md px-4 py-2 
+      text-white placeholder-gray-400 outline-none focus:border-transparent focus:ring-2 
+      focus:ring-[#FF0000]/50 focus:border-[#000000]
+      transition-all duration-300
+    `,
+    cardStyle: `
+      bg-[#1A1A1A]/80 
+      backdrop-blur-sm hover:bg-[#1A1A1A]/90 transition-all duration-300
+    `,
+    glassCard: `
+      bg-[#1A1A1A]/80 backdrop-blur-lg 
+      rounded-lg
+      hover:bg-[#1A1A1A]/90 transition-all duration-300
+    `,
+  };
+  
+
+  // Define keyframe animations locally
+  const keyframes = `
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-
-    setFormLoading(true);
-    try {
-      const formattedData = {
-        ...data,
-        teamSize: Number(data.teamSize),
-        members: data.members.slice(0, Number(data.teamSize)), // Only keep required members
-      };
-
-      const API_BASE_URL = "https://inceptionx-production.onrender.com";
-
-      const res = await fetch(`${API_BASE_URL}/team/register`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify(formattedData),
-      });
-      
-      const result = await res.json();
-
-      if (res.ok) {
-        setSuccess(true);
-        toast({
-          title: "Registration Successful!",
-          description: "Your team has been registered for the Xpection.",
-        });
-        form.reset();
-        setTimeout(() => {
-          navigate("/"); // Redirect to home page after 3 seconds
-        }, 3000);
-      } else {
-        throw new Error(result?.message || "Registration failed.");
-      }
-    } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Registration Failed",
-        description: error.message || "Please try again later.",
-      });
-    } finally {
-      setFormLoading(false);
+    
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+  `;
+
+  const onSubmit = async (data: FormData) => {
+    setSubmitAnimation(true);
+    
+    // Simulating API call
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    
+    console.log("Form data submitted:", data);
+    
+    // Show success toast
+    toast.success("Registration submitted successfully!", {
+      description: `Team "${data.teamName}" has been registered with payment.`,
+      duration: 5000,
+    });
+    
+    setSubmitAnimation(false);
   };
 
-  const nextStep = () => setStep((prev) => prev + 1);
-  const prevStep = () => setStep((prev) => prev - 1);
-  const FirstMemberCollege = form.watch("members.0.college");
+  const setTeamLeader = (leaderIndex: number) => {
+    const updatedMembers = [...getValues("members")];
+    updatedMembers.forEach((member, index) => {
+      setValue(`members.${index}.isLeader`, index === leaderIndex);
+    });
+  };
+
+  // Validate at least one team leader is selected
+  useEffect(() => {
+    const hasLeader = members.some((member) => member.isLeader);
+    if (!hasLeader && members.length > 0) {
+      setTeamLeader(0);
+    }
+  }, [members]);
+
   return (
-    <div className="min-h-screen text-white bg-black relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,200,0.1),rgba(0,0,0,0))]" />
+    <>
+      {/* Include keyframe animations in style tag */}
+      <style>{keyframes}</style>
       
-      <Navigation />
-
-      <div className="relative z-10 max-w-5xl mx-auto px-4 py-12 my-10">
-        <div className="glass-card rounded-xl p-8 space-y-8 bg-black/50 backdrop-blur-sm border border-[#1c242e]">
+      <div className={formStyles.container}>
+        <form 
+          onSubmit={handleSubmit(onSubmit)} 
+          className={formStyles.form}
+          style={{ animationDelay: "0.2s" }}
+        >
+          <TeamNameInput 
+            register={register} 
+            errors={errors} 
+            customStyles={formStyles}
+          />
           
-          {/* Show success message if registration is completed */}
-          {success ? (
-            <div className="text-center">
-              <h2 className="text-2xl font-bold font-orbitron text-teal-400">🎉 Registration Successful!</h2>
-              <p className="text-gray-300 mt-4">Redirecting to the home page...</p>
-            </div>
-          ) : (
-            <>
-              {/* Authentication UI */}
-              <div className="flex justify-between items-center">
-                {loading ? (
-                  <p className="text-gray-400">Checking login status...</p>
-                ) :
-                 user ? (
-                  <div className="flex items-center space-x-4">
-                    <img src={user.avatar} alt="User Avatar" className="w-10 h-10 rounded-full" />
-                    <span className="text-gray-300">{user.username}</span>
-                    <button onClick={logout} className="text-teal-400">Logout</button>
-                  </div>
-                ) : (
-                  <div className="text-center w-full">
-                    <p className="text-gray-300">You must be logged in to register.</p>
-                    <Link 
-                      key="Login"
-                      to="/login"> 
-                    <button className="mt-4 text-teal-400 bg-gray-800 px-4 py-2 rounded hover:bg-gray-700">
-                      Login
-                    </button>
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              {/* Show Registration Form Only if User is Logged In */}
-              {user &&
-               (
-                <Form {...form}>
-                  <form method="POST" onSubmit={handleSubmit} className="space-y-8 animate-fade-in">
-                    { <TeamInfoForm form={form} setTeamSize={setTeamSize} />}
-                    { <div className="space-y-8">
-                        {Array.from({ length: teamSize }).map((_, index) => (
-                          <MemberForm 
-                          key={index} 
-                          form={form} 
-                          index={index}
-                          firstMemberCollege={FirstMemberCollege || ""} />
-                        ))}
-                      </div>
-                    }
-                    {<FinalDetailsForm form={form} />}
-
-                    <div className="flex justify-between pt-8">
-                        <Button type="submit" className="w-28 ml-auto bg-teal-500 hover:bg-teal-400 text-black" disabled={formLoading}>
-                          {formLoading ? "Submitting..." : "Submit"}
-                        </Button>
-                    </div>
-                  </form>
-                </Form>
-               )} 
-           </> 
-          )} 
+          <TeamMembersSection 
+            register={register}
+            errors={errors}
+            control={control}
+            fields={fields}
+            members={members}
+            setTeamLeader={setTeamLeader}
+            append={append}
+            remove={remove}
+            customStyles={formStyles}
+          />
+          
+          <PaymentSection
+            register={register}
+            errors={errors}
+            control={control}
+            customStyles={formStyles}
+          />
+          
+          <SubmitButton 
+            isSubmitting={isSubmitting} 
+            disabled={fields.length < 3}
+            submitAnimation={submitAnimation}
+          />
+        </form>
       </div>
-     </div>  
-  </div>  
+    </>
   );
-}
+};
+
+export default RegistrationForm;

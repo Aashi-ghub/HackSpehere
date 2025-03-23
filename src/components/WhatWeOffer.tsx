@@ -28,7 +28,7 @@ const WhatWeOffer = () => {
             {/* Entire div hover effect */}
             <motion.div
               whileHover={{ scale: 1.05, y: -10 }}
-              className="bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] p-4 rounded-lg backdrop-blur-sm  border-primary/20 group-hover:border-primary/100 group-hover:shadow-xl group-hover:scale-105 group-hover:translate-y-2 transition-all duration-300"
+              className="bg-gradient-to-br from-[#4a1f1a] via-[#151310] to-[#000000] p-4 rounded-lg backdrop-blur-sm  border-primary/20 group-hover:border-primary/100 group-hover:shadow-xl group-hover:scale-105 group-hover:translate-y-2 transition-all duration-300"
             >
               <div className="mb-4 transform group-hover:scale-100 transition-transform duration-300">
                 {offering.icon}
@@ -52,7 +52,7 @@ const WhatWeOffer = () => {
           >
             <motion.div
               whileHover={{ scale: 1.05, y: -10 }}
-              className="bg-gradient-to-br from-[#255e61] via-[#222] to-[#1a1a1a] p-4 rounded-lg backdrop-blur-sm  border-primary/20 group-hover:border-primary/100 group-hover:shadow-xl group-hover:scale-105 group-hover:translate-y-2 transition-all duration-300"
+              className="bg-gradient-to-br from-[#4a1f1a] via-[#151310] to-[#000000] p-4 rounded-lg backdrop-blur-sm  border-primary/20 group-hover:border-primary/100 group-hover:shadow-xl group-hover:scale-105 group-hover:translate-y-2 transition-all duration-300"
             >
               {/* Icon container with hover effect */}
               <div className="mb-4 transform group-hover:scale-100 transition-transform duration-300">

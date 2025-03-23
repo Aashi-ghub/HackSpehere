@@ -121,10 +121,8 @@ const RegistrationForm: React.FC = () => {
       // Make API call to the backend /register route
       const response = await fetch("https://inceptionx-production.onrender.com/team/register", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          credentials: "include",
-        },
+        headers: {"Content-Type": "application/json"},
+        credentials: "include",
         body: JSON.stringify(data), // Send the form data as JSON
       });
       const result = await response.json();

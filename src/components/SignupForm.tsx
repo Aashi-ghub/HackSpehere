@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Form.css';
+import Layout from './Layout';
+import Navigation from '../components/Navigation';
 
 const SignupForm: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -18,8 +20,11 @@ const SignupForm: React.FC = () => {
   };
 
   return (
-    <div className="form-container">
-      <div className="form-box">
+    <Layout>
+       <Navigation /> 
+      
+    <div className="form-container ">
+      <div className="form-box ">
         <img src="/hackspher-logo.png" alt="HackSpher Logo" className="logo" />
         <h1 className="form-title">Sign Up</h1>
         <input
@@ -51,6 +56,7 @@ const SignupForm: React.FC = () => {
         </p>
       </div>
     </div>
+    </Layout>
   );
 };
 

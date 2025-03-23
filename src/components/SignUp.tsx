@@ -3,6 +3,8 @@ import { ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 
+
+
 interface SignUpProps {
   onToggleForm: () => void;
   onAuthMethodChange: (method: "form" | "github") => void;
@@ -60,8 +62,10 @@ function SignUp({ onToggleForm, onAuthMethodChange }: SignUpProps) {
   };
 
   return (
+    
     <>
-      <h2 className="text-3xl font-bold text-white mb-6 text-center">
+     
+      <h2 className="text-3xl font-bold  text-white mb-6 text-center">
         Create Account
       </h2>
 
@@ -76,7 +80,7 @@ function SignUp({ onToggleForm, onAuthMethodChange }: SignUpProps) {
             onChange={(e) =>
               setCredentials((prev) => ({ ...prev, email: e.target.value }))
             }
-            className="w-full px-4 py-2 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+            className="w-full px-4 py-2 rounded-lg bg-black/50 border border-gray-700 text-white placeholder-gray-400 focus:border-white focus:ring-2 focus:ring-cyan-500/20 transition-all"
             placeholder="your@email.com"
           />
         </div>
@@ -91,20 +95,20 @@ function SignUp({ onToggleForm, onAuthMethodChange }: SignUpProps) {
             onChange={(e) =>
               setCredentials((prev) => ({ ...prev, password: e.target.value }))
             }
-            className="w-full px-4 py-2 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+            className="w-full px-4 py-2 rounded-lg bg-black/50 border border-gray-700 text-white placeholder-gray-400 focus:border-white focus:ring-2 focus:ring-cyan-500/20 transition-all"
             placeholder="••••••••"
           />
         </div>
 
         <button
           type="submit"
-          className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center group relative overflow-hidden"
+          className="w-full bg-red-700 hover:bg-red-600 text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center group relative overflow-hidden"
         >
           <span className="relative z-10 flex items-center">
             Sign Up
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </span>
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity" />
         </button>
 
         <div className="relative my-6">
@@ -112,7 +116,7 @@ function SignUp({ onToggleForm, onAuthMethodChange }: SignUpProps) {
             <div className="w-full border-t border-gray-700"></div>
           </div>
           <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-gray-900 text-gray-400">
+            <span className="px-2 bg-black/50 text-gray-400">
               Or continue with
             </span>
           </div>
@@ -121,7 +125,7 @@ function SignUp({ onToggleForm, onAuthMethodChange }: SignUpProps) {
         <button
           type="button"
           onClick={() => handleGoogleLogin()}
-          className="w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center group border border-gray-700"
+          className="w-full bg-white hover:bg-gray-700 text-black font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center group border border-gray-700"
         >
           <svg
             className="mr-2 h-5 w-5"
@@ -153,12 +157,13 @@ function SignUp({ onToggleForm, onAuthMethodChange }: SignUpProps) {
         Already have an account?
         <button
           onClick={onToggleForm}
-          className="ml-1 font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+          className="ml-1 font-semibold text-red-400 hover:text-cyan-300 transition-colors"
         >
           Sign in
         </button>
       </p>
     </>
+  
   );
 }
 

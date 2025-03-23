@@ -6,7 +6,7 @@
     min-height: 100vh;
     background: #111; /* Darker background */
     animation: fadeIn 1s ease-out; /* Fade-in animation for the whole container */
-  }
+}
   
   .form-box {
     background: #222; /* Darker form background */

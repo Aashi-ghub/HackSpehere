@@ -28,7 +28,7 @@ const Hero = () => {
               <img
                 src="/X[1].webp"
                 alt="X Logo"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain translate-x-[25px]"
               />
             </div>
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545]  font-raleway">

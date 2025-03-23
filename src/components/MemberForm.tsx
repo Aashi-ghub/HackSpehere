@@ -4,13 +4,14 @@ import { Github } from "lucide-react";
 import { UseFormReturn } from "react-hook-form";
 import { FormValues } from "./types";
 import { motion } from "framer-motion";
+import { Checkbox } from "@/components/ui/checkbox"; // Import Checkbox component
 
 interface MemberFormProps {
   form: UseFormReturn<FormValues>;
   index: number;
+  firstMemberCollege:string; 
 }
-
-export const MemberForm = ({ form, index }: MemberFormProps) => {
+export const MemberForm = ({ form, index ,firstMemberCollege}: MemberFormProps) => {
   return (
     <div className="p-6 bg-black/30 border text border-teal-500/20 rounded-lg space-y-4">
        <motion.div
@@ -97,7 +98,44 @@ export const MemberForm = ({ form, index }: MemberFormProps) => {
             </FormItem>
           )}
         />
-      </div>
+        <FormField
+          control={form.control}
+          name={`members.${index}.college`}
+          render={({ field }) => (
+            <FormItem >
+              <FormLabel className="text-[#ececed]">College</FormLabel>
+              <FormControl>
+              <Input
+                placeholder="Enter college name"
+                {...field}
+                className="bg-black/50 border-teal-500/20 focus:border-2 w-full"
+              />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+          />
+           {index !== 0 && (
+            <div className=" flex items-center space-x-2">
+              <Checkbox
+                id={`same-college-${index}`}
+                onCheckedChange={(checked) => {
+                  if (checked) {
+                    form.setValue(`members.${index}.college`, firstMemberCollege);
+                  } else {
+                    form.setValue(`members.${index}.college`, ""); // Clear the field if unchecked
+                  }
+                }}
+              />
+              <label
+                htmlFor={`same-college-${index}`}
+                className="text-sm text-[#ececed]"
+              >
+                Same college as First Team Member
+              </label>
+            </div>
+          )}
+        </div>
       </motion.div>
     </div>
   );

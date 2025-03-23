@@ -33,9 +33,8 @@ export default function RegistrationForm() {
         email: "",
         phone: "",
         socialLink: "",
-        role: "",
+        collge:"",
       }),
-      theme: "",
       participantType: "",
       source: "",
       termsAccepted: false,
@@ -96,7 +95,7 @@ export default function RegistrationForm() {
 
   const nextStep = () => setStep((prev) => prev + 1);
   const prevStep = () => setStep((prev) => prev - 1);
-
+  const FirstMemberCollege = form.watch("members.0.college");
   return (
     <div className="min-h-screen text-white bg-black relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,200,0.1),rgba(0,0,0,0))]" />
@@ -140,13 +139,19 @@ export default function RegistrationForm() {
               </div> */}
 
               {/* Show Registration Form Only if User is Logged In */}
-              {user && (
+              {
+              // user &&
+               (
                 <Form {...form}>
                   <form method="POST" onSubmit={handleSubmit} className="space-y-8 animate-fade-in">
                     { <TeamInfoForm form={form} setTeamSize={setTeamSize} />}
                     { <div className="space-y-8">
                         {Array.from({ length: teamSize }).map((_, index) => (
-                          <MemberForm key={index} form={form} index={index} />
+                          <MemberForm 
+                          key={index} 
+                          form={form} 
+                          index={index}
+                          firstMemberCollege={FirstMemberCollege || ""} />
                         ))}
                       </div>
                     }

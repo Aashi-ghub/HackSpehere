@@ -173,7 +173,7 @@ const Navigation = () => {
                     Logout
                   </button>
                 ) : (
-                  <button onClick={() => (window.location.href = `${API_BASE_URL}/auth/github`)} className="block text-left px-4 py-2 text-sm hover:bg-[#1A1F27] rounded">
+                  <button onClick={() => (window.location.href = `${API_BASE_URL}/auth/google`)} className="block text-left px-4 py-2 text-sm hover:bg-[#1A1F27] rounded">
                     Login
                   </button>
                 )}

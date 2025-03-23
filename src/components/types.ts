@@ -10,7 +10,7 @@ export const formSchema = z.object({
       email: z.string().email("Invalid email address"),
       phone: z.string().min(10, "Invalid phone number"),
       socialLink: z.string().url().optional(),
-      role: z.string().min(1, "Please select a role"),
+      college: z.string().min(1, "College name is required"),
     })
   ),
   theme: z.string().min(1, "Please select a theme"),

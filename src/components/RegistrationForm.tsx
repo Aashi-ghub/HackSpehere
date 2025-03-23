@@ -143,12 +143,10 @@ const RegistrationForm: React.FC = () => {
           });
         }
       }
-    } catch (error) {
-      console.error("Error during registration:", error);
-  
+    } catch (err) {
       // Show error toast
       toast.error("Registration failed!", {
-        description: error.message || "An error occurred. Please try again.",
+        description: err.message || "An error occurred. Please try again.",
         duration: 5000,
       });
     } finally {

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { toast } from "sonner";
@@ -7,10 +6,10 @@ import TeamMembersSection from "./TeamMembersSection";
 import PaymentSection from "./PaymentSection";
 import SubmitButton from "./SubmitButton";
 import { FormData, TeamMember } from "./TeamMembersSection";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 
 const RegistrationForm: React.FC = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -93,7 +92,6 @@ const RegistrationForm: React.FC = () => {
       hover:bg-[#1A1A1A]/90 transition-all duration-300
     `,
   };
-  
 
   // Define keyframe animations locally
   const keyframes = `
@@ -115,18 +113,21 @@ const RegistrationForm: React.FC = () => {
 
   const onSubmit = async (data: FormData) => {
     setSubmitAnimation(true);
-    
+
     // Simulating API call
     try {
       // Make API call to the backend /register route
-      const response = await fetch("https://inceptionx-production.onrender.com/team/register", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        credentials: "include",
-        body: JSON.stringify(data), // Send the form data as JSON
-      });
+      const response = await fetch(
+        "https://Xception-production.onrender.com/team/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify(data), // Send the form data as JSON
+        }
+      );
       const result = await response.json();
-      if (response.ok) { 
+      if (response.ok) {
         toast.success("Registration submitted successfully!", {
           description: `Team "${data.teamName}" has been registered with payment.`,
           duration: 5000,
@@ -134,7 +135,7 @@ const RegistrationForm: React.FC = () => {
         setTimeout(() => {
           navigate("/");
         }, 3000);
-      }else {
+      } else {
         {
           toast.error(result.message, {
             description: "Please try Again",
@@ -151,7 +152,6 @@ const RegistrationForm: React.FC = () => {
       setSubmitAnimation(false);
     }
   };
-  
 
   const setTeamLeader = (leaderIndex: number) => {
     const updatedMembers = [...getValues("members")];
@@ -172,20 +172,20 @@ const RegistrationForm: React.FC = () => {
     <>
       {/* Include keyframe animations in style tag */}
       <style>{keyframes}</style>
-      
+
       <div className={formStyles.container}>
-        <form 
-          onSubmit={handleSubmit(onSubmit)} 
+        <form
+          onSubmit={handleSubmit(onSubmit)}
           className={formStyles.form}
           style={{ animationDelay: "0.2s" }}
         >
-          <TeamNameInput 
-            register={register} 
-            errors={errors} 
+          <TeamNameInput
+            register={register}
+            errors={errors}
             customStyles={formStyles}
           />
-          
-          <TeamMembersSection 
+
+          <TeamMembersSection
             register={register}
             errors={errors}
             control={control}
@@ -196,16 +196,16 @@ const RegistrationForm: React.FC = () => {
             remove={remove}
             customStyles={formStyles}
           />
-          
+
           <PaymentSection
             register={register}
             errors={errors}
             control={control}
             customStyles={formStyles}
           />
-          
-          <SubmitButton 
-            isSubmitting={isSubmitting} 
+
+          <SubmitButton
+            isSubmitting={isSubmitting}
             disabled={fields.length < 3}
             submitAnimation={submitAnimation}
           />

@@ -20,7 +20,7 @@ const Hero = () => {
       >
         <source src="/redbg.webm" type="video/webm" />
       </video> */}
-      
+
       {/* Content Wrapper */}
       <div className="text-center relative z-10 max-w-4xl w-full">
         {/* Tagline */}
@@ -30,29 +30,29 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="inline-block my-4 px-4 py-1.5 bg-[#d13131]/10  text-[#e0ecec] rounded-full text-xs md:text-sm font-medium"
         >
-          COUNTDOWN TO INCEPTIONX STARTS
+          COUNTDOWN TO Xception STARTS
         </motion.div>
         <h1 className="relative text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-wider flex flex-col items-center justify-center text-center gap-1">
-  <div className="flex items-center justify-center">
-    <div className="relative -mr-2 md:-mr-4 lg:-mr-6">
-      <img 
-        src="/X[1].webp" 
-        alt="X Logo" 
-        className="w-20 h-20 md:w-28 md:h-28 lg:w-40 lg:h-52 object-contain"
-      />
-      <div className="absolute inset-0 w-full h-full rounded-full bg-red-700 blur-2xl opacity-20 z-[-1]"></div>
-    </div>
-    <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545] font-raleway">CEPTION</span>
-  </div>
+          <div className="flex items-center justify-center">
+            <div className="relative -mr-2 md:-mr-4 lg:-mr-6">
+              <img
+                src="/X[1].webp"
+                alt="X Logo"
+                className="w-20 h-20 md:w-28 md:h-28 lg:w-40 lg:h-52 object-contain"
+              />
+              <div className="absolute inset-0 w-full h-full rounded-full bg-red-700 blur-2xl opacity-20 z-[-1]"></div>
+            </div>
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545] font-raleway">
+              CEPTION
+            </span>
+          </div>
 
-  {/* Tagline -  */}
-  
-  <span className="text-[#d13131] text-xs md:text-xs ml-40 lg:text-xs font-orbitron font-extrabold tracking-[0.2em] leading-tight mt-[-56px]">
-    COMPETE · CONNECT · CONQUER
-  </span>
-  
-</h1>
+          {/* Tagline -  */}
 
+          <span className="text-[#d13131] text-xs md:text-xs ml-40 lg:text-xs font-orbitron font-extrabold tracking-[0.2em] leading-tight mt-[-56px]">
+            COMPETE · CONNECT · CONQUER
+          </span>
+        </h1>
 
         {/* Subtitle with Typewriter Effect */}
         <div className="text-white/80 text-sm md:text-lg font-bold mt-12 font-mono lg:text-xl mb-12 max-w-2xl mx-auto overflow-hidden tracking-wide">
@@ -65,7 +65,7 @@ const Hero = () => {
                 duration: 0.1,
                 delay: 1.2 + index * 0.2,
                 type: "spring",
-                stiffness: 100
+                stiffness: 100,
               }}
               className="inline-block mr-1"
             >
@@ -74,7 +74,7 @@ const Hero = () => {
           ))}
         </div>
         {/* Button */}
-        <motion.div 
+        <motion.div
           className="mb-8"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}

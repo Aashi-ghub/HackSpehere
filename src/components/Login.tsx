@@ -1,45 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import { ArrowRight, Github, GithubIcon } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { ArrowRight, Github, GithubIcon } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { useNavigate  } from 'react-router-dom';
-import GoogleIcon from './googleIcon';
+import { useNavigate } from "react-router-dom";
+import GoogleIcon from "./googleIcon";
 
 interface LoginProps {
   onToggleForm: () => void;
-  onAuthMethodChange: (method: 'form' | 'github') => void;
+  onAuthMethodChange: (method: "form" | "github") => void;
 }
 
 function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
-    const [credentials, setCredentials] = useState({ email: '', password: '' });
-    const { toast } = useToast();
-    const navigate =useNavigate();
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const { toast } = useToast();
+  const navigate = useNavigate();
 
-// Login with Google
-const handleGoogleLogin = async () => {
+  // Login with Google
+  const handleGoogleLogin = async () => {
     // window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
-     window.location.href="https://inceptionx-production.onrender.com/auth/google" // Redirect to GitHub login
-    }    
+    window.location.href =
+      "https://Xception-production.onrender.com/auth/google"; // Redirect to GitHub login
+  };
 
-
-// Handle form submission and login with Email/Password
+  // Handle form submission and login with Email/Password
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Login credentials:', credentials);
+    console.log("Login credentials:", credentials);
 
     try {
       console.log("Trying to log in...");
-      
+
       // production API URL
-      const API_BASE_URL="https://inceptionx-production.onrender.com"
+      const API_BASE_URL = "https://Xception-production.onrender.com";
 
       // development API URL
-          // const API_BASE_URL="http://localhost:5000"
+      // const API_BASE_URL="http://localhost:5000"
 
-       const response = await fetch(`${API_BASE_URL}/auth/login`, {
+      const response = await fetch(`${API_BASE_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include", // Ensure authentication session is included
-         body: JSON.stringify(credentials),
+        body: JSON.stringify(credentials),
       });
       const result = await response.json();
       if (response.ok) {
@@ -51,20 +51,18 @@ const handleGoogleLogin = async () => {
         setTimeout(() => {
           navigate("/"); // Redirect to home page after 3 seconds
         }, 3000);
-      } 
-      else {
-         toast({
-        variant: "destructive",
-        title: result.message,
-        description:"Please try Again ",
+      } else {
+        toast({
+          variant: "destructive",
+          title: result.message,
+          description: "Please try Again ",
         });
       }
-    }
-    catch (error) {
+    } catch (error) {
       toast({
         variant: "destructive",
         title: error.message,
-       description: error.message || "Please try again later.",
+        description: error.message || "Please try again later.",
       });
     }
   };
@@ -77,28 +75,36 @@ const handleGoogleLogin = async () => {
 
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-200">Email</label>
+          <label className="block text-sm font-medium text-gray-200">
+            Email
+          </label>
           <input
             type="email"
             value={credentials.email}
-            onChange={(e) => setCredentials(prev => ({ ...prev, email: e.target.value }))}
+            onChange={(e) =>
+              setCredentials((prev) => ({ ...prev, email: e.target.value }))
+            }
             className="w-full px-4 py-2 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
             placeholder="your@email.com"
           />
         </div>
 
         <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-200">Password</label>
+          <label className="block text-sm font-medium text-gray-200">
+            Password
+          </label>
           <input
             type="password"
             value={credentials.password}
-            onChange={(e) => setCredentials(prev => ({ ...prev, password: e.target.value }))}
+            onChange={(e) =>
+              setCredentials((prev) => ({ ...prev, password: e.target.value }))
+            }
             className="w-full px-4 py-2 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
             placeholder="password"
           />
         </div>
 
-        <button 
+        <button
           type="submit"
           className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center group relative overflow-hidden"
         >
@@ -114,7 +120,9 @@ const handleGoogleLogin = async () => {
             <div className="w-full border-t border-gray-700"></div>
           </div>
           <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-gray-900 text-gray-400">Or continue with</span>
+            <span className="px-2 bg-gray-900 text-gray-400">
+              Or continue with
+            </span>
           </div>
         </div>
 

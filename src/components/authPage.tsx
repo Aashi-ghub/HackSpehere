@@ -8,17 +8,20 @@ interface AuthPageProps {
 }
 
 // const API_BASE_URL = "http://localhost:5000";
- const API_BASE_URL="https://inceptionx-production.onrender.com"
+const API_BASE_URL = "https://Xception-production.onrender.com";
 
 const AuthPage = ({ onAuthSuccess }: AuthPageProps = {}) => {
-  const [user, setUser] = useState<{ username: string; avatar: string } | null>(null);
+  const [user, setUser] = useState<{ username: string; avatar: string } | null>(
+    null
+  );
   const { toast } = useToast();
 
   // Fetch logged-in user data
   useEffect(() => {
     if (user) {
-      console.log("fetch:",user)
-      return}; // Avoid unnecessary calls
+      console.log("fetch:", user);
+      return;
+    } // Avoid unnecessary calls
 
     const fetchUser = async () => {
       try {
@@ -35,7 +38,11 @@ const AuthPage = ({ onAuthSuccess }: AuthPageProps = {}) => {
         }
       } catch (error) {
         console.error("Error fetching user:", error);
-        toast({ title: "Error", description: "Failed to fetch user", variant: "destructive" });
+        toast({
+          title: "Error",
+          description: "Failed to fetch user",
+          variant: "destructive",
+        });
       }
     };
 
@@ -50,10 +57,17 @@ const AuthPage = ({ onAuthSuccess }: AuthPageProps = {}) => {
     try {
       await fetch(`${API_BASE_URL}/auth/logout`, { credentials: "include" });
       setUser(null);
-      toast({ title: "Logged out", description: "You have been logged out successfully" });
+      toast({
+        title: "Logged out",
+        description: "You have been logged out successfully",
+      });
     } catch (error) {
       console.error("Logout error:", error);
-      toast({ title: "Error", description: "Failed to log out", variant: "destructive" });
+      toast({
+        title: "Error",
+        description: "Failed to log out",
+        variant: "destructive",
+      });
     }
   };
 
@@ -63,9 +77,16 @@ const AuthPage = ({ onAuthSuccess }: AuthPageProps = {}) => {
         {user ? (
           <div className="text-center text-white">
             <h1 className="text-3xl font-bold">Welcome, {user.username}!</h1>
-            <img src={user.avatar} alt="GitHub Avatar" className="w-16 h-16 rounded-full mx-auto mt-4" />
+            <img
+              src={user.avatar}
+              alt="GitHub Avatar"
+              className="w-16 h-16 rounded-full mx-auto mt-4"
+            />
             <p className="mt-2 text-gray-300">You're logged in with GitHub</p>
-            <Button className="mt-4 bg-red-600 hover:bg-red-700 text-white w-full" onClick={handleLogout}>
+            <Button
+              className="mt-4 bg-red-600 hover:bg-red-700 text-white w-full"
+              onClick={handleLogout}
+            >
               Logout
             </Button>
           </div>
@@ -90,7 +111,8 @@ const AuthPage = ({ onAuthSuccess }: AuthPageProps = {}) => {
               </Button>
 
               <p className="text-sm text-center text-gray-400">
-                By continuing, you agree to our Terms of Service and Privacy Policy
+                By continuing, you agree to our Terms of Service and Privacy
+                Policy
               </p>
             </div>
           </>

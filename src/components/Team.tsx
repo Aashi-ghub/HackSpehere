@@ -60,8 +60,8 @@ const Team = () => {
             className={`
               px-7 py-2 rounded-full transition-all duration-300 capitalize 
               ${activeTeam === category 
-                ? 'bg-[#bf2a2a] text-black hover:bg-teal-600' 
-                : 'bg-transparent text-white hover:bg-teal-500/20'}
+                ? 'bg-[#bf2a2a] text-black hover:bg-red-600' 
+                : 'bg-transparent text-white hover:bg-red-500/20'}
             `}
           >
             {category} Team 
@@ -74,13 +74,13 @@ const Team = () => {
         {teamCategories[activeTeam as keyof typeof teamCategories].map((member, index) => (
           <div 
             key={index} 
-            className="group relative bg-gradient-to-br from-[#1f1f1f] via-[#1e2323] to-[#000f0f] rounded-xl p-6 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-teal-500/20 hover:scale-[1.02]"
+            className="group relative bg-gradient-to-br from-[#1f1f1f] via-[#1e2323] to-[#0f0101dc] rounded-xl p-6 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-white/20 hover:scale-[1.02]"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-[#111212] via-[#1e2323] to-[#1f1f1f] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
             <div className="relative z-10 h-full flex flex-col items-center transition-all duration-500">
               <div className="relative mb-6 group-hover:scale-95 transition-transform duration-300">
-                <div className="w-28 h-28 sm:w-32 font-serif sm:h-32 mx-auto rounded-2xl overflow-hidden border-2 border-teal-500/50 shadow-lg shadow-teal-700/30 transform rotate-3 group-hover:rotate-0 group-hover:rounded-full transition-all duration-300">
+                <div className="w-28 h-28 sm:w-32 font-serif sm:h-32 mx-auto rounded-2xl overflow-hidden border-2 border-white/50 shadow-lg shadow-white/30 transform rotate-3 group-hover:rotate-0 group-hover:rounded-full transition-all duration-300">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -94,7 +94,7 @@ const Team = () => {
               <div className="text-center transition-all duration-500 mb-6">
                 <h3 className="text-xl sm:text-2xl text-white font-bold mb-2 tracking-tight">{member.name}</h3>
                 <div className="inline-block min-w-[140px]">
-                  <p className="text-sm whitespace-nowrap text-teal-400 font-medium px-3 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20">
+                  <p className="text-sm whitespace-nowrap text-white font-medium px-3 py-1.5 rounded-full bg-white/10 border border-white/20">
                     {member.role}
                   </p>
                 </div>
@@ -105,7 +105,7 @@ const Team = () => {
                   href={member.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-950 to-teal-400 hover:from-black/5 hover:to-teal-800 text-white px-4 py-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-105 hover:shadow-lg hover:shadow-teal-500/25"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-black/30 to-red-500 hover:from-black/5 hover:to-white text-white px-4 py-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25"
                 >
                   <Linkedin className="w-5 h-5" />
                   Connect

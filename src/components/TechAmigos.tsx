@@ -64,7 +64,7 @@ const TechAmigos: React.FC = () => {
     <div className="hidden md:block">
     <div className="relative h-auto mt-20 w-full text-white flex flex-col p-10 px-14 rounded-lg shadow-lg overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1E3C3D] to-[#212121] opacity-50 rounded-lg"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#ada1a1] to-[#212121] opacity-50 rounded-lg"></div>
 
       {/* Main Content */}
       <div className="relative flex flex-col items-center h-full w-full gap-8 px-10">
@@ -84,10 +84,10 @@ const TechAmigos: React.FC = () => {
                   alt="Tech Amigos Logo"
                   className="w-24 h-24 mx-auto mb-6 rounded-lg"
                 />
-                <h1 className="text-4xl font-bold text-cyan-400 mb-4">
+                <h1 className="text-4xl font-bold text-white mb-4">
                   {pages[currentPage].title}
                 </h1>
-                <h2 className="text-2xl font-bold text-cyan-400 mb-4">
+                <h2 className="text-2xl font-bold text-white mb-4">
                   {pages[currentPage].subtitle}
                 </h2>
                 <p className="text-lg text-gray-300 leading-relaxed">
@@ -97,10 +97,10 @@ const TechAmigos: React.FC = () => {
             ) : (
               <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
                 <div className="max-w-lg text-left">
-                  <h1 className="text-4xl font-bold text-cyan-400 mb-4">
+                  <h1 className="text-4xl font-bold text-white mb-4">
                     {pages[currentPage].title}
                   </h1>
-                  <h2 className="text-2xl font-bold text-cyan-400 mb-4">
+                  <h2 className="text-2xl font-bold text-white mb-4">
                     {pages[currentPage].subtitle}
                   </h2>
                   <p className="text-lg text-gray-300 leading-relaxed">

@@ -8,7 +8,7 @@ const VideoBackground = () => {
         loop
         muted
         playsInline
-        className="absolute w-full h-full object-cover filter "
+        className="absolute w-full h-full object-cover filter grayscale brightness-[1.5] contrast-[1.2]"
       >
         <source src="/bg.webm" type="video/webm" />
       </video>

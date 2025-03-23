@@ -29,7 +29,7 @@ const Faqs: React.FC = () => {
     return (
       <div className="max-w-2xl mx-auto p-4">
         <h2 className="text-3xl font-bold font-orbitron text-white mb-1 flex items-center gap-3 justify-center">
-          <CircleHelp className="text-primary h-8 w-8" />
+          <CircleHelp className="text-red-400 h-8 w-8" />
           FAQs
         </h2>
         <div className='text-[#8d8f92] text-lg text-center font-stretch-extra-condense'>Find answers to common questions about Inception X.</div>
@@ -38,7 +38,7 @@ const Faqs: React.FC = () => {
             <div
               key={index}
               className={`border-b p-4 transition-all duration-300 ${
-                activeIndex === index ? 'border-b border-4 border-teal-500 shadow-lg' : 'border-teal-500/20'
+                activeIndex === index ? 'border-b border-4 border-red-300 shadow-lg' : 'border-teal-500/20'
               }`}
             >
               <button

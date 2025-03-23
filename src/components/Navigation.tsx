@@ -76,7 +76,7 @@ const Navigation = () => {
       <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-            <span className="bg-gradient-to-r  from-[#dbe2e2] via-[#b3beba] to-[#4fd1d7]   font-bold font-orbitron bg-clip-text text-transparent">Xception</span>
+            <span className="bg-gradient-to-r  from-[#e96969] via-[#ead7d7] to-[#8e8686]   font-bold font-orbitron bg-clip-text text-transparent">Xception</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -87,7 +87,7 @@ const Navigation = () => {
                   key={link.name}
                   href={link.path}
                   onClick={(e) => handleSmoothScroll(e, link.name.toLowerCase())}
-                  className="text-white font-orbitron hover:text-[#378f89] transition-colors duration-200 font-secondary"
+                  className="text-white font-quicksand hover:text-[#8f3737] transition-colors duration-200 font-secondary"
                 >
                   {link.name}
                 </a>
@@ -96,7 +96,7 @@ const Navigation = () => {
                   key={link.name}
                   to={link.path}
                   onClick={() => link.name === "Home" && window.scrollTo({ top: 0, behavior: "smooth" })}
-                  className="text-white font-orbitron hover:text-[#378f89] transition-colors duration-200 font-secondary"
+                  className="text-white font-quicksand hover:text-[#8f3737] transition-colors duration-200 font-secondary"
                 >
                   {link.name}
                 </Link>
@@ -127,7 +127,7 @@ const Navigation = () => {
               key="Login"
               to="/login"> 
               <button
-                className="text-white font-orbitron hover:text-[#378f89] transition-colors duration-200 nav-link font-secondary"
+                className="text-white font-quicksand hover:text-[#8f3737] transition-colors duration-200 nav-link font-secondary"
               >
                 Login
               </button>

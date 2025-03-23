@@ -8,13 +8,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative mt-16 bg-gradient-to-b from-secondary/50 via-secondary/30 to-secondary/10 backdrop-blur-lg border-t border-primary/20">
+    <footer className="relative mt-16 bg-gradient-to-br from-black/10 via-red-300/20 to-black/10  backdrop-blur-lg border-t border-primary/20">
       <div className="absolute right-4 -top-4">
         <Button
           onClick={scrollToTop}
           variant="outline"
           size="icon"
-          className="rounded-full bg-primary/80 text-white shadow-lg hover:bg-primary"
+          className="rounded-full bg-red/80 text-white shadow-lg hover:bg-red"
         >
           <ArrowUp className="h-4 w-4" />
         </Button>
@@ -24,7 +24,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* About Section */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">InceptionX</h3>
+            <h3 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545]">Xception</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Join us in shaping the future of technology through innovation and collaboration.
             </p>
@@ -32,7 +32,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">Quick Links</h3>
+            <h3 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545]">Quick Links</h3>
             <ul className="space-y-3 text-sm">
               {["Themes", "Timeline", "Sponsors"].map((link) => (
                 <li key={link}>
@@ -49,10 +49,10 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">Contact</h3>
+            <h3 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545]">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-muted-foreground">
-                <Mail className="h-5 w-5 text-primary" />
+                <Mail className="h-5 w-5 text-transparent bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545]" />
                 <span>inceptionx.contact@gmail.com</span>
               </li>
             </ul>
@@ -60,7 +60,7 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">Follow Us</h3>
+            <h3 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545]">Follow Us</h3>
             <div className="flex space-x-5">
               {[
                 { icon: Github, href: "https://github.com/InceptionX-hack" },

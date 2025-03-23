@@ -50,7 +50,7 @@ const Faqs: React.FC = () => {
             }`}
           >
             <button
-              className="w-full text-left  flex justify-between items-center py-2 text-lg font-medium text-gray-700 focus:outline-none"
+              className="w-full text-left  flex justify-between items-center py-2 text-lg font-medium text-white focus:outline-none"
               onClick={() => toggleFaq(index)}
             >
               {faq.question}
@@ -67,7 +67,7 @@ const Faqs: React.FC = () => {
                 activeIndex === index ? "max-h-screen" : "max-h-0"
               }`}
             >
-              <p className="mt-2 text-gray-400">{faq.answer}</p>
+              <p className="mt-2 text-white">{faq.answer}</p>
             </div>
           </div>
         ))}

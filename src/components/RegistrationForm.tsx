@@ -112,7 +112,7 @@ export default function RegistrationForm() {
           ) : (
             <>
               {/* Authentication UI */}
-              {/* <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center">
                 {loading ? (
                   <p className="text-gray-400">Checking login status...</p>
                 ) :
@@ -134,11 +134,10 @@ export default function RegistrationForm() {
                     </Link>
                   </div>
                 )}
-              </div> */}
+              </div>
 
               {/* Show Registration Form Only if User is Logged In */}
-              {
-              // user &&
+              {user &&
                (
                 <Form {...form}>
                   <form method="POST" onSubmit={handleSubmit} className="space-y-8 animate-fade-in">

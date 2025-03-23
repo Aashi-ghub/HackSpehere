@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Github } from 'lucide-react';
+import { ArrowRight, Github, GithubIcon } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate  } from 'react-router-dom';
 import GoogleIcon from './googleIcon';
@@ -123,7 +123,7 @@ const handleGoogleLogin = async () => {
           onClick={() => handleGoogleLogin()}
           className="w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center group border border-gray-700"
         >
-          <GoogleIcon className="mr-2 h-5 w-5" />
+          <GithubIcon className="mr-2 h-5 w-5" />
           Continue with Google
         </button>
       </form>

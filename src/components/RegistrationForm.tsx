@@ -26,7 +26,6 @@ export default function RegistrationForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       teamName: "",
-      teamDescription: "",
       teamSize: "3",
       members: Array(3).fill({
         fullName: "",
@@ -35,7 +34,6 @@ export default function RegistrationForm() {
         socialLink: "",
         collge:"",
       }),
-      participantType: "",
       source: "",
       termsAccepted: false,
     },
@@ -73,7 +71,7 @@ export default function RegistrationForm() {
         setSuccess(true);
         toast({
           title: "Registration Successful!",
-          description: "Your team has been registered for the hackathon.",
+          description: "Your team has been registered for the Xpection.",
         });
         form.reset();
         setTimeout(() => {

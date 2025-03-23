@@ -38,25 +38,6 @@ export const TeamInfoForm = ({ form, setTeamSize }: TeamInfoFormProps) => {
       />
       <FormField
         control={form.control}
-        name="teamDescription"
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel className="text-[#ececed] text-lg">Team Description (Optional)</FormLabel> 
-            <FormControl>
-            <div className="relative">
-                <Textarea
-                  placeholder="Breif Description (Optional)"
-                  {...field}
-                  className=" border-[#1c242e] focus:border-2 min-h-[100px]  "
-                />
-              </div>
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-      <FormField
-        control={form.control}
         name="teamSize"
         render={({ field }) => (
           <FormItem>

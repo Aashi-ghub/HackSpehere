@@ -131,7 +131,7 @@ export const MemberForm = ({ form, index ,firstMemberCollege}: MemberFormProps) 
                 htmlFor={`same-college-${index}`}
                 className="text-sm text-[#ececed]"
               >
-                Same college as First Team Member
+                Same college as Team Member 1
               </label>
             </div>
           )}

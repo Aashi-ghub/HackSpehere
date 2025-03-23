@@ -11,70 +11,16 @@ interface FinalDetailsFormProps {
 }
 
 export const FinalDetailsForm: React.FC<FinalDetailsFormProps> = ({ form }) => {
-  const themes = ["AI/ML", "Blockchain", "Healthcare", "Education", "Sustainability"];
   const sources = ["Social Media", "University", "Friends", "Tech Community", "Other"];
 
   return (
     <div className="space-y-10">
-      {/* Theme Selection */}
+      {/* How did you hear about us? */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}>
-      {/* <FormField
-        control={form.control}
-        name="theme"
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel className="text-[#ececed] text-lg ">Theme</FormLabel>
-            <Select onValueChange={field.onChange} defaultValue={field.value}>
-              <FormControl>
-                <div className="relative">
-                <SelectTrigger className="bg-black/50 border-teal-500/20">
-                  <SelectValue placeholder="Select theme" />
-                </SelectTrigger>
-                </div>
-              </FormControl>
-              <SelectContent>
-                {themes.map((theme) => (
-                  <SelectItem key={theme} value={theme}>
-                    {theme}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-            <FormMessage />
-          </FormItem>
-        )}
-      /> */}
-
-      {/* Participant Type */}
-      <FormField
-        control={form.control}
-        name="participantType"
-        render={({ field }) => (
-          <FormItem className="mt-[15px]">
-            <FormLabel className="text-[#ececed] text-lg">Participant Type</FormLabel>
-            <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex flex-col space-y-1">
-              <FormItem className="flex items-center space-x-3">
-                <FormControl>
-                  <RadioGroupItem value="student" />
-                </FormControl>
-                <FormLabel className="font-normal text-gray-300">Student</FormLabel>
-              </FormItem>
-              <FormItem className="flex items-center space-x-3">
-                <FormControl>
-                  <RadioGroupItem value="professional" />
-                </FormControl>
-                <FormLabel className="font-normal text-gray-300">Working Professional</FormLabel>
-              </FormItem>
-            </RadioGroup>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-
-      {/* How did you hear about us? */}
+        transition={{ duration: 0.5 }}
+        >
       <FormField
         control={form.control}
         name="source"

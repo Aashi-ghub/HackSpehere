@@ -5,22 +5,10 @@ import { motion } from "framer-motion";
 import React from "react";
 
 const Hero = () => {
-  const title = "Xception";
   const subtitle = "Being  Ordinary  is  not  an  Option";
 
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center relative overflow-hidden px-4">
-      {/* Video Background */}
-      {/* <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      >
-        <source src="/redbg.webm" type="video/webm" />
-      </video> */}
-
       {/* Content Wrapper */}
       <div className="text-center relative z-10 max-w-4xl w-full">
         {/* Tagline */}
@@ -28,34 +16,34 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-block my-4 px-4 py-1.5 bg-[#d13131]/10  text-[#e0ecec] rounded-full text-xs md:text-sm font-medium"
+          className="inline-block my-4 px-3 py-1 bg-[#d13131]/10 text-[#e0ecec] rounded-full text-xs md:text-sm font-medium"
         >
           COUNTDOWN TO Xception STARTS
         </motion.div>
-        <h1 className="relative text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-wider flex flex-col items-center justify-center text-center gap-1">
+
+        {/* Main Heading */}
+        <h1 className="relative text-4xl md:text-6xl font-extrabold text-white leading-tight tracking-wide flex flex-col items-center text-center">
           <div className="flex items-center justify-center">
-            <div className="relative -mr-2 md:-mr-4 lg:-mr-6">
+            <div className="relative w-16 h-20 l:w-24 l:h-32 md:w-32 md:h-44">
               <img
                 src="/X[1].webp"
                 alt="X Logo"
-                className="w-20 h-20 md:w-28 md:h-28 lg:w-40 lg:h-52 object-contain"
+                className="w-full h-full object-contain"
               />
-              <div className="absolute inset-0 w-full h-full rounded-full bg-red-700 blur-2xl opacity-20 z-[-1]"></div>
             </div>
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545] font-raleway">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545]  font-raleway">
               CEPTION
             </span>
           </div>
 
-          {/* Tagline -  */}
-
-          <span className="text-[#d13131] text-xs md:text-xs ml-40 lg:text-xs font-orbitron font-extrabold tracking-[0.2em] leading-tight mt-[-56px]">
+          {/* Tagline - Fixed Positioning */}
+          <span className="text-[#d13131] text-[10px] sm:text-xs md:text-xs ml-24 sm:ml-40  md:ml-40 font-orbitron font-extrabold tracking-[0.2em] mt-[-9px] sm:mt-[-9px] md:mt-[-56px]">
             COMPETE · CONNECT · CONQUER
           </span>
         </h1>
 
-        {/* Subtitle with Typewriter Effect */}
-        <div className="text-white/80 text-sm md:text-lg font-bold mt-12 font-mono lg:text-xl mb-12 max-w-2xl mx-auto overflow-hidden tracking-wide">
+        {/* Subtitle */}
+        <div className="text-white/80 text-sm sm:text-base md:text-lg font-bold mt-12 font-mono lg:text-xl mb-12 max-w-md sm:max-w-xl mx-auto tracking-wide">
           {subtitle.split(" ").map((word, index) => (
             <motion.span
               key={index}
@@ -63,7 +51,7 @@ const Hero = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{
                 duration: 0.1,
-                delay: 1.2 + index * 0.2,
+                delay: 1 + index * 0.15,
                 type: "spring",
                 stiffness: 100,
               }}
@@ -73,34 +61,37 @@ const Hero = () => {
             </motion.span>
           ))}
         </div>
-        {/* Button */}
+
+        {/* Register Button */}
         <motion.div
-          className="mb-8"
+          className="mb-6"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 2.5 }}
+          transition={{ duration: 0.5, delay: 2 }}
         >
           <Link
             to="/register"
-            className="group relative inline-flex items-center px-6 py-3 md:px-8 md:py-4 bg-gradient-to-br from-[#ec4545] to-[#ad3434] text-white rounded-full transition-all duration-300 transform hover:scale-105 font-medium overflow-hidden text-sm md:text-base"
+            className="group relative inline-flex items-center px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-gradient-to-br from-[#ec4545] to-[#ad3434] text-white rounded-full transition-all duration-300 transform hover:scale-105 font-medium text-xs sm:text-sm md:text-base"
           >
             <span className="relative z-10 flex items-center">
               REGISTER NOW
-              <ArrowRight className="ml-2 inline-block transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-[#a7abab] to-[#e11414] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </Link>
         </motion.div>
+
         {/* Countdown Timer */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 3 }}
-          className="w-full flex justify-center pb-8 md:pb-0"
+          transition={{ duration: 0.5, delay: 2.5 }}
+          className="w-full flex justify-center pb-6"
         >
           <CountdownTimer />
         </motion.div>
       </div>
+
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black/50 z-0"></div>
     </div>

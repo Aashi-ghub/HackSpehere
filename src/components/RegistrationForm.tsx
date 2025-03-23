@@ -7,8 +7,10 @@ import TeamMembersSection from "./TeamMembersSection";
 import PaymentSection from "./PaymentSection";
 import SubmitButton from "./SubmitButton";
 import { FormData, TeamMember } from "./TeamMembersSection";
+import { useNavigate } from "react-router-dom"; 
 
 const RegistrationForm: React.FC = () => {
+  const navigate = useNavigate(); 
   const {
     register,
     handleSubmit,
@@ -115,18 +117,46 @@ const RegistrationForm: React.FC = () => {
     setSubmitAnimation(true);
     
     // Simulating API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
     
-    console.log("Form data submitted:", data);
-    
-    // Show success toast
-    toast.success("Registration submitted successfully!", {
-      description: `Team "${data.teamName}" has been registered with payment.`,
-      duration: 5000,
-    });
-    
-    setSubmitAnimation(false);
+    try {
+      // Make API call to the backend /register route
+      const response = await fetch("https://inceptionx-production.onrender.com/teamRoutes/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data), // Send the form data as JSON
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to register. Please try again.");
+      }
+  
+      const result = await response.json();
+      console.log("Registration successful:", result);
+  
+      // Show success toast
+      toast.success("Registration submitted successfully!", {
+        description: `Team "${data.teamName}" has been registered with payment.`,
+        duration: 5000,
+      });
+       // Redirect to home Page after 3 sec
+      setTimeout(() => {
+        navigate("/"); // Redirect to the home page
+      }, 3000);
+    } catch (error) {
+      console.error("Error during registration:", error);
+  
+      // Show error toast
+      toast.error("Registration failed!", {
+        description: error.message || "An error occurred. Please try again.",
+        duration: 5000,
+      });
+    } finally {
+      setSubmitAnimation(false);
+    }
   };
+  
 
   const setTeamLeader = (leaderIndex: number) => {
     const updatedMembers = [...getValues("members")];

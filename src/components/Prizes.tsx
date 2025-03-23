@@ -6,25 +6,26 @@ import { Card, CardContent } from "@/components/ui/card";
 const prizeData = [
   {
     title: "First Prize",
-    amount: "₹60,000",
+    amount: "₹31,000",
     perks: [
-      "Cash prize of ₹60,000",
-      "Internship opportunities",
-      "Mentorship from industry experts",
-      "Tech gadgets and swag",
+      "Cash prize of ₹31,000",
+      "Trophy",
+      "Certificate of Excellence",
+      "Welcome Kit",
+      "Goodies & Swags",
     ],
     icon: <FaTrophy className="text-yellow-400 text-4xl" />,
   },
   {
     title: "Second Prize",
-    amount: "₹35,000",
-    perks: ["Cash prize of ₹35,000", "Internship opportunities", "Tech gadgets and swag"],
+    amount: "₹21,000",
+    perks: ["Cash prize of ₹35,000", "Welcome kit", " Certificate of Excellence", "Goodies & Swags"],
     icon: <IoRibbonOutline className="text-white text-4xl" />,
   },
   {
     title: "Third Prize",
-    amount: "₹20,000",
-    perks: ["Cash prize of ₹20,000", "Tech gadgets and swag"],
+    amount: "₹11,000",
+    perks: ["Cash prize of ₹20,000", "Welcome kit", " Certificate of Excellence", "Goodies & Swags"],
     icon: <IoRibbonOutline className="text-orange-400 text-4xl" />,
   },
 ];

@@ -117,33 +117,32 @@ const RegistrationForm: React.FC = () => {
     setSubmitAnimation(true);
     
     // Simulating API call
-    
     try {
       // Make API call to the backend /register route
       const response = await fetch("https://inceptionx-production.onrender.com/teamRoutes/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          credentials: "include",
         },
         body: JSON.stringify(data), // Send the form data as JSON
       });
-  
-      if (!response.ok) {
-        throw new Error("Failed to register. Please try again.");
-      }
-  
       const result = await response.json();
-      console.log("Registration successful:", result);
-  
-      // Show success toast
-      toast.success("Registration submitted successfully!", {
-        description: `Team "${data.teamName}" has been registered with payment.`,
-        duration: 5000,
-      });
-       // Redirect to home Page after 3 sec
-      setTimeout(() => {
-        navigate("/"); // Redirect to the home page
-      }, 3000);
+      if (response.ok) { 
+        toast.success("Registration submitted successfully!", {
+          description: `Team "${data.teamName}" has been registered with payment.`,
+          duration: 5000,
+        });
+        setTimeout(() => {
+          navigate("/");
+        }, 3000);
+      }else {
+        {
+          toast.error(result.message, {
+            description: "Please try Again",
+          });
+        }
+      }
     } catch (error) {
       console.error("Error during registration:", error);
   

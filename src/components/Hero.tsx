@@ -36,7 +36,7 @@ const Hero = () => {
           <span className="bg-gradient-to-r from-[#e9ebeb] via-[#a9b1ae] to-[#46b1b7] font-orbitron bg-clip-text text-transparent inline-block">
             {title.split(" ")[0]} {/* "INCEPTION" */}
           </span>
-          <span className="text-white text-5xl md:text-7xl font-orbitron font-extrabold ml-2 inline-block">X</span> {/* "X" in white */}
+          <span className="text-white text-5xl md:text-7xl font-orbitron font-extrabold ml-2 inline-block"></span> {/* "X" in white */}
         </h1>
         {/* Subtitle with Typewriter Effect */}
         <div className="text-white text-sm md:text-lg lg:text-xl mb-8 max-w-2xl mx-auto overflow-hidden tracking-wide">

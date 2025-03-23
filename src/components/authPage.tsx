@@ -42,7 +42,7 @@ const AuthPage = ({ onAuthSuccess }: AuthPageProps = {}) => {
     fetchUser();
   }, [onAuthSuccess, user, toast]);
 
-  const handleGitHubAuth = () => {
+  const handleGoogleAuth = () => {
     window.location.href = `${API_BASE_URL}/auth/google`;
   };
 
@@ -83,7 +83,7 @@ const AuthPage = ({ onAuthSuccess }: AuthPageProps = {}) => {
             <div className="mt-8 space-y-4">
               <Button
                 className="w-full h-12 bg-[#2ea44f] hover:bg-[#2c974b] text-white flex items-center justify-center space-x-3 text-lg transition-colors"
-                onClick={handleGitHubAuth}
+                onClick={handleGoogleAuth}
               >
                 <GitHubIcon className="w-6 h-6" />
                 <span>Continue with GitHub</span>

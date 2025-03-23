@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ArrowRight, Github } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate  } from 'react-router-dom';
+import GoogleIcon from './googleIcon';
 
 interface LoginProps {
   onToggleForm: () => void;
@@ -13,8 +14,8 @@ function Login({ onToggleForm, onAuthMethodChange }: LoginProps) {
     const { toast } = useToast();
     const navigate =useNavigate();
 
-// Login with GitHub
-const handleGitHubLogin = async () => {
+// Login with Google
+const handleGoogleLogin = async () => {
     // window.location.href = "http://localhost:5000/auth/github"; // Redirect to GitHub login
      window.location.href="https://inceptionx-production.onrender.com/auth/google" // Redirect to GitHub login
     }    
@@ -119,11 +120,11 @@ const handleGitHubLogin = async () => {
 
         <button
           type="button"
-          onClick={() => handleGitHubLogin()}
+          onClick={() => handleGoogleLogin()}
           className="w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center group border border-gray-700"
         >
-          <Github className="mr-2 h-5 w-5" />
-          Continue with GitHub
+          <GoogleIcon className="mr-2 h-5 w-5" />
+          Continue with Google
         </button>
       </form>
 

@@ -199,6 +199,7 @@ const RegistrationForm: React.FC = () => {
             errors={errors}
             control={control}
             customStyles={formStyles}
+            membersCount={members.length}
           />
 
           <SubmitButton

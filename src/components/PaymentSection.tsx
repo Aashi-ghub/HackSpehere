@@ -12,9 +12,10 @@ interface PaymentSectionProps {
   customStyles?: {
     cardStyle: string;
   };
+  membersCount:number
 }
 
-const PaymentSection: React.FC<PaymentSectionProps> = ({ register, errors, customStyles }) => {
+const PaymentSection: React.FC<PaymentSectionProps> = ({ register, errors, customStyles ,membersCount}) => {
   // Local styling definitions
   const localStyles = {
     paymentCard: `
@@ -45,10 +46,12 @@ const PaymentSection: React.FC<PaymentSectionProps> = ({ register, errors, custo
           <div className="flex items-center gap-3">
             <CreditCard className="h-6 w-6 text-[#FF0000]" />
             <div className="flex-1">
-              <p className={localStyles.paymentText}>Registration Fee</p>
+              <p className={localStyles.paymentText}>Registration Fee (₹999 per member)</p>
               <p className={localStyles.paymentSubtext}>Registration will only be confirmed after payment</p>
             </div>
-            <div className={localStyles.paymentAmount}>Rs.1000</div>
+            <div className={localStyles.paymentAmount}>
+              {membersCount === 4 ? '₹3996' : '₹2997'}
+              </div>
           </div>
         </div>
 

@@ -3,10 +3,7 @@ import { motion } from "framer-motion";
 
 const WhatWeOffer = () => {
   const offerings = [
-    { icon: <Wifi className="w-6 h-6 text-white" />, title: "High-Speed WiFi", description: "Stay connected with blazing fast internet" },
-    { icon: <Coffee className="w-6 h-6 text-white" />, title: "Free Food & Drinks", description: "Keep energized throughout the event" },
     { icon: <Gift className="w-6 h-6 text-white" />, title: "Swag & Goodies", description: "Amazing swag and prizes for winners" },
-    { icon: <Code2 className="w-6 h-6 text-white" />, title: "Workshops", description: "Learn from industry experts" },
     { icon: <Award className="w-6 h-6 text-white" />, title: "Certificates", description: "Get certified for your participation" },
     { icon: <Smile className="w-6 h-6 text-white" />, title: "Networking", description: "Connect with like-minded developers" }
   ];

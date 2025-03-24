@@ -9,7 +9,6 @@ export interface TeamMember {
   fullName: string;
   phone: string;
   email: string;
-  github: string;
   college: string;
   isLeader: boolean;
 }
@@ -76,7 +75,6 @@ const TeamMembersSection: React.FC<TeamMembersSectionProps> = ({
         fullName: "",
         phone: "",
         email: "",
-        github: "",
         college: "",
         isLeader: false,
       });

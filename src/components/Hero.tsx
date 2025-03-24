@@ -24,14 +24,14 @@ const Hero = () => {
         {/* Main Heading */}
         <h1 className="relative text-4xl md:text-6xl font-extrabold text-white leading-tight tracking-wide flex flex-col items-center text-center">
           <div className="flex items-center justify-center">
-            <div className="relative w-16 h-20 l:w-24 l:h-32 md:w-32 md:h-44">
+            <div className="relative w-16 h-20 sm:w-24 sm:h-24 l:w-24 l:h-32 md:w-32 md:h-44">
               <img
                 src="/X[1].webp"
                 alt="X Logo"
-                className="w-full h-full object-contain translate-x-[25px]"
+                className="w-full h-full object-contain"
               />
             </div>
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545]  font-raleway">
+            <span className="text-transparent translate-x-[-15px] sm:translate-x[-25px] md:translate-x-[-30px] bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545]  font-raleway">
               CEPTION
             </span>
           </div>
@@ -43,19 +43,19 @@ const Hero = () => {
         </h1>
 
         {/* Subtitle */}
-        <div className="text-white/80 text-sm sm:text-base md:text-lg font-bold mt-12 font-mono lg:text-xl mb-12 max-w-md sm:max-w-xl mx-auto tracking-wide">
+        <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF3130] via-[#BEB6B6] to-[#FF3130]  text-lg sm:text-xl md:text-3xl font-extrabold mt-12 font-mono lg:text-2xl mb-12 max-w-md sm:max-w-xl mx-auto tracking-wide ">
           {subtitle.split(" ").map((word, index) => (
             <motion.span
               key={index}
               initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0}}
               transition={{
-                duration: 0.1,
-                delay: 1 + index * 0.15,
+                duration: 0.2,
+                delay: 1 + index * 0.1,
                 type: "spring",
                 stiffness: 100,
               }}
-              className="inline-block mr-1"
+              className="inline-block mr-2 "
             >
               {word}
             </motion.span>

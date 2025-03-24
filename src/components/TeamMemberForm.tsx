@@ -153,23 +153,7 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
             </p>
           )}
         </div>
-
-        <div className="relative">
-          <input
-            {...register(`members.${index}.github`, {
-              required: "GitHub ID is required",
-            })}
-            placeholder="GitHub ID *"
-            className={localStyles.input}
-          />
-          {errors.members?.[index]?.github && (
-            <p className={localStyles.errorText}>
-              {errors.members[index].github.message}
-            </p>
-          )}
-        </div>
-
-        <div className="relative md:col-span-2">
+        <div className="relative ">
           <input
             {...register(`members.${index}.college`, {
               required: "College name is required",

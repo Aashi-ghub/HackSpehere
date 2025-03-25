@@ -162,7 +162,7 @@ const Timeline: React.FC = () => {
       </div>
 
       {/* Timeline Vertical Line */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-white top-[220px] h-[calc(100%-180px)]"></div>
+      <div className=" hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-white top-[240px] h-[calc(100%-180px)]"></div>
 
       <div className="space-y-8">
         {timelineData[activeTab].map((item, index) => (

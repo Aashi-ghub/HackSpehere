@@ -69,41 +69,41 @@ const TeamMembersSection: React.FC<TeamMembersSectionProps> = ({
     `
   };
 
-  const handleAddMember = () => {
-    if (fields.length < 4) {
-      append({
-        fullName: "",
-        phone: "",
-        email: "",
-        college: "",
-        isLeader: false,
-      });
-    }
-  };
+  // const handleAddMember = () => {
+  //   if (fields.length < 4) {
+  //     append({
+  //       fullName: "",
+  //       phone: "",
+  //       email: "",
+  //       college: "",
+  //       isLeader: false,
+  //     });
+  //   }
+  // };
 
-  const handleRemoveMember = (index: number) => {
-    if (fields.length > 3) {
-      // Check if we're removing the team leader
-      const isRemovingLeader = members[index].isLeader;
+  // const handleRemoveMember = (index: number) => {
+  //   if (fields.length > 3) {
+  //     // Check if we're removing the team leader
+  //     const isRemovingLeader = members[index].isLeader;
       
-      remove(index);
+  //     remove(index);
       
-      // If we removed the leader, set the first member as the new leader
-      if (isRemovingLeader && fields.length > 1) {
-        setTimeout(() => setTeamLeader(0), 0);
-      }
-    } else {
-      toast.error("A minimum of 3 members is required");
-    }
-  };
+  //     // If we removed the leader, set the first member as the new leader
+  //     if (isRemovingLeader && fields.length > 1) {
+  //       setTimeout(() => setTeamLeader(0), 0);
+  //     }
+  //   } else {
+  //     toast.error("A minimum of 3 members is required");
+  //   }
+  // };
 
   return (
     <div className={localStyles.container}>
       <div className={localStyles.sectionHeader}>
         <h2 className={localStyles.title}>Team Members</h2>
-        <p className={localStyles.memberCount}>
+        {/* <p className={localStyles.memberCount}>
           {fields.length}/4 members
-        </p>
+        </p> */}
       </div>
       
       <div className="space-y-6"> {/* <-- This is the key line */}
@@ -116,14 +116,12 @@ const TeamMembersSection: React.FC<TeamMembersSectionProps> = ({
       control={control}
       isLeader={members[index]?.isLeader || false}
       onSetLeader={setTeamLeader}
-      onRemove={handleRemoveMember}
-      showRemoveButton={fields.length > 3}
       customStyles={customStyles}
     />
   ))}
 </div>
       
-      <div className="flex justify-center mt-6">
+      {/* <div className="flex justify-center mt-6">
         <button
           type="button"
           onClick={handleAddMember}
@@ -139,7 +137,7 @@ const TeamMembersSection: React.FC<TeamMembersSectionProps> = ({
         <p className={localStyles.errorText}>
           Minimum 3 members required
         </p>
-      )}
+      )} */}
     </div>
   );
 };

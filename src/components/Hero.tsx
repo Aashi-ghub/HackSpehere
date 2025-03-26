@@ -43,7 +43,7 @@ const Hero = () => {
         </h1>
 
         {/* Subtitle */}
-        <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF3130] via-[#BEB6B6] to-[#FF3130]  text-lg sm:text-xl md:text-3xl font-extrabold mt-12 font-mono lg:text-2xl mb-12 max-w-md sm:max-w-xl mx-auto tracking-wide ">
+        <div className="text-white  text-lg sm:text-xl md:text-3xl font-extrabold mt-12 font-mono lg:text-2xl mb-12 max-w-md sm:max-w-xl mx-auto tracking-wide ">
           {subtitle.split(" ").map((word, index) => (
             <motion.span
               key={index}

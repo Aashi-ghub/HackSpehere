@@ -41,8 +41,6 @@ const TeamMembersSection: React.FC<TeamMembersSectionProps> = ({
   fields,
   members,
   setTeamLeader,
-  append,
-  remove,
   customStyles,
 }) => {
   // Define local styles

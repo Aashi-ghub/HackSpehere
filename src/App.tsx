@@ -9,6 +9,7 @@ import ThemesPage from "./pages/ThemesPage";
 import ThemeList from "./components/ThemeList"; 
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm"
+import  LeaderBoard from "./pages/Leaderboard";
   
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/signup" element={<SignupForm/>}></Route>
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/themeslist/:theme" element={<ThemesPage/>} />
+          <Route path="/leaderBoard" element={<LeaderBoard/>}/>
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

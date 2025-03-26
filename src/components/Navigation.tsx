@@ -118,9 +118,16 @@ const Navigation = () => {
                   className="text-white font-quicksand hover:text-[#8f3737] transition-colors duration-200 font-secondary"
                 >
                   {link.name}
-                </Link>
-              )
+                </Link>  
+              ) 
             )}
+             <Link key="LeaderBoard" to="/leaderBoard">
+              <button className="text-white font-quicksand hover:text-[#8f3737] transition-colors duration-200 nav-link font-secondary">
+                LeaderBoard
+              </button>
+            </Link>
+
+
             {user ? (
               <div className="relative">
                 <img

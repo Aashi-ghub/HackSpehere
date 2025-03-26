@@ -13,6 +13,8 @@ import VideoBackground from "../components/videobackground";
 import FAQs from "../components/faqs";
 import TechAmigos from "@/components/TechAmigos";
 import ExcitingPrizes from "@/components/Prizes";
+import Leaderboard from "@/pages/Leaderboard";
+
 
 
 const Index = () => {
@@ -42,6 +44,7 @@ const Index = () => {
             <div id="ExicitingPrizes">
               <ExcitingPrizes />
             </div>
+
 
             <div id="themes">
               <Themes />

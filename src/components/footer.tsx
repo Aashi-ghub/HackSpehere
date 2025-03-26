@@ -113,7 +113,7 @@ const Footer = () => {
             <div>
               <Button
                 variant="link"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="text-sm text-muted-foreground hover:text-red-400 transition-colors"
               >
                 Privacy Policy
               </Button>

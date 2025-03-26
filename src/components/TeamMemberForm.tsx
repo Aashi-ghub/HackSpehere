@@ -10,9 +10,9 @@ interface TeamMemberFormProps {
   errors: FieldErrors<FormData>;
   control: Control<FormData>;
   isLeader: boolean;
-  onSetLeader: (index: number) => void;
-  onRemove: (index: number) => void;
-  showRemoveButton: boolean;
+   onSetLeader: (index: number) => void;
+  // onRemove: (index: number) => void;
+  // showRemoveButton: boolean;
   customStyles?: {
     glassCard: string;
     inputField: string;
@@ -26,8 +26,6 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
   control,
   isLeader,
   onSetLeader,
-  onRemove,
-  showRemoveButton,
   customStyles,
 }) => {
   // Define local styles instead of relying on global CSS
@@ -76,7 +74,7 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
             {isLeader ? "Team Leader" : `Team Member ${index + 1}`}
           </h3>
         </div>
-        {showRemoveButton && (
+        {/* {showRemoveButton && (
           <button
             type="button"
             onClick={() => onRemove(index)}
@@ -97,7 +95,7 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
           </button>
-        )}
+        )} */}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

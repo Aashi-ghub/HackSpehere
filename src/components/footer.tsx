@@ -50,7 +50,7 @@ const Footer = () => {
                 <li key={link}>
                   <a
                     href={`#${link.toLowerCase()}`}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-red-500 transition-colors"
                   >
                     {link}
                   </a>
@@ -82,7 +82,7 @@ const Footer = () => {
                 { icon: Github, href: "https://github.com/Xception-hack" },
                 {
                   icon: Instagram,
-                  href: "https://www.instagram.com/techamigosclub.dsw",
+                  href: "https://www.instagram.com/dsw.cgc/",
                 },
                 {
                   icon: Linkedin,
@@ -94,7 +94,7 @@ const Footer = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-red-500 transition-colors"
                 >
                   <Icon className="h-5 w-5" />
                 </a>

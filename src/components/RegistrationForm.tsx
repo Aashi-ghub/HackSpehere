@@ -44,6 +44,13 @@ const RegistrationForm: React.FC = () => {
           college: "",
           isLeader: false,
         },
+        {
+          fullName: "",
+          phone: "",
+          email: "",
+          college: "",
+          isLeader: false,
+        },
       ],
     },
   });

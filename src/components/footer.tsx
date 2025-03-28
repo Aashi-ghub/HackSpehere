@@ -101,8 +101,18 @@ const Footer = () => {
               ))}
             </div>
           </div>
-        </div>
 
+          {/*location*/}
+          {/* <div className="space-y-4">
+            <h3 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545]">
+              Location
+            </h3>
+            <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3466.96880491781!2d76.6618807383817!3d30.68721506099027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fef154b91a85b%3A0x4d8b9df97e986631!2sChandigarh%20Group%20of%20Colleges%20(CGC)%20-%20Landran!5e0!3m2!1sen!2sin!4v1743013187915!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+           </div>
+        
+          </div> */}
         {/* Divider */}
         <div className="mt-10 border-t border-primary/20 pt-6">
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -120,6 +130,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </footer>
   );

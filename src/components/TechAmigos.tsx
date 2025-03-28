@@ -48,7 +48,7 @@ const TechAmigos: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       nextPage();
-    }, 5000);
+    }, 10000);
     return () => clearTimeout(timer);
   }, [currentPage]);
 

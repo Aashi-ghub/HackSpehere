@@ -11,9 +11,9 @@ import WhatWeOffer from "../components/WhatWeOffer";
 import Footer from "../components/footer";
 import VideoBackground from "../components/videobackground";
 import FAQs from "../components/faqs";
-import TechAmigos from "@/components/TechAmigos";
-import ExcitingPrizes from "@/components/Prizes";
-import Leaderboard from "@/pages/Leaderboard";
+import TechAmigos from "../components/TechAmigos";
+import ExcitingPrizes from "../components/Prizes";
+import EventResources from "../components/EventResources";
 
 
 
@@ -35,12 +35,17 @@ const Index = () => {
           </div>
           <div className="mx-4">
             <WhatWeOffer />
+            
 
             {/* Add IDs for scroll navigation */}
             <div id="timeline">
               <Timeline />
             </div>
 
+            <div className="mt-20 mx-6">
+            <EventResources />
+            </div>
+           
             <div id="ExicitingPrizes">
               <ExcitingPrizes />
             </div>
@@ -50,11 +55,9 @@ const Index = () => {
               <Themes />
             </div>
 
-            {/* TechCards Section (moved above Team) */}
-            <div className="mt-16 mx-6">
-             
-            </div>
+          
             <Team />
+            
             <TechAmigos />
             <Sponsors />
             <FAQs />

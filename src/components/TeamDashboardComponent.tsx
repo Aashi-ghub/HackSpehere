@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate ,useLocation} from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import StatusSection from "./Dashboard/StatusSection";
 import TeamMembersSection from "./Dashboard/TeamMembersSection";
 import { TeamData, PaymentData } from "./typesDashboard";
@@ -8,8 +8,8 @@ import Navigation from "./Navigation";
 
 // Main Dashboard Component
 const TeamDashboardComponent: React.FC = () => {
-  const location =useLocation();
-  const {teamDetails}=location.state || {};
+  const location = useLocation();
+  const { teamDetails } = location.state || {};
   console.log(teamDetails);
   const [teamData, setTeamData] = useState<TeamData | null>(null);
   const [paymentData, setPaymentData] = useState<PaymentData | null>(null);
@@ -20,18 +20,20 @@ const TeamDashboardComponent: React.FC = () => {
     // Fetch data from localStorage
     const fetchData = () => {
       setLoading(true);
-      
+
       try {
         // Get team data
         const storedTeamData = localStorage.getItem("teamData");
         if (storedTeamData) {
           setTeamData(JSON.parse(storedTeamData));
-        } else if(teamDetails) {
+        } else if (teamDetails) {
           setTeamData(teamDetails);
         } else {
-          console.error("No team data found in localStorage or passed as props.");
-        }     
-        
+          console.error(
+            "No team data found in localStorage or passed as props."
+          );
+        }
+
         // Get payment data
         const storedPaymentData = localStorage.getItem("teamPayment");
         if (storedPaymentData) {
@@ -43,11 +45,14 @@ const TeamDashboardComponent: React.FC = () => {
         setLoading(false);
       }
     };
-    
+
     fetchData();
   }, []);
 
   const handleBackToHome = () => {
+    navigate("/");
+  };
+  const handleBackToRegister = () => {
     navigate("/register");
   };
 
@@ -58,7 +63,7 @@ const TeamDashboardComponent: React.FC = () => {
       py-10 px-4 md:px-8
     `,
     pageContainer: `
-      max-w-6xl mx-auto p-6 animate-[fadeIn_0.5s_ease-in-out]
+      max-w-6xl mx-auto animate-[fadeIn_0.5s_ease-in-out]
     `,
     header: `
       mb-6 text-center
@@ -89,64 +94,70 @@ const TeamDashboardComponent: React.FC = () => {
 
   if (loading) {
     return (
-      
-      <div className={styles.mainBackground}>
-        <div className={styles.pageContainer}>
-          <div className={styles.loadingContainer}>
-            <p className={styles.loadingText}>Loading team dashboard...</p>
+      <Layout>
+        <div className={styles.mainBackground}>
+          <div className={styles.pageContainer}>
+            <div className={styles.loadingContainer}>
+              <p className={styles.loadingText}>Loading team dashboard...</p>
+            </div>
           </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 
   if (!teamData) {
     return (
-      <div className={styles.mainBackground}>
-        <div className={styles.pageContainer}>
-          <div className={styles.noDataMessage}>
-            <p className="text-xl mb-4">No team data available</p>
-            <p className="text-gray-300 mb-6">Please complete team registration first</p>
-            <button
-              onClick={handleBackToHome}
-              className={styles.backButton}
-            >
-              Go to Registration
-            </button>
+      <Layout>
+        <div className={styles.mainBackground}>
+          <div className={styles.pageContainer}>
+            <div className={styles.noDataMessage}>
+              <p className="text-xl mb-4">No team data available</p>
+              <p className="text-gray-300 mb-6">
+                Please complete team registration first
+              </p>
+              <button onClick={handleBackToRegister} className={styles.backButton}>
+                Go to Registration
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 
   return (
-    <div className={styles.mainBackground}>
-      <div className={styles.pageContainer}>
-        <div className={styles.header}>
-          <h1 className={styles.pageTitle}>
-            <span role="img" aria-label="Team" className={styles.icon}>👥</span> Team Dashboard
-          </h1>
-          <p className={styles.subtitle}>
-            Manage your team and track your participation status
-          </p>
+    <Layout>
+      <Navigation />
+      <div className="relative flex flex-col items-center sm:p-4 md:p-14  text-white overflow-hidden"></div>
+      
+        <div className={styles.pageContainer}>
+          <div className={styles.header}>
+            <h1 className={styles.pageTitle}>
+              <span role="img" aria-label="Team" className={styles.icon}>
+                👥
+              </span>{" "}
+              Team Dashboard
+            </h1>
+            <p className={styles.subtitle}>
+              Manage your team and track your participation status
+            </p>
+          </div>
+
+          {/* Status Section at the top */}
+          <StatusSection paymentData={paymentData} />
+
+          {/* Team Members Section */}
+          <TeamMembersSection members={teamData.members} />
+
+          <div className="flex justify-center">
+            <button onClick={handleBackToHome} className={styles.backButton}>
+              Back to Home
+            </button>
+          </div>
         </div>
-        
-        {/* Status Section at the top */}
-        <StatusSection paymentData={paymentData} />
-        
-        {/* Team Members Section */}
-        <TeamMembersSection members={teamData.members} />
-        
-        <div className="flex justify-center">
-          <button
-            onClick={handleBackToHome}
-            className={styles.backButton}
-          >
-            Back to Home
-          </button>
-        </div>
-      </div>
-    </div>
+      
+    </Layout>
   );
 };
 

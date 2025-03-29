@@ -1,4 +1,6 @@
 import XceptionLeaderboard from "../components/Leaderboard/leaderboard"
+import Navigation from "@/components/Navigation";
+import Layout from "@/components/Layout";
 
 import React ,{useState} from "react";
 import {motion} from "framer-motion";

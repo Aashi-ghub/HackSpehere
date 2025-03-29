@@ -37,7 +37,7 @@ const Hero = () => {
           </div>
 
           {/* Tagline - Fixed Positioning */}
-          <span className="text-[#d13131] text-[10px] sm:text-xs md:text-xs ml-24 sm:ml-36  md:ml-32 font-orbitron font-extrabold tracking-[0.2em] mt-[-9px] sm:mt-[-9px] md:mt-[-56px]">
+          <span className="text-[#d13131] text-[10px] sm:text-xs md:text-xs ml-24 sm:ml-32  md:ml-32 font-orbitron font-extrabold tracking-[0.2em] mt-[-9px] sm:mt-[-9px] md:mt-[-56px]">
             COMPETE · CONNECT · CONQUER
           </span>
         </h1>

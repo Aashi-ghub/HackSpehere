@@ -137,7 +137,7 @@ const RegistrationForm: React.FC = () => {
           duration: 5000,
         });
         setTimeout(() => {
-          navigate("/");
+          navigate("/payment");
         }, 3000);
       } else {
         {
@@ -146,6 +146,7 @@ const RegistrationForm: React.FC = () => {
           });
         }
       }
+      
     } catch (err) {
       // Show error toast
       toast.error("Registration failed!", {
@@ -154,6 +155,7 @@ const RegistrationForm: React.FC = () => {
       });
     } finally {
       setSubmitAnimation(false);
+      
     }
   };
 

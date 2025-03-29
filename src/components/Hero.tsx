@@ -37,13 +37,13 @@ const Hero = () => {
           </div>
 
           {/* Tagline - Fixed Positioning */}
-          <span className="text-[#d13131] text-[10px] sm:text-xs md:text-xs ml-24 sm:ml-40  md:ml-40 font-orbitron font-extrabold tracking-[0.2em] mt-[-9px] sm:mt-[-9px] md:mt-[-56px]">
+          <span className="text-[#d13131] text-[10px] sm:text-xs md:text-xs ml-24 sm:ml-36  md:ml-32 font-orbitron font-extrabold tracking-[0.2em] mt-[-9px] sm:mt-[-9px] md:mt-[-56px]">
             COMPETE · CONNECT · CONQUER
           </span>
         </h1>
 
         {/* Subtitle */}
-        <div className="text-white  text-lg sm:text-xl md:text-3xl font-extrabold mt-12 font-mono lg:text-2xl mb-12 max-w-md sm:max-w-xl mx-auto tracking-wide ">
+        <div className="text-white text-lg sm:text-xl md:text-3xl font-extrabold mt-12 font-montserrat lg:text-2xl mb-12 max-w-md sm:max-w-xl mx-auto tracking-wide ">
           {subtitle.split(" ").map((word, index) => (
             <motion.span
               key={index}
@@ -77,7 +77,7 @@ const Hero = () => {
               REGISTER NOW
               <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#a7abab] to-[#e11414] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#a7abab] to-[#e11414] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </Link>
         </motion.div>
 

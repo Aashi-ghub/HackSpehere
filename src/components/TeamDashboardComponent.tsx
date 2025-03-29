@@ -21,7 +21,7 @@ const TeamDashboardComponent: React.FC = () => {
       
       try {
         // Get team data
-        const storedTeamData = localStorage.getItem("teamDetails");
+        const storedTeamData = localStorage.getItem("teamData");
         if (storedTeamData) {
           setTeamData(JSON.parse(storedTeamData));
         } else if(teamDetails) {

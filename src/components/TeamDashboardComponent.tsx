@@ -3,6 +3,8 @@ import { useNavigate ,useLocation} from "react-router-dom";
 import StatusSection from "./Dashboard/StatusSection";
 import TeamMembersSection from "./Dashboard/TeamMembersSection";
 import { TeamData, PaymentData } from "./typesDashboard";
+import Layout from "./Layout";
+import Navigation from "./Navigation";
 
 // Main Dashboard Component
 const TeamDashboardComponent: React.FC = () => {
@@ -52,7 +54,7 @@ const TeamDashboardComponent: React.FC = () => {
   // All styles defined with template literals
   const styles = {
     mainBackground: `
-      min-h-screen w-full bg-gradient-to-br from-black to-red-300 text-white
+      min-h-screen w-full bg-gradient-to-br from-black to-red-700 text-white
       py-10 px-4 md:px-8
     `,
     pageContainer: `
@@ -87,6 +89,7 @@ const TeamDashboardComponent: React.FC = () => {
 
   if (loading) {
     return (
+      
       <div className={styles.mainBackground}>
         <div className={styles.pageContainer}>
           <div className={styles.loadingContainer}>

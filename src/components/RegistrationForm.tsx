@@ -117,6 +117,9 @@ const RegistrationForm: React.FC = () => {
 
   const onSubmit = async (data: FormData) => {
     setSubmitAnimation(true);
+    
+    // set the TeamData in localStorage
+    localStorage.setItem("teamData", JSON.stringify(data));
 
     // Simulating API call
     try {
@@ -137,7 +140,8 @@ const RegistrationForm: React.FC = () => {
           duration: 5000,
         });
         setTimeout(() => {
-          navigate("/payment");
+          // navigate("/payment ",{state:{teamDetails:data}});
+             navigate("/payment")
         }, 3000);
       } else {
         {

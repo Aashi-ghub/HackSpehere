@@ -174,7 +174,7 @@ const Navigation = () => {
               <div
                 ref={dropdownRef}
                 className="absolute top-12 right-0 w-48 bg-[#0D1117]/80 backdrop-blur-xl shadow-lg rounded-lg p-2 text-white flex flex-col space-y-2"
-              >
+              > 
                 {navLinks.map((link) =>
                   link.name === "Themes" || link.name === "Timeline" ? (
                     <a
@@ -202,6 +202,11 @@ const Navigation = () => {
                     </Link>
                   )
                 )}
+              <Link key="LeaderBoard" to="/leaderBoard">
+              <button className="block px-4 py-2 text-sm hover:bg-[#1A1F27] rounded">
+                LeaderBoard
+              </button>
+            </Link>
                 {user ? (
                   <button
                     onClick={() => setUser(null)}

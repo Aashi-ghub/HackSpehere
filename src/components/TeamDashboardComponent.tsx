@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,useLocation} from "react-router-dom";
 import StatusSection from "./Dashboard/StatusSection";
 import TeamMembersSection from "./Dashboard/TeamMembersSection";
 import { TeamData, PaymentData } from "./typesDashboard";
 
 // Main Dashboard Component
 const TeamDashboardComponent: React.FC = () => {
+  const location =useLocation();
+  const {teamDetails}=location.state || {};
+  console.log(teamDetails);
   const [teamData, setTeamData] = useState<TeamData | null>(null);
   const [paymentData, setPaymentData] = useState<PaymentData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -21,7 +24,11 @@ const TeamDashboardComponent: React.FC = () => {
         const storedTeamData = localStorage.getItem("teamData");
         if (storedTeamData) {
           setTeamData(JSON.parse(storedTeamData));
-        }
+        } else if(teamDetails) {
+          setTeamData(teamDetails);
+        } else {
+          console.error("No team data found in localStorage or passed as props.");
+        }     
         
         // Get payment data
         const storedPaymentData = localStorage.getItem("teamPayment");

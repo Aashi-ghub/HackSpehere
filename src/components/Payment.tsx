@@ -216,6 +216,8 @@ const PaymentComponent: React.FC = () => {
     // } finally {
     //   setIsSubmitting(false);
     // }
+    toast.success("Payment details submitted successfully");
+    navigate("/dashboard");
     setIsSubmitting(false);
     }, 1500);
   };

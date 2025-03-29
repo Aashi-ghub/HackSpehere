@@ -1,10 +1,13 @@
 
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,useLocation } from "react-router-dom";
 import { toast } from "sonner";
 import Layout from "./Layout";
 
 const PaymentComponent: React.FC = () => {
+  const location =useLocation();
+  const {teamDetails}=location.state || {};
+  console.log(teamDetails);
   const [transactionId, setTransactionId] = useState<string>("");
   interface TeamData {
     teamName: string;
@@ -127,18 +130,47 @@ const PaymentComponent: React.FC = () => {
   };
 
   useEffect(() => {
-    // // Retrieve team data from localStorage
-    // const storedTeamData = localStorage.getItem("teamData");
-    // if (storedTeamData) {
-    //   setTeamData(JSON.parse(storedTeamData));
-    // } else {
-    //   // If no team data, redirect to registration
-    //   navigate("/");
-    //   toast.error("Please complete team registration first");
-    // }
+    // Retrieve team data from localStorage
+    const storedTeamData = localStorage.getItem("teamData");
+    if (storedTeamData) {
+      setTeamData(JSON.parse(storedTeamData));
+    } else {
+      // If no team data, redirect to registration
+      navigate("/");
+      toast.error("Please complete team registration first");
+    }
+    //  Retrive team data from Database or Backend 
+    //  const fetchTeamData =async ()=>{
+    //    try{
+    //      // Make an API call to fetch team data
+    //      const  response =await fetch(
+    //       `https://inceptionx-production.onrender.com/team/${teamDetails.teamName}`, // Replace with your backend endpoint
+    //       {
+    //         method: "GET",
+    //         headers: { "Content-Type": "application/json" },
+    //         credentials: "include",
+    //       }
+    //     )
+    //       if(response.ok){
+    //         const data =await response.json();
+    //         setTeamData(data);
+    //       } else {
+    //          throw new Error("Failed to fetch team data");
+    //       }       
+    //     } catch (error){
+    //        toast.error("unable to fetch team data .Please try again");
+    //        navigate("/");
+    //     }
+    //    };
+    //    if (teamDetails?.teamName) {
+    //     fetchTeamData();
+    //   } else {
+    //     toast.error("No team details found. Please register first.");
+    //     navigate("/"); // Redirect to registration form if no team details are found
+    //   }
   }, [navigate]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!transactionId.trim()) {
@@ -149,9 +181,11 @@ const PaymentComponent: React.FC = () => {
     setIsSubmitting(true);
     
     // Simulate payment processing
-    setTimeout(() => {
+    setTimeout(async() => {
+      // try {
       // Create payment data
       const paymentData = {
+        teamName: teamData?.teamName,
         transactionId: transactionId.trim(),
         timestamp: new Date().toISOString(),
         status: "Pending" as const
@@ -159,13 +193,30 @@ const PaymentComponent: React.FC = () => {
       
       // Store in localStorage
       localStorage.setItem("teamPayment", JSON.stringify(paymentData));
-      
-      toast.success("Payment details submitted successfully");
-      
-      // Navigate to dashboard after submission
-      navigate("/dashboard");
-      
-      setIsSubmitting(false);
+
+       // store Payment data in backend 
+    //    const response = await fetch(
+    //     "https://inceptionx-production.onrender.com/payment/submit", // Replace with your backend endpoint
+    //     {
+    //       method: "POST",
+    //       headers: { "Content-Type": "application/json" },
+    //       credentials: "include",
+    //       body: JSON.stringify(paymentData), // Send payment data as JSON
+    //     }
+    //   );
+  
+    //   if (response.ok) {
+    //     toast.success("Payment details submitted successfully");
+    //     navigate("/dashboard",{state:{teamDetails:teamDetails}}); // Navigate to the dashboard after successful submission
+    //   } else {
+    //     throw new Error("Failed to submit payment details");
+    //   }
+    // } catch (error: any) {
+    //   toast.error(error.message || "Payment submission failed. Please try again.");
+    // } finally {
+    //   setIsSubmitting(false);
+    // }
+    setIsSubmitting(false);
     }, 1500);
   };
   

@@ -157,10 +157,7 @@ const Navigation = () => {
                 </button>
               </Link>
             )}
-<<<<<<< HEAD
-=======
              
->>>>>>> 35a424f66f93c63f0c448b8bf57fbbb19cb210bf
           </div>
 
           {/* Mobile Menu Button */}

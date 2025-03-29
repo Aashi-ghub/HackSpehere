@@ -16,9 +16,9 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-block my-4 px-3 py-1 bg-[#d13131]/10 text-[#e0ecec] rounded-full text-xs md:text-sm font-medium"
+          className="inline-block my-2 mt-16 px-3 py-1 bg-[#d13131]/10 text-[#e0ecec] rounded-full text-xs md:text-sm font-bold"
         >
-          COUNTDOWN TO Xception STARTS
+         Countdown to XCEPTION Starts- 21 APRIL 
         </motion.div>
 
         {/* Main Heading */}
@@ -43,7 +43,7 @@ const Hero = () => {
         </h1>
 
         {/* Subtitle */}
-        <div className="text-white text-lg sm:text-xl md:text-3xl font-extrabold mt-12 font-montserrat lg:text-2xl mb-12 max-w-md sm:max-w-xl mx-auto tracking-wide ">
+        <div className="text-white text-lg sm:text-xl md:text-3xl font-bold mt-12 font-montserrat lg:text-2xl mb-12 max-w-md sm:max-w-xl mx-auto tracking-wide ">
           {subtitle.split(" ").map((word, index) => (
             <motion.span
               key={index}

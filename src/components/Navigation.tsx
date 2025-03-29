@@ -123,7 +123,7 @@ const Navigation = () => {
             )}
              <Link key="LeaderBoard" to="/leaderBoard">
               <button className="text-white font-quicksand hover:text-[#8f3737] transition-colors duration-200 nav-link font-secondary">
-                LeaderBoard
+                Leaderboard
               </button>
             </Link>
 
@@ -157,6 +157,10 @@ const Navigation = () => {
                 </button>
               </Link>
             )}
+<<<<<<< HEAD
+=======
+             
+>>>>>>> 35a424f66f93c63f0c448b8bf57fbbb19cb210bf
           </div>
 
           {/* Mobile Menu Button */}

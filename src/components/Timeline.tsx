@@ -62,9 +62,9 @@ const Timeline: React.FC = () => {
         detailedDescription: "In Tech Bingo, teams receive a 5x5 digital bingo card and must solve tech-related challenges announced every 2 minutes. Correct answers allow them to mark their cards, aiming to complete rows, columns, or a full house to score points. Once marked, answers cannot be changed. External help is prohibited, and cheating leads to disqualification. The team with the fastest correct responses wins in case of a tie.",
         },
       {
-        title: "Project X: 1v1 (11:15 AM - 1:00 AM)",
+        title: "Project X: Battleground (11:15 AM - 1:00 AM)",
         description: "1v1 is a head-to-head challenge where participants debug and fix frontend code under time pressure. Each player receives buggy code, identifies issues, and provides structured explanations before submitting their solution.",
-        detailedDescription: "In 1v1, participants face off in a frontend debugging challenge hosted on HackerRank. Each player receives buggy code snippets and must identify, debug, and fix the issues while maintaining the original logic and output. Explanations must clearly justify the fixes. No external tools are allowed, and incorrect or partial fixes result in lower scores. The best debuggers with the fastest, most accurate solutions will emerge victorious.",      
+        detailedDescription: "In Battleground, participants face off in a frontend debugging challenge hosted on HackerRank. Each player receives buggy code snippets and must identify, debug, and fix the issues while maintaining the original logic and output. Explanations must clearly justify the fixes. No external tools are allowed, and incorrect or partial fixes result in lower scores. The best debuggers with the fastest, most accurate solutions will emerge victorious.",      
         },
       {
         title: "Project X: D for Decryption (12:00 PM - 12:30 PM)",

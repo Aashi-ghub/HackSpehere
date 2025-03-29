@@ -17,6 +17,7 @@ import { Badge } from "../ui/badge";
 import { cn } from "@/lib/utils";
 import Navigation from "../Navigation"; // Import your navigation component
 import Layout from "../Layout"; // Import your layout component
+import PageFooter from "../PageFooter";
 
 // Define types for our data
 type TeamCategory = "Hackathon" | "Coding" | "Design" | "AI" | "Robotics";
@@ -584,6 +585,7 @@ const XceptionLeaderboard: React.FC = () => {
               LAST UPDATED: {new Date().toLocaleTimeString()}
             </p>
           </div>
+          <PageFooter/>
         </div>
         
       

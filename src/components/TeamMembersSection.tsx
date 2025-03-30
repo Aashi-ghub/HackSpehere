@@ -69,35 +69,6 @@ const TeamMembersSection: React.FC<TeamMembersSectionProps> = ({
       text-[#FF0000] text-center mt-4
     `
   };
-
-  // const handleAddMember = () => {
-  //   if (fields.length < 4) {
-  //     append({
-  //       fullName: "",
-  //       phone: "",
-  //       email: "",
-  //       college: "",
-  //       isLeader: false,
-  //     });
-  //   }
-  // };
-
-  // const handleRemoveMember = (index: number) => {
-  //   if (fields.length > 3) {
-  //     // Check if we're removing the team leader
-  //     const isRemovingLeader = members[index].isLeader;
-      
-  //     remove(index);
-      
-  //     // If we removed the leader, set the first member as the new leader
-  //     if (isRemovingLeader && fields.length > 1) {
-  //       setTimeout(() => setTeamLeader(0), 0);
-  //     }
-  //   } else {
-  //     toast.error("A minimum of 3 members is required");
-  //   }
-  // };
-
   return (
     <div className={localStyles.container}>
       <div className={localStyles.sectionHeader}>

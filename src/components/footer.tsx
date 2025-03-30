@@ -67,7 +67,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-muted-foreground justify-center">
                 <Mail className="h-5 w-5 text-transparent bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545]" />
-                <span>Xception.contact@gmail.com</span>
+                <span>dsw@cgc.edu.in</span>
               </li>
             </ul>
           </div>

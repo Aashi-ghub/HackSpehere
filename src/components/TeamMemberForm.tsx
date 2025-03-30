@@ -52,21 +52,16 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
   };
   const [uploadedFileName, setUploadedFileName] = useState<string | null>(null);
   const HandleuploadID = () => {
-    const input = document.createElement("input");
-    input.type='file'
-    input.accept="image/*"
-    input.onchange = (e) => {
-      const file = (e.target as HTMLInputElement).files?.[0];
-      if (file) {
-        // Handle the file upload here
-
-        setUploadedFileName(file.name); // Update the idCard field in the members array
-        console.log("File selected:", file.name);
+    const input = document.getElementsByClassName("idCard");
+    const fileInput = input[0] as HTMLInputElement;
+    fileInput.click();
+    fileInput.onchange = (e) => {
+      const target = e.target as HTMLInputElement;
+      if (target.files && target.files.length > 0) {
+        setUploadedFileName(target.files[0].name);
       }
     };
-    input.click();
-
-  }
+  };
   
   // Animation delay style
   const animationDelayStyle = { animationDelay: `${index * 0.1}s` };
@@ -136,15 +131,31 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
             </p>
           )}
         </div>
-      
-        <div className="relative">
+        {/* <div className="relative">
+          <div
+            // placeholder={uploadedFileName || "Upload your IDCard*"}
+            className={localStyles.input}
+            onClick={HandleuploadID}>
+            <label htmlFor={`members.${index}.idCard`}>
+              {uploadedFileName || "Upload your IDCard*"}
           <input
-            placeholder={uploadedFileName||"Upload your IDCard*"}
-            onClick={HandleuploadID}
-            className={localStyles.input}/>
-        </div>
-
-         
+            {...register(`members.${index}.idCard`, {
+              required: "idCard is required",
+            })}
+            type="file"
+            accept="image/*"
+            placeholder="Upload idCard*"
+            className="hidden idCard"
+            
+          />
+          {errors.members?.[index]?.fullName && (
+            <p className={localStyles.errorText}>
+              {errors.members[index].fullName.message}
+            </p>
+          )}
+          </label>
+          </div>
+        </div> */}
         <div className="relative">
           <input
             {...register(`members.${index}.phone`, {
@@ -179,22 +190,6 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
           {errors.members?.[index]?.email && (
             <p className={localStyles.errorText}>
               {errors.members[index].email.message}
-            </p>
-          )}
-        </div>
-        <div className="relative">
-          <input
-            {...register(`members.${index}.idCard`, {
-              required: "idCard is required",
-            })}
-            type="file"
-            accepted="image/*"
-            placeholder="Upload idCard*"
-            className="idCard hidden"
-          />
-          {errors.members?.[index]?.fullName && (
-            <p className={localStyles.errorText}>
-              {errors.members[index].fullName.message}
             </p>
           )}
         </div>

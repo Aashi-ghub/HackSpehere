@@ -117,6 +117,7 @@ const RegistrationForm: React.FC = () => {
 
   const onSubmit = async (data: FormData) => {
     setSubmitAnimation(true);
+    console.log(data);
     
     // set the TeamData in localStorage
     localStorage.setItem("teamData", JSON.stringify(data));

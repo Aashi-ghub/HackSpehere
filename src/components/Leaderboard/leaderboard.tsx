@@ -17,6 +17,7 @@ import { Badge } from "../ui/badge";
 import { cn } from "@/lib/utils";
 import Navigation from "../Navigation"; // Import your navigation component
 import Layout from "../Layout"; // Import your layout component
+import PageFooter from "../PageFooter";
 
 // Define types for our data
 type TeamCategory = "Hackathon" | "Coding" | "Design" | "AI" | "Robotics";
@@ -338,7 +339,7 @@ const XceptionLeaderboard: React.FC = () => {
           {/* Leaderboard */}
           <div className="relative w-full  rounded-lg overflow-hidden">
             {/* Glowing border */}
-            <div className="absolute inset-0 p-px rounded-lg bg-gradient-to-r from-red-500 via-white to-red-500 opacity-50 animate-pulse-slow"></div>
+            <div className="absolute inset-0 p-px rounded-lg bg-gradient-to-r from-white/30 to-red-500  animate-pulse-slow"></div>
 
             {/* Content */}
             <div className="relative w-full bg-black/80 backdrop-blur-sm p-3 sm:p-4 md:p-6 rounded-lg">
@@ -429,7 +430,7 @@ const XceptionLeaderboard: React.FC = () => {
                             {entry.credits.toLocaleString()} / 5000
                           </span>
                         </div>
-                        <div className="relative w-full h-2 bg-gray-900 rounded-lg overflow-hidden">
+                        <div className="relative w-full h-2 bg-gray-600 rounded-lg overflow-hidden">
                           {/* Glow effect */}
                           <div className="absolute inset-0 flex">
                             <div
@@ -443,10 +444,7 @@ const XceptionLeaderboard: React.FC = () => {
                             className="relative z-10 h-full rounded-lg bg-gradient-to-r from-red-700 to-red-500 transition-all duration-500 ease-out"
                             style={{ width: `${(entry.credits / 5000) * 100}%` }}
                           >
-                            {/* Animated shine effect */}
-                            <div className="absolute inset-0 overflow-hidden">
-                              <div className="w-1/4 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
-                            </div>
+                            
                           </div>
                         </div>
                       </div>
@@ -584,6 +582,7 @@ const XceptionLeaderboard: React.FC = () => {
               LAST UPDATED: {new Date().toLocaleTimeString()}
             </p>
           </div>
+          <PageFooter/>
         </div>
         
       

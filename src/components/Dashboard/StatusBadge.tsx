@@ -9,8 +9,8 @@ const StatusBadge: React.FC<StatusBadgeProps> = ({ status }) => {
     badge: `
       inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
       ${status === "Confirmed" 
-        ? "bg-green-100 text-green-600 border border-green-200" 
-        : "bg-yellow-100 text-yellow-600 border border-yellow-200"}
+        ? "bg-green-300/10 text-green-600 border-white" 
+        : "bg-yellow-300/10 text-yellow-600  border-white"}
     `,
     container: `flex items-center gap-2`,
     dot: `

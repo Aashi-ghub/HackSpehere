@@ -71,26 +71,26 @@ const Timeline: React.FC = () => {
         description: "D for Decryption challenges participants to decode encrypted tech-based puzzles using logical reasoning and decryption techniques. With only pen and paper, participants must solve the puzzles within the given time.",
         detailedDescription: "In D for Decryption, participants receive questions encrypted in Morse code and must decode them using a provided sheet. The event is conducted offline, with no electronic devices allowed. Accuracy and speed are key, as points are awarded for correct decryption, answer accuracy, and time efficiency. Independent problem-solving is required, making this event a true test of analytical thinking and cryptography skills.",
         },
-      {
-        title: "Product X: The Big why (10:30 AM - 11:15 AM)",
-        description: "The Big Why challenges participants to analyze real-world case studies of business successes and failures. Through group discussions, they must critically evaluate key factors and justify their reasoning.",
-        detailedDescription: "In The Big Why, participants receive case studies of thriving and failed businesses and must dissect the reasons behind their outcomes. Working in teams, they analyze market strategies, financial decisions, and external influences to present a structured argument. The event emphasizes logical reasoning, teamwork, and persuasive communication, making it a test of business acumen and analytical thinking.",      
-       },
-      {
-        title: "Product X: Take it to make it! (11:15 AM - 1:00 AM)",
-        description: "Take It to Make It! is a thrilling mock auction event where teams bid for materials within a budget and use them to create a product. Strategic thinking, budget management, and creativity are key to success.",
-        detailedDescription: "In Take It to Make It!, participants engage in a mock auction, bidding for essential items within a fixed budget. The challenge is to craft a functional or innovative product from the purchased materials while justifying their choices. Unlike other events where points are earned, this event introduces spending mechanics, emphasizing financial strategy. Overspending results in penalties, making resource allocation and decision-making crucial for victory.",      
-       },
-      {
-        title: "Product X: Bridge the Gap (10:30 AM - 11:15 AM)",
-        description: "Bridge the Gap challenges participants to establish a logical connection between two seemingly unrelated concepts. By blending creativity with analytical thinking, participants must present a compelling and coherent link within the given time.",
-        detailedDescription: "In Bridge the Gap, participants receive two distinct topics and must creatively bridge them using logic and reasoning. The event is conducted on stage, where each team gets preparation time before presenting their connections. Props, slides, or live demonstrations can enhance their arguments. Originality, clarity, and engagement are key, as judges score based on creativity, logical coherence, and audience impact. This event tests both critical thinking and presentation skills.",     
-       },
-      {
-        title: "Product X: Pitch it Wrong (11:15 AM - 1:00 AM)",
-        description: "Pitch It Wrong is a fun and challenging event where participants must present an impractical, absurd, or impossible idea and convince the judges to say YES by making it sound feasible.",
-        detailedDescription: "In Pitch It Wrong, participants receive a logically or scientifically impossible idea and must creatively pitch it as if it could work. The event takes place on stage, where teams have limited time to prepare and deliver their presentation. Persuasion, confidence, and humor play a key role in convincing the judges. The more absurd yet convincing the pitch, the higher the chances of winning. Bonus points if the judges say YES !",     
-       },      
+      // {
+      //   title: "Product X: The Big why (10:30 AM - 11:15 AM)",
+      //   description: "The Big Why challenges participants to analyze real-world case studies of business successes and failures. Through group discussions, they must critically evaluate key factors and justify their reasoning.",
+      //   detailedDescription: "In The Big Why, participants receive case studies of thriving and failed businesses and must dissect the reasons behind their outcomes. Working in teams, they analyze market strategies, financial decisions, and external influences to present a structured argument. The event emphasizes logical reasoning, teamwork, and persuasive communication, making it a test of business acumen and analytical thinking.",      
+      //  },
+      // {
+      //   title: "Product X: Take it to make it! (11:15 AM - 1:00 AM)",
+      //   description: "Take It to Make It! is a thrilling mock auction event where teams bid for materials within a budget and use them to create a product. Strategic thinking, budget management, and creativity are key to success.",
+      //   detailedDescription: "In Take It to Make It!, participants engage in a mock auction, bidding for essential items within a fixed budget. The challenge is to craft a functional or innovative product from the purchased materials while justifying their choices. Unlike other events where points are earned, this event introduces spending mechanics, emphasizing financial strategy. Overspending results in penalties, making resource allocation and decision-making crucial for victory.",      
+      //  },
+      // {
+      //   title: "Product X: Bridge the Gap (10:30 AM - 11:15 AM)",
+      //   description: "Bridge the Gap challenges participants to establish a logical connection between two seemingly unrelated concepts. By blending creativity with analytical thinking, participants must present a compelling and coherent link within the given time.",
+      //   detailedDescription: "In Bridge the Gap, participants receive two distinct topics and must creatively bridge them using logic and reasoning. The event is conducted on stage, where each team gets preparation time before presenting their connections. Props, slides, or live demonstrations can enhance their arguments. Originality, clarity, and engagement are key, as judges score based on creativity, logical coherence, and audience impact. This event tests both critical thinking and presentation skills.",     
+      //  },
+      // {
+      //   title: "Product X: Pitch it Wrong (11:15 AM - 1:00 AM)",
+      //   description: "Pitch It Wrong is a fun and challenging event where participants must present an impractical, absurd, or impossible idea and convince the judges to say YES by making it sound feasible.",
+      //   detailedDescription: "In Pitch It Wrong, participants receive a logically or scientifically impossible idea and must creatively pitch it as if it could work. The event takes place on stage, where teams have limited time to prepare and deliver their presentation. Persuasion, confidence, and humor play a key role in convincing the judges. The more absurd yet convincing the pitch, the higher the chances of winning. Bonus points if the judges say YES !",     
+      //  },      
     ],
     "Day 2": [
       {

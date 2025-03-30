@@ -1,5 +1,5 @@
 
-import React from "react";
+import React,{useState} from "react";
 import { UseFormRegister, FieldErrors, Control, Controller } from "react-hook-form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { FormData } from "./TeamMembersSection";
@@ -50,6 +50,23 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
       text-rose-500 hover:text-opacity-80 transition-colors
     `
   };
+  const [uploadedFileName, setUploadedFileName] = useState<string | null>(null);
+  const HandleuploadID = () => {
+    const input = document.createElement("input");
+    input.type='file'
+    input.accept="image/*"
+    input.onchange = (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0];
+      if (file) {
+        // Handle the file upload here
+
+        setUploadedFileName(file.name); // Update the idCard field in the members array
+        console.log("File selected:", file.name);
+      }
+    };
+    input.click();
+
+  }
   
   // Animation delay style
   const animationDelayStyle = { animationDelay: `${index * 0.1}s` };
@@ -74,28 +91,6 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
             {isLeader ? "Team Leader" : `Team Member ${index + 1}`}
           </h3>
         </div>
-        {/* {showRemoveButton && (
-          <button
-            type="button"
-            onClick={() => onRemove(index)}
-            className={localStyles.removeButton}
-            aria-label="Remove member"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-        )} */}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -113,7 +108,43 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
             </p>
           )}
         </div>
+        <div className="relative ">
+          <input
+            {...register(`members.${index}.college`, {
+              required: "College name is required",
+            })}
+            placeholder="College Name *"
+            className={localStyles.input}
+          />
+          {errors.members?.[index]?.college && (
+            <p className={localStyles.errorText}>
+              {errors.members[index].college.message}
+            </p>
+          )}
+        </div>
+        <div className="relative">
+          <input
+            {...register(`members.${index}.rollNumber`, {
+              required: "Roll number is required",
+            })}
+            placeholder="Roll Number *"
+            className={localStyles.input}
+          />
+          {errors.members?.[index]?.rollNumber && (
+            <p className={localStyles.errorText}>
+              {errors.members[index].rollNumber.message}
+            </p>
+          )}
+        </div>
+      
+        <div className="relative">
+          <input
+            placeholder={uploadedFileName||"Upload your IDCard*"}
+            onClick={HandleuploadID}
+            className={localStyles.input}/>
+        </div>
 
+         
         <div className="relative">
           <input
             {...register(`members.${index}.phone`, {
@@ -151,17 +182,19 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
             </p>
           )}
         </div>
-        <div className="relative ">
+        <div className="relative">
           <input
-            {...register(`members.${index}.college`, {
-              required: "College name is required",
+            {...register(`members.${index}.idCard`, {
+              required: "idCard is required",
             })}
-            placeholder="College Name *"
-            className={localStyles.input}
+            type="file"
+            accepted="image/*"
+            placeholder="Upload idCard*"
+            className="idCard hidden"
           />
-          {errors.members?.[index]?.college && (
+          {errors.members?.[index]?.fullName && (
             <p className={localStyles.errorText}>
-              {errors.members[index].college.message}
+              {errors.members[index].fullName.message}
             </p>
           )}
         </div>

@@ -122,45 +122,48 @@ const RegistrationForm: React.FC = () => {
     localStorage.setItem("teamData", JSON.stringify(data));
 
     // Simulating API call
-    try {
-      // Make API call to the backend /register route
-      const response = await fetch(
-        "https://inceptionx-production.onrender.com/team/register",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          credentials: "include",
-          body: JSON.stringify(data), // Send the form data as JSON
-        }
-      );
-      const result = await response.json();
-      if (response.ok) {
-        toast.success("Registration submitted successfully!", {
-          description: `Team "${data.teamName}" has been registered with payment.`,
-          duration: 5000,
-        });
-        setTimeout(() => {
-          // navigate("/payment ",{state:{teamDetails:data}});
-             navigate("/payment")
-        }, 3000);
-      } else {
-        {
-          toast.error(result.message, {
-            description: "Please try Again",
-          });
-        }
-      }
+    // try {
+    //   // Make API call to the backend /register route
+    //   const response = await fetch(
+    //     "https://inceptionx-production.onrender.com/team/register",
+    //     {
+    //       method: "POST",
+    //       headers: { "Content-Type": "application/json" },
+    //       credentials: "include",
+    //       body: JSON.stringify(data), // Send the form data as JSON
+    //     }
+    //   );
+    //   const result = await response.json();
+    //   if (response.ok) {
+    //     toast.success("Registration submitted successfully!", {
+    //       description: `Team "${data.teamName}" has been registered with payment.`,
+    //       duration: 5000,
+    //     });
+    //     setTimeout(() => {
+    //       // navigate("/payment ",{state:{teamDetails:data}});
+    //          navigate("/payment")
+    //     }, 3000);
+    //   } else {
+    //     {
+    //       toast.error(result.message, {
+    //         description: "Please try Again",
+    //       });
+    //     }
+    //   }
       
-    } catch (err) {
-      // Show error toast
-      toast.error("Registration failed!", {
-        description: err.message || "An error occurred. Please try again.",
-        duration: 5000,
-      });
-    } finally {
-      setSubmitAnimation(false);
+    // } catch (err) {
+    //   // Show error toast
+    //   toast.error("Registration failed!", {
+    //     description: err.message || "An error occurred. Please try again.",
+    //     duration: 5000,
+    //   });
+    // } finally {
+    //   setSubmitAnimation(false);
       
-    }
+    // }
+    setTimeout(() => {
+      navigate('/payment')
+    }, 3000);
   };
 
   const setTeamLeader = (leaderIndex: number) => {

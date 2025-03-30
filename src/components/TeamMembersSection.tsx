@@ -11,6 +11,9 @@ export interface TeamMember {
   email: string;
   college: string;
   isLeader: boolean;
+  rollNumber:string;
+  idCard:File|string;
+
 }
 
 export interface FormData {
@@ -99,9 +102,6 @@ const TeamMembersSection: React.FC<TeamMembersSectionProps> = ({
     <div className={localStyles.container}>
       <div className={localStyles.sectionHeader}>
         <h2 className={localStyles.title}>Team Members</h2>
-        {/* <p className={localStyles.memberCount}>
-          {fields.length}/4 members
-        </p> */}
       </div>
       
       <div className="space-y-6"> {/* <-- This is the key line */}

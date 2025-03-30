@@ -14,6 +14,7 @@ import FAQs from "../components/faqs";
 import TechAmigos from "../components/TechAmigos";
 import ExcitingPrizes from "../components/Prizes";
 import EventResources from "../components/EventResources";
+import Faculty from "../components/Faculty";
 
 
 
@@ -57,7 +58,7 @@ const Index = () => {
 
           
             
-            
+            <Faculty/>
             <TechAmigos />
             <Sponsors />
             <FAQs />

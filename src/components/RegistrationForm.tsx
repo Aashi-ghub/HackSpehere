@@ -28,6 +28,8 @@ const RegistrationForm: React.FC = () => {
           phone: "",
           email: "",
           college: "",
+          idCard:"",
+          rollNumber:"",
           isLeader: true,
         },
         {
@@ -35,6 +37,8 @@ const RegistrationForm: React.FC = () => {
           phone: "",
           email: "",
           college: "",
+          idCard:"",
+          rollNumber:"",
           isLeader: false,
         },
         {
@@ -42,6 +46,8 @@ const RegistrationForm: React.FC = () => {
           phone: "",
           email: "",
           college: "",
+          idCard:"",
+          rollNumber:"",
           isLeader: false,
         },
         {
@@ -49,6 +55,8 @@ const RegistrationForm: React.FC = () => {
           phone: "",
           email: "",
           college: "",
+          idCard:"",
+          rollNumber:"",
           isLeader: false,
         },
       ],
@@ -62,7 +70,8 @@ const RegistrationForm: React.FC = () => {
 
   const members = watch("members");
   const [submitAnimation, setSubmitAnimation] = useState<boolean>(false);
-
+  const [isProcessing,setIsProcessing]=useState<boolean>(false);
+  console.log(isSubmitting,"isSubmitting")
   // All styling is encapsulated within the component
   const formStyles = {
     container: `
@@ -109,16 +118,20 @@ const RegistrationForm: React.FC = () => {
       to { transform: translateY(0); opacity: 1; }
     }
     
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
-    }
+      @keyframes spinAndFade {
+    0% { transform: rotate(0deg); opacity: 1; }
+    50% { transform: rotate(180deg); opacity: 0.5; }
+    100% { transform: rotate(360deg); opacity: 1; }
+  }
   `;
 
   const onSubmit = async (data: FormData) => {
     setSubmitAnimation(true);
-    console.log(data);
-    
+    console.log("data",data);
+    console.log("Form submission started");
+    await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate API call
+    console.log("Form submission completed");
+
     // set the TeamData in localStorage
     localStorage.setItem("teamData", JSON.stringify(data));
 
@@ -137,7 +150,7 @@ const RegistrationForm: React.FC = () => {
     //   const result = await response.json();
     //   if (response.ok) {
     //     toast.success("Registration submitted successfully!", {
-    //       description: `Team "${data.teamName}" has been registered with payment.`,
+    //       description: Team "${data.teamName}" has been registered with payment.,
     //       duration: 5000,
     //     });
     //     setTimeout(() => {
@@ -203,6 +216,7 @@ const RegistrationForm: React.FC = () => {
             register={register}
             errors={errors}
             control={control}
+            setValue={setValue}
             fields={fields}
             members={members}
             setTeamLeader={setTeamLeader}

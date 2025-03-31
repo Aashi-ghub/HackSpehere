@@ -1,6 +1,6 @@
 
 import React from "react";
-import { UseFormRegister, FieldErrors, Control, UseFieldArrayReturn, FieldArrayWithId } from "react-hook-form";
+import { UseFormRegister, FieldErrors, Control, UseFieldArrayReturn, FieldArrayWithId, UseFormSetValue } from "react-hook-form";
 import TeamMemberForm from "./TeamMemberForm";
 import { Plus } from "lucide-react";
 import { toast } from "sonner";
@@ -31,6 +31,7 @@ interface TeamMembersSectionProps {
   setTeamLeader: (index: number) => void;
   append: UseFieldArrayReturn<FormData, "members", "id">["append"];
   remove: UseFieldArrayReturn<FormData, "members", "id">["remove"];
+  setValue: UseFormSetValue<FormData>; // Added setValue
   customStyles?: {
     glassCard: string;
     inputField: string;

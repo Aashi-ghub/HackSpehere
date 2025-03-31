@@ -60,7 +60,7 @@ const Index = () => {
             
             <Faculty/>
             <TechAmigos />
-            <Sponsors />
+              {/* <Sponsors />  */}
             <FAQs />
           </div>
         </div>

@@ -78,8 +78,8 @@ const Navigation = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#000000]/90 backdrop-blur-lg"
-          : "bg-[#000000]/60 backdrop-blur-md"
+          ? "bg-transparent backdrop-blur-lg"
+          : "bg-transparent backdrop-blur-md"
       } navbar font-primary`}
     >
       <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">

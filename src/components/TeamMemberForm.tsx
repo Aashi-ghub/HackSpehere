@@ -1,6 +1,6 @@
 
 import React,{useState} from "react";
-import { UseFormRegister, FieldErrors, Control, Controller } from "react-hook-form";
+import { UseFormRegister, FieldErrors, Control, Controller , UseFormSetValue} from "react-hook-form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { FormData } from "./TeamMembersSection";
 
@@ -9,6 +9,7 @@ interface TeamMemberFormProps {
   register: UseFormRegister<FormData>;
   errors: FieldErrors<FormData>;
   control: Control<FormData>;
+  setValue: UseFormSetValue<FormData>;
   isLeader: boolean;
    onSetLeader: (index: number) => void;
   // onRemove: (index: number) => void;
@@ -24,6 +25,7 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
   register,
   errors,
   control,
+  setValue,
   isLeader,
   onSetLeader,
   customStyles,
@@ -51,18 +53,14 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
     `
   };
   const [uploadedFileName, setUploadedFileName] = useState<string | null>(null);
-  const HandleuploadID = () => {
-    const input = document.getElementsByClassName("idCard");
-    const fileInput = input[0] as HTMLInputElement;
-    fileInput.click();
-    fileInput.onchange = (e) => {
-      const target = e.target as HTMLInputElement;
-      if (target.files && target.files.length > 0) {
-        setUploadedFileName(target.files[0].name);
-      }
-    };
+  const handleuploadID = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const file =e.target.files?.[0];
+    if(file){
+      setUploadedFileName(file.name);
+      setValue(`members.${index}.idCard`, file,{ shouldValidate: true }); // update the form state
+    }
   };
-  
+
   // Animation delay style
   const animationDelayStyle = { animationDelay: `${index * 0.1}s` };
 
@@ -131,31 +129,33 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({
             </p>
           )}
         </div>
-        {/* <div className="relative">
-          <div
-            // placeholder={uploadedFileName || "Upload your IDCard*"}
-            className={localStyles.input}
-            onClick={HandleuploadID}>
-            <label htmlFor={`members.${index}.idCard`}>
-              {uploadedFileName || "Upload your IDCard*"}
+        
+        <div className={`relative ${localStyles.input}`}>
           <input
-            {...register(`members.${index}.idCard`, {
-              required: "idCard is required",
-            })}
             type="file"
             accept="image/*"
-            placeholder="Upload idCard*"
-            className="hidden idCard"
-            
+            className="hidden"
+            id={`members.${index}.idCard`}
+            onChange={(e)=>{
+              const file = e.target.files?.[0];
+              setUploadedFileName(file.name);
+              setValue(`members.${index}.idCard`, file, { shouldValidate: true });
+            }}
           />
-          {errors.members?.[index]?.fullName && (
-            <p className={localStyles.errorText}>
-              {errors.members[index].fullName.message}
-            </p>
-          )}
+           {errors.members?.[index]?.idCard && (
+           <p className="text-red-500">{errors.members?.[index]?.idCard?.message}</p>
+           )}
+          <label
+            htmlFor={`members.${index}.idCard`}
+            className=" mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 cursor-pointer"
+          >
+            Upload ID Card
           </label>
-          </div>
-        </div> */}
+          {uploadedFileName && (
+            <span className="mt-2 mx-2 text-sm text-gray-300">{uploadedFileName}</span>
+          )}
+        </div>  
+
         <div className="relative">
           <input
             {...register(`members.${index}.phone`, {

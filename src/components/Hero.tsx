@@ -63,6 +63,7 @@ const Hero = () => {
         </div>
 
         {/* Register Button */}
+        {!localStorage.getItem("teamData") &&(
         <motion.div
           className="mb-6"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -80,6 +81,7 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#a7abab] to-[#e11414] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </Link>
         </motion.div>
+        )}
 
         {/* Countdown Timer */}
         <motion.div

@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 
 const RegistrationForm: React.FC = () => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState(null);
   const {
     register,
     handleSubmit,
@@ -28,8 +30,8 @@ const RegistrationForm: React.FC = () => {
           phone: "",
           email: "",
           college: "",
-          idCard:"",
-          rollNumber:"",
+          idCard: null,
+          rollNumber: "",
           isLeader: true,
         },
         {
@@ -37,8 +39,8 @@ const RegistrationForm: React.FC = () => {
           phone: "",
           email: "",
           college: "",
-          idCard:"",
-          rollNumber:"",
+          idCard: null,
+          rollNumber: "",
           isLeader: false,
         },
         {
@@ -46,8 +48,8 @@ const RegistrationForm: React.FC = () => {
           phone: "",
           email: "",
           college: "",
-          idCard:"",
-          rollNumber:"",
+          idCard: null,
+          rollNumber: "",
           isLeader: false,
         },
         {
@@ -55,13 +57,15 @@ const RegistrationForm: React.FC = () => {
           phone: "",
           email: "",
           college: "",
-          idCard:"",
-          rollNumber:"",
+          idCard: null,
+          rollNumber: "",
           isLeader: false,
         },
       ],
     },
   });
+
+
 
   const { fields, append, remove } = useFieldArray({
     control,
@@ -70,8 +74,41 @@ const RegistrationForm: React.FC = () => {
 
   const members = watch("members");
   const [submitAnimation, setSubmitAnimation] = useState<boolean>(false);
-  const [isProcessing,setIsProcessing]=useState<boolean>(false);
-  console.log(isSubmitting,"isSubmitting")
+
+  // Fetch user authentication status
+  useEffect(() => {
+    const API_BASE_URL = "https://inceptionx-production.onrender.com";
+    const fetchUser = async () => {
+      try {
+        const response = await fetch(`${API_BASE_URL}/auth/user`, {
+          method: "GET",
+          credentials: "include", // Include cookies if needed
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setUser(data);
+          console.log(data) // Set the user if logged in
+        } else {
+          setUser(null); // No user found
+        }
+      } catch (error) {
+        console.error("Error fetching user:", error);
+        setUser(null);
+      } finally {
+        setTimeout(() => {
+          setIsLoading(false); // Stop loading after 2 seconds
+        }, 2000); // Stop loading
+      }
+    };
+
+    fetchUser();
+  }, []);
+
+
   // All styling is encapsulated within the component
   const formStyles = {
     container: `
@@ -122,18 +159,37 @@ const RegistrationForm: React.FC = () => {
     0% { transform: rotate(0deg); opacity: 1; }
     50% { transform: rotate(180deg); opacity: 0.5; }
     100% { transform: rotate(360deg); opacity: 1; }
-  }
-  `;
+  }`;
+  const convertFileToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = (error) => reject(error);
+      reader.readAsDataURL(file); // Convert the file to a Base64 string
+    });
+  };
 
   const onSubmit = async (data: FormData) => {
     setSubmitAnimation(true);
-    console.log("data",data);
+    console.log("data", data);
     console.log("Form submission started");
     await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate API call
     console.log("Form submission completed");
 
+    // Convert idCard files to Base64 and save them in localStorage
+    const membersWithBase64IdCards = await Promise.all(
+      data.members.map(async (member) => {
+        if (member.idCard) {
+          const base64 = await convertFileToBase64(member.idCard);
+          return { ...member, idCard: base64 }; // Replace the File object with Base64 string
+        }
+        return member;
+      })
+    );
+    const updatedData = { ...data, members: membersWithBase64IdCards };
+
     // set the TeamData in localStorage
-    localStorage.setItem("teamData", JSON.stringify(data));
+    localStorage.setItem("teamData", JSON.stringify(updatedData));
 
     // Simulating API call
     // try {
@@ -164,7 +220,7 @@ const RegistrationForm: React.FC = () => {
     //       });
     //     }
     //   }
-      
+
     // } catch (err) {
     //   // Show error toast
     //   toast.error("Registration failed!", {
@@ -173,13 +229,14 @@ const RegistrationForm: React.FC = () => {
     //   });
     // } finally {
     //   setSubmitAnimation(false);
-      
+
     // }
     setTimeout(() => {
       navigate('/payment')
     }, 3000);
   };
 
+  // Set the first member as the team leader by default
   const setTeamLeader = (leaderIndex: number) => {
     const updatedMembers = [...getValues("members")];
     updatedMembers.forEach((member, index) => {
@@ -195,7 +252,27 @@ const RegistrationForm: React.FC = () => {
     }
   }, [members]);
 
-  return (
+  if (isLoading) {
+    //  show a loading spinner or message here
+    return (
+      <div className="flex justify-center h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-red-500 border-solid"></div>
+        <p className="ml-4 text-white text-lg">Loading...</p>
+      </div>
+    );
+  }
+
+  return !user ? (
+    <div className="text-center text-white">
+      <p>You need to log in to register.</p>
+      <button
+        onClick={() => navigate("/login")}
+        className="mt-4 px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
+      >
+        Login
+      </button>
+    </div>
+  ) : (
     <>
       {/* Include keyframe animations in style tag */}
       <style>{keyframes}</style>

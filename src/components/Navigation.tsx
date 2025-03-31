@@ -8,7 +8,7 @@ import path from "path";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Themes", path: "#themes" },
-  { name: "Timeline", path: "#timeline" },
+  // { name: "Timeline", path: "#timeline" },
 ];
 
 const Navigation = () => {
@@ -76,11 +76,10 @@ const Navigation = () => {
   };
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled
           ? "bg-transparent backdrop-blur-lg"
           : "bg-transparent backdrop-blur-md"
-      } navbar font-primary`}
+        } navbar font-primary`}
     >
       <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -96,7 +95,7 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) =>
-              link.name === "Themes" || link.name === "Timeline" ? (
+              link.name === "Themes" ? (
                 <a
                   key={link.name}
                   href={link.path}
@@ -118,15 +117,21 @@ const Navigation = () => {
                   className="text-white font-quicksand hover:text-[#8f3737] transition-colors duration-200 font-secondary"
                 >
                   {link.name}
-                </Link>  
-              ) 
+                </Link>
+              )
             )}
-             <Link key="LeaderBoard" to="/leaderBoard">
+            <Link key="LeaderBoard" to="/leaderBoard">
               <button className="text-white font-quicksand hover:text-[#8f3737] transition-colors duration-200 nav-link font-secondary">
                 Leaderboard
               </button>
             </Link>
-
+            {localStorage.getItem("teamData") ? (
+              <Link key="Dashboard" to="/dashboard">
+                <button className="text-white font-quicksand hover:text-[#8f3737] transition-colors duration-200 nav-link font-secondary">
+                  Dashboard
+                </button>
+              </Link>
+            ) : null}
 
             {user ? (
               <div className="relative">
@@ -157,7 +162,7 @@ const Navigation = () => {
                 </button>
               </Link>
             )}
-             
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -174,7 +179,7 @@ const Navigation = () => {
               <div
                 ref={dropdownRef}
                 className="absolute top-12 right-0 w-48 bg-[#0D1117]/80 backdrop-blur-xl shadow-lg rounded-lg p-2 text-white flex flex-col space-y-2"
-              > 
+              >
                 {navLinks.map((link) =>
                   link.name === "Themes" || link.name === "Timeline" ? (
                     <a
@@ -202,11 +207,11 @@ const Navigation = () => {
                     </Link>
                   )
                 )}
-              <Link key="LeaderBoard" to="/leaderBoard">
-              <button className="block px-4 py-2 text-sm hover:bg-[#1A1F27] rounded">
-                LeaderBoard
-              </button>
-            </Link>
+                <Link key="LeaderBoard" to="/leaderBoard">
+                  <button className="block px-4 py-2 text-sm hover:bg-[#1A1F27] rounded">
+                    LeaderBoard
+                  </button>
+                </Link>
                 {user ? (
                   <button
                     onClick={() => setUser(null)}

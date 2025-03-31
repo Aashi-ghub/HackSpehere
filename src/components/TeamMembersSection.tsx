@@ -12,7 +12,7 @@ export interface TeamMember {
   college: string;
   isLeader: boolean;
   rollNumber:string;
-  idCard:File|string;
+  idCard:File|null;
 
 }
 
@@ -42,6 +42,7 @@ const TeamMembersSection: React.FC<TeamMembersSectionProps> = ({
   register,
   errors,
   control,
+  setValue,
   fields,
   members,
   setTeamLeader,
@@ -84,6 +85,7 @@ const TeamMembersSection: React.FC<TeamMembersSectionProps> = ({
       register={register}
       errors={errors}
       control={control}
+      setValue={setValue}
       isLeader={members[index]?.isLeader || false}
       onSetLeader={setTeamLeader}
       customStyles={customStyles}

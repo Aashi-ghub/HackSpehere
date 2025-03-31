@@ -19,7 +19,7 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({
     disabled:cursor-not-allowed
     ${submitAnimation ? "animate-[pulse_1.5s_infinite]" : ""}
   `;
-
+  
   return (
     <div className="text-center">
       <button

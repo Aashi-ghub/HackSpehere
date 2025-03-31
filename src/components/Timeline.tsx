@@ -68,8 +68,8 @@ const Timeline: React.FC = () => {
         },
       {
         title: "Project X: D for Decryption (12:00 PM - 12:30 PM)",
-        description: "Participants enhance a basic portfolio website through multiple code swaps, adapting and improving each iteration within strict time limits.",
-        detailedDescription: "In this event, organizers will provide participants with a basic HTML structure for a DSW portfolio website, serving as the foundation for development. Teams must enhance the website by adding CSS for styling, JavaScript for interactivity, and additional functionalities to improve its design and usability. After an initial development phase, teams will swap their codebases and continue refining another team's project. This process will repeat through four forks, with each team building upon the previous team's work.",
+        description: "Participants enhance a basic portfolio website through two code swaps, adapting and improving each iteration within strict time limits.",
+        detailedDescription: "In this event, organizers will provide participants with a basic HTML structure for a portfolio website, serving as the foundation for development. Teams must enhance the website by adding CSS for styling, JavaScript for interactivity, and additional functionalities to improve its design and usability. After an initial development phase, teams will swap their codebases and continue refining another team's project. This process will repeat through two forks, with each team building upon the previous team's work.",
         },
         {
         title: "Connect X: The Sacrifice (10:30 AM - 11:00 AM)",

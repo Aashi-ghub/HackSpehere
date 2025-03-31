@@ -212,6 +212,13 @@ const Navigation = () => {
                     LeaderBoard
                   </button>
                 </Link>
+                {localStorage.getItem("teamData") ? (
+              <Link key="Dashboard" to="/dashboard">
+                <button className="text-white font-quicksand hover:text-[#8f3737] transition-colors duration-200 nav-link font-secondary">
+                  Dashboard
+                </button>
+              </Link>
+            ) : null}
                 {user ? (
                   <button
                     onClick={() => setUser(null)}

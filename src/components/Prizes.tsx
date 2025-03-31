@@ -10,19 +10,29 @@ const prizeData = [
     perks: [
       "Cash prize of ₹31,000",
       "Trophy",
+      "Exclusive winner's certificate",
+      "Featured on social media & website"
     ],
     icon: <FaTrophy className="text-yellow-400 text-4xl" />,
   },
   {
     title: "Second Prize",
     amount: "₹21,000",
-    perks: ["Cash prize of ₹21,000"],
+    perks: [
+      "Cash prize of ₹21,000",
+      "Runner-up certificate",
+      "Social media recognition"
+    ],
     icon: <IoRibbonOutline className="text-white text-4xl" />,
   },
   {
     title: "Third Prize",
     amount: "₹11,000",
-    perks: ["Cash prize of ₹11,000"],
+    perks: [
+      "Cash prize of ₹11,000",
+      "Achievement certificate",
+      "Social media mention"
+    ],
     icon: <IoRibbonOutline className="text-orange-400 text-4xl" />,
   },
 ];

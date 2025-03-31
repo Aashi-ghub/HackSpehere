@@ -1,11 +1,14 @@
-import { Wifi, Coffee, Gift, Code2, Award, Smile } from "lucide-react";
+import { Wifi, Coffee, Gift, Gamepad, Award, Smile } from "lucide-react";
 import { motion } from "framer-motion";
 
 const WhatWeOffer = () => {
   const offerings = [
     { icon: <Gift className="w-6 h-6 text-white" />, title: "Swag & Goodies", description: "Amazing swag and prizes for winners" },
     { icon: <Award className="w-6 h-6 text-white" />, title: "Certificates", description: "Get certified for your participation" },
-    { icon: <Smile className="w-6 h-6 text-white" />, title: "Networking", description: "Connect with like-minded developers" }
+    { icon: <Smile className="w-6 h-6 text-white" />, title: "Networking", description: "Connect with like-minded developers" },
+    { icon: <Coffee className="w-6 h-6 text-white" />, title: "Food & Refreshments", description: "Enjoy complimentary snacks and beverages" },
+    { icon: <Gamepad className="w-6 h-6 text-white" />, title: "Fun & Mini Games", description: "Fun challenges & games to keep you engaged" },
+    { icon: <Wifi className="w-6 h-6 text-white" />, title: "High-Speed WiFi", description: "Seamless internet access for all participants" }
   ];
 
   return (
@@ -25,7 +28,7 @@ const WhatWeOffer = () => {
             {/* Entire div hover effect */}
             <motion.div
               whileHover={{ scale: 1.05, y: -10 }}
-              className="bg-gradient-to-br from-[#4a1f1a] via-[#151310] to-[#000000] p-4 rounded-lg backdrop-blur-sm  border-primary/20 group-hover:border-primary/100 group-hover:shadow-xl group-hover:scale-105 group-hover:translate-y-2 transition-all duration-300"
+              className="bg-gradient-to-br from-[#4a1f1a] via-[#151310] to-[#000000] p-4 rounded-lg backdrop-blur-sm  border-primary/20 group-hover:border-primary/100 group-hover:shadow-xl group-hover:scale-105 group-hover:translate-y-2 transition-all duration-500"
             >
               <div className="mb-4 transform group-hover:scale-100 transition-transform duration-300">
                 {offering.icon}

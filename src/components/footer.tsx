@@ -84,10 +84,7 @@ const Footer = () => {
                   icon: Instagram,
                   href: "https://www.instagram.com/dsw.cgc/",
                 },
-                {
-                  icon: Linkedin,
-                  href: "https://www.linkedin.com/in/techamigos-cgc-landran-214626284",
-                },
+                
               ].map(({ icon: Icon, href }, index) => (
                 <a
                   key={index}

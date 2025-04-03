@@ -1,25 +1,25 @@
-import { Lightbulb, Leaf, Heart, Bot } from "lucide-react";
+import { Briefcase, Cpu, Leaf, Bot } from "lucide-react";
 
 const Themes = () => {
   const themes = [
     {
-      title: "Miscellaneous Innovation",
-      description: "Explore boundless possibilities in tech innovation",
-      icon: <Lightbulb className="w-6 h-6 text-red-300" />
+      title: "Business & Entrepreneurship",
+      description: "Innovate and disrupt industries with groundbreaking business solutions. Transform ideas into scalable ventures and shape the future of commerce.",
+      icon: <Briefcase className="w-6 h-6 text-red-300" />
     },
     {
-      title: "Sustainable Smart Ecosystem",
-      description: "Build solutions for a sustainable future",
+      title: "Cutting-Edge Technology",
+      description: "Push the boundaries of technology by exploring AI, blockchain, cybersecurity, and more. Build revolutionary digital experiences and futuristic solutions.",
+      icon: <Cpu className="w-6 h-6 text-red-300" />
+    },
+    {
+      title: "Sustainable & Green Ecosystem",
+      description: "Create impactful solutions that promote sustainability, eco-friendly practices, and environmental conservation for a better tomorrow.",
       icon: <Leaf className="w-6 h-6 text-red-300" />
     },
     {
-      title: "Health & Wellness",
-      description: "Transform healthcare through technology",
-      icon: <Heart className="w-6 h-6 text-red-300" />
-    },
-    {
-      title: "Automation",
-      description: "Revolutionize processes with smart automation",
+      title: "Intelligent Automation",
+      description: "Streamline processes, enhance efficiency, and drive innovation through automation, robotics, and AI-powered systems.",
       icon: <Bot className="w-6 h-6 text-red-300" />
     },
   ];
@@ -27,7 +27,7 @@ const Themes = () => {
   return (
     <section className="py-12 animate-fade-in" id="themes">
       <h2 className="text-3xl font-bold justify-center text-white mb-8 flex font-orbitron items-center gap-2">
-        <Lightbulb className="text-red-300" />
+        <Briefcase className="text-red-300" />
         Themes
       </h2>
       <div className="grid md:grid-cols-2 gap-6">

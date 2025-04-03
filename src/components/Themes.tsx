@@ -5,29 +5,29 @@ const Themes = () => {
     {
       title: "Business & Entrepreneurship",
       description: "Innovate and disrupt industries with groundbreaking business solutions. Transform ideas into scalable ventures and shape the future of commerce.",
-      icon: <Briefcase className="w-6 h-6 text-red-300" />
+      icon: <Briefcase className="w-6 h-6 text-red-500" />
     },
     {
       title: "Cutting-Edge Technology",
       description: "Push the boundaries of technology by exploring AI, blockchain, cybersecurity, and more. Build revolutionary digital experiences and futuristic solutions.",
-      icon: <Cpu className="w-6 h-6 text-red-300" />
+      icon: <Cpu className="w-6 h-6 text-red-500" />
     },
     {
       title: "Sustainable & Green Ecosystem",
       description: "Create impactful solutions that promote sustainability, eco-friendly practices, and environmental conservation for a better tomorrow.",
-      icon: <Leaf className="w-6 h-6 text-red-300" />
+      icon: <Leaf className="w-6 h-6 text-red-500" />
     },
     {
       title: "Intelligent Automation",
       description: "Streamline processes, enhance efficiency, and drive innovation through automation, robotics, and AI-powered systems.",
-      icon: <Bot className="w-6 h-6 text-red-300" />
+      icon: <Bot className="w-6 h-6 text-red-500" />
     },
   ];
 
   return (
     <section className="py-12 animate-fade-in" id="themes">
       <h2 className="text-3xl font-bold justify-center text-white mb-8 flex font-orbitron items-center gap-2">
-        <Briefcase className="text-red-300" />
+        <Briefcase className="text-red-500" />
         Themes
       </h2>
       <div className="grid md:grid-cols-2 gap-6">

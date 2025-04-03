@@ -1,5 +1,4 @@
 import { Lightbulb, Leaf, Heart, Bot } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const Themes = () => {
   const themes = [
@@ -33,26 +32,25 @@ const Themes = () => {
       </h2>
       <div className="grid md:grid-cols-2 gap-6">
         {themes.map((theme, index) => (
-         // <Link to={`/themesList/${theme.title}`} key={index}>
-            <div
-              className="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-black 
-              transition-transform duration-100 ease-out hover:scale-105 hover:border-slate-100 
-              hover:shadow-xl hover:shadow-red-500/20 cursor-pointer"
-            >
-              <div className="mb-4 relative">
-                <div className="absolute inset-0 bg-teal-500/20 rounded-full blur-xl opacity-30 transition-opacity duration-300" />
-                <div className="relative">
-                  {theme.icon}
-                </div>
+          <div
+            key={index}
+            className="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-black 
+            transition-transform duration-100 ease-out hover:scale-105 hover:border-slate-100 
+            hover:shadow-xl hover:shadow-red-500/20 cursor-pointer"
+          >
+            <div className="mb-4 relative">
+              <div className="absolute inset-0 bg-teal-500/20 rounded-full blur-xl opacity-30 transition-opacity duration-300" />
+              <div className="relative">
+                {theme.icon}
               </div>
-              <h3 className="text-xl text-white font-bold">
-                {theme.title}
-              </h3>
-              <p className="text-gray-400 mt-2">
-                {theme.description}
-              </p>
             </div>
-          </Link>
+            <h3 className="text-xl text-white font-bold">
+              {theme.title}
+            </h3>
+            <p className="text-gray-400 mt-2">
+              {theme.description}
+            </p>
+          </div>
         ))}
       </div>
     </section>

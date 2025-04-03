@@ -33,7 +33,7 @@ const Themes = () => {
       </h2>
       <div className="grid md:grid-cols-2 gap-6">
         {themes.map((theme, index) => (
-          <Link to={`/themesList/${theme.title}`} key={index}>
+         // <Link to={`/themesList/${theme.title}`} key={index}>
             <div
               className="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-black 
               transition-transform duration-100 ease-out hover:scale-105 hover:border-slate-100 

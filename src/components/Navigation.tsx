@@ -88,12 +88,12 @@ const Navigation = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             <div className="flex items-center space-x-2 text-left">
-  <span className="bg-gradient-to-r from-[#e96969] via-[#ead7d7] to-[#8e8686] font-bold font-orbitron bg-clip-text text-transparent text-base sm:text-lg md:text-xl">
-    Xception
-  </span>
-  <img src="/DSW_LOGO_Curve_transparent.webp" alt="DSW Logo" className="w-16 h-16 sm:w-14 sm:h-14 md:w-16 md:h-16" />
-  <img src="/cgc logo.webp" alt="CGC Logo" className="w-16 h-16 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain" />
-</div>
+              <span className="bg-gradient-to-r from-[#e96969] via-[#ead7d7] to-[#8e8686] font-bold font-orbitron bg-clip-text text-transparent text-base sm:text-lg md:text-xl">
+                Xception
+              </span>
+              <img src="/DSW_LOGO_Curve_transparent.webp" alt="DSW Logo" className="w-16 h-16 sm:w-14 sm:h-14 md:w-16 md:h-16" />
+              <img src="/cgc logo.webp" alt="CGC Logo" className="w-16 h-16 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain" />
+            </div>
 
           </Link>
 

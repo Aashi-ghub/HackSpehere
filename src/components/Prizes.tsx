@@ -38,7 +38,7 @@ const prizeData = [
 ];
 
 const PrizeCard = ({ title, amount, perks, icon }) => (
-  <Card className="w-[600px] max-w-full mt-4 bg-transparent bg-opacity-60 border-2 border-[#ece7e7] rounded-lg shadow-lg p-6">
+  <Card className="group w-[600px] max-w-full mt-4 bg-transparent bg-opacity-60 border-2 border-[#ece7e7] rounded-lg shadow-lg p-6 transition-all duration-300 hover:bg-transparent hover:shadow-2xl hover:scale-105">
     <CardContent className="flex flex-col items-center">
       {icon}
       <h2 className="text-4xl text-[#ea5e5e] font-semibold mt-3">{title}</h2>
@@ -51,7 +51,7 @@ const PrizeCard = ({ title, amount, perks, icon }) => (
         ))}
       </ul>
     </CardContent>
-  </Card>
+  </Card>
 );
 
 const ExcitingPrizes = () => (

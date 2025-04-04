@@ -6,12 +6,12 @@ import React from "react";
 import Bubbles from "./Bubbles";
 
 const Hero = () => {
-  const subtitle = "Being  Ordinary  is  not  an  Option";
+  const subtitle = "BEING ORDINARY IS NOT AN OPTION";
 
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center relative overflow-hidden px-4">
       {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full opacity-90 z-0">
+      <div className="absolute inset-0 w-full h-full opacity-80 z-0">
         <video
           autoPlay
           loop
@@ -48,7 +48,7 @@ const Hero = () => {
       </div> */}
 
       {/* Enhanced Background Overlay with Gradient - Update z-index */}
-      <div className="absolute inset-0 "></div>
+      <div className="absolute inset-0 bg-black "></div>
 
       {/* Content Wrapper - Update z-index */}
       <div className="text-center relative z-[3] max-w-4xl w-full">

@@ -1,4 +1,4 @@
-import { Briefcase, Cpu, Leaf, Bot } from "lucide-react";
+import { Briefcase, HeartPulse, Leaf, Bot } from "lucide-react";
 
 const Themes = () => {
   const themes = [
@@ -8,9 +8,9 @@ const Themes = () => {
       icon: <Briefcase className="w-6 h-6 text-red-500" />
     },
     {
-      title: "Cutting-Edge Technology",
-      description: "Push the boundaries of technology by exploring AI, blockchain, cybersecurity, and more. Build revolutionary digital experiences and futuristic solutions.",
-      icon: <Cpu className="w-6 h-6 text-red-500" />
+      title: "Health & Fitness",
+      description: "Empower yourself with knowledge on wellness, nutrition, and fitness. Explore cutting-edge health tech, workout routines, and mindful living for a better you.",
+      icon: <HeartPulse className="w-6 h-6 text-red-500" />
     },
     {
       title: "Sustainable & Green Ecosystem",

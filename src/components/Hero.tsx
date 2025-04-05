@@ -90,7 +90,7 @@ const Hero = () => {
           ))}
         </div>
 
-        {/* Register Button */}
+        {/* Register Button 
         {!localStorage.getItem("teamData") && (
           <motion.div
             className="mb-6"
@@ -110,7 +110,7 @@ const Hero = () => {
             </Link>
           </motion.div>
         )}
-
+*/}
         {/* Countdown Timer */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

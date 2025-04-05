@@ -16,8 +16,9 @@ const Hero = () => {
           loop
           muted
           playsInline
-          className="absolute w-full h-full object-cover"
           poster="/fallback-image.jpg"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          style={{ objectFit: "cover" }}
           ref={(video) => {
             if (video) {
               video.playbackRate = 0.5;
@@ -25,7 +26,6 @@ const Hero = () => {
           }}
         >
           <source src="/arrow.webm" type="video/webm" />
-          <source src="/arrow.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
@@ -90,7 +90,8 @@ const Hero = () => {
           ))}
         </div>
 
-        {/* Register Button 
+        {/* Register Button (commented for now) */}
+        {/* 
         {!localStorage.getItem("teamData") && (
           <motion.div
             className="mb-6"
@@ -110,7 +111,8 @@ const Hero = () => {
             </Link>
           </motion.div>
         )}
-*/}
+        */}
+
         {/* Countdown Timer */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

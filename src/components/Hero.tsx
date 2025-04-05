@@ -2,55 +2,35 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import CountdownTimer from "./CountdownTimer";
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
-// import Bubbles from "./Bubbles"; // Uncomment if using
+// import Bubbles from "./Bubbles"; // Optional
 
 const Hero = () => {
   const subtitle = "BEING ORDINARY IS NOT AN OPTION";
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // 768px = Tailwind's md breakpoint
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center relative overflow-hidden px-4">
       {/* Background */}
       <div className="absolute inset-0 w-full h-full opacity-80 z-0">
-        {isMobile ? (
-          <img
-            src="/mobile-fallback.jpg"
-            alt="Background"
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute w-full h-full object-cover"
-            poster="/fallback-image.jpg"
-            ref={(video) => {
-              if (video) {
-                video.playbackRate = 0.5;
-              }
-            }}
-          >
-            <source src="/arrow.webm" type="video/webm" />
-            <source src="/arrow.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        )}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute w-full h-full object-cover"
+          poster="/fallback-image.jpg"
+          ref={(video) => {
+            if (video) {
+              video.playbackRate = 0.5;
+            }
+          }}
+        >
+          <source src="/arrow.webm" type="video/webm" />
+          <source src="/arrow.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
-      {/* Optional Bubbles component */}
+      {/* Optional Bubbles */}
       {/* <div className="absolute inset-0 z-[1]">
         <Bubbles />
       </div> */}
@@ -60,7 +40,6 @@ const Hero = () => {
 
       {/* Content */}
       <div className="text-center relative z-[3] max-w-4xl w-full">
-        {/* Countdown Label */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

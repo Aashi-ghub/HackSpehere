@@ -96,7 +96,7 @@ const Index = () => {
               </FadeInSection>
             </div>
 
-            <div id="ExicitingPrizes">
+            <div id="ExcitingPrizes">
               <FadeInSection>
                 <ExcitingPrizes />
               </FadeInSection>

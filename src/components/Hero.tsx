@@ -2,57 +2,65 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import CountdownTimer from "./CountdownTimer";
 import { motion } from "framer-motion";
-import React from "react";
-import Bubbles from "./Bubbles";
+import React, { useEffect, useState } from "react";
+// import Bubbles from "./Bubbles"; // Uncomment if using
 
 const Hero = () => {
   const subtitle = "BEING ORDINARY IS NOT AN OPTION";
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // 768px = Tailwind's md breakpoint
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center relative overflow-hidden px-4">
-      {/* Background Video */}
+      {/* Background */}
       <div className="absolute inset-0 w-full h-full opacity-80 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute w-full h-full object-cover"
-          poster="/fallback-image.jpg" // Add a fallback image
-          ref={(video) => {
-            if (video) {
-              video.playbackRate = 0.5; // Set playback speed to 0.5x (slower)
-            }
-          }}
-        >
-          <source src="/arrow.webm" type="video/webm" />
-          {/* Add WebM version for better browser support */}
-          <source src="/arrow.mp4" type="video/mp4" />
-          {/* Fallback text if video fails to load */}
-          Your browser does not support the video tag.
-        </video>
-
-        {/* Mobile Fallback Image - Hidden on desktop */}
-        <div className="absolute inset-0 md:hidden">
+        {isMobile ? (
           <img
             src="/mobile-fallback.jpg"
             alt="Background"
             className="w-full h-full object-cover"
           />
-        </div>
+        ) : (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute w-full h-full object-cover"
+            poster="/fallback-image.jpg"
+            ref={(video) => {
+              if (video) {
+                video.playbackRate = 0.5;
+              }
+            }}
+          >
+            <source src="/arrow.webm" type="video/webm" />
+            <source src="/arrow.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        )}
       </div>
 
-      {/* Add Bubbles Component
-      <div className="absolute inset-0 ">
+      {/* Optional Bubbles component */}
+      {/* <div className="absolute inset-0 z-[1]">
         <Bubbles />
       </div> */}
 
-      {/* Enhanced Background Overlay with Gradient - Update z-index */}
-      <div className="absolute inset-0 bg-black "></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black z-[1]"></div>
 
-      {/* Content Wrapper - Update z-index */}
+      {/* Content */}
       <div className="text-center relative z-[3] max-w-4xl w-full">
-        {/* Tagline */}
+        {/* Countdown Label */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,18 +80,18 @@ const Hero = () => {
                 className="w-full h-full object-contain"
               />
             </div>
-            <span className="text-transparent translate-x-[-15px] sm:translate-x[-25px] md:translate-x-[-30px] bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545]  font-raleway">
+            <span className="text-transparent translate-x-[-15px] sm:translate-x[-25px] md:translate-x-[-30px] bg-clip-text bg-gradient-to-br from-[#f3eded] to-[#534545] font-raleway">
               CEPTION
             </span>
           </div>
 
-          {/* Tagline - Fixed Positioning */}
-          <span className="text-[#d13131] text-[10px] sm:text-xs md:text-xs ml-24 sm:ml-32  md:ml-32 font-orbitron font-extrabold tracking-[0.2em] mt-[-9px] sm:mt-[-9px] md:mt-[-56px]">
+          {/* Subheading */}
+          <span className="text-[#d13131] text-[10px] sm:text-xs md:text-xs ml-24 sm:ml-32 md:ml-32 font-orbitron font-extrabold tracking-[0.2em] mt-[-9px] sm:mt-[-9px] md:mt-[-56px]">
             COMPETE · CONNECT · CONQUER
           </span>
         </h1>
 
-        {/* Subtitle with enhanced visibility */}
+        {/* Subtitle */}
         <div className="text-white text-lg sm:text-xl md:text-3xl font-bold mt-16 font-montserrat lg:text-2xl mb-12 max-w-md sm:max-w-xl mx-auto tracking-wide drop-shadow-lg">
           {subtitle.split(" ").map((word, index) => (
             <motion.span

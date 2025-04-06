@@ -82,7 +82,7 @@ const Footer = () => {
               {[
                {
                 icon: MailIcon,
-                href: "href:mailto:dsw@cgc.edu.in?subject=Enquiry%20about%20Xception",
+                href: "mailto:dsw@cgc.edu.in",
               },
                 {
                   icon: Instagram,

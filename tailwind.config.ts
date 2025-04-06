@@ -25,6 +25,8 @@ export default {
         orbitron: ["Orbitron", "sans-serif"],
         quicksand: ["Quicksand", "sans-serif"],
         raleway: ["Raleway", "sans-serif"],
+        tillana: ['Tillana', 'cursive'],
+        luxurious: ["Luxurious Roman", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",

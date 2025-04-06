@@ -15,9 +15,9 @@ const Timeline: React.FC = () => {
         detailedDescription: "Register for the event and get familiar with rules and guidelines.",
       },
       {
-        title: "Problem Statement Release",
-        description: "Get ready to tackle real-world challenges.",
-        detailedDescription: "The problem statement will be released and participants can start working on their solutions."
+        title: "Themes Go Live",
+        description: "Built with a focus on clarity and style, this all-purpose theme fits effortlessly into any workflow or aesthetic.",
+        detailedDescription: "Explore groundbreaking themes that drive real-world impact. Dive into Business & Entrepreneurship to innovate scalable ventures and disrupt industries with bold business solutions. Focus on Health & Fitness to empower wellness through advanced health tech, mindful living, and fitness innovation. Contribute to a better planet with the Sustainable & Green Ecosystem by developing eco-friendly, conservation-driven technologies. And embrace the future with Intelligent Automation, where AI, robotics, and smart systems streamline efficiency and redefine possibilities."
       },
       {
         title: "Project X",
@@ -47,47 +47,47 @@ const Timeline: React.FC = () => {
     ],
     "Day 1": [
       {
-        title: "Opening Ceremony & Instructions (10:00 AM - 10:10 AM)",
+        title: "Opening Ceremony & Instructions (10:00 AM - 11:00 AM)",
         description: "Introduction to Tech Showdown, Briefing on event rules and judging criteria",
         detailedDescription: "Tech Showdown is a fast-paced, engaging competition designed to test participants' problem-solving, debugging, and AI-prompt engineering skills. The event consists of three distinct phases, each assessing different aspects of technical expertise and Judging Criteria: Speed: Fastest completion of a grid. Accuracy: Only correctly completed challenges count.",
       },
       {
-        title: "Project X: Project PPT (10:20 AM - 10:30 AM)",
+        title: "Project X: Project PPT (11:30 AM - 12:30 AM)",
         description: "Participants will develop a hardware/software-driven solution to real-world problems in a structured four-day online challenge, culminating in a PowerPoint presentation showcasing their work.",
         detailedDescription: "This event challenges participants to develop a hardware/software-driven solution to real-world problems within a structured four-day online development cycle. Students will choose from 3-4 real-life problem statements and work entirely online to design, prototype, and refine their projects. All coding and development will take place during the four days following the opening ceremony. The event culminates in a PowerPoint presentation, where participants showcase their solutions, highlighting their approach, implementation, and impact.",
       },
       {
-        title: "Project X: Tech Bingo (10:30 AM - 11:15 AM)",
+        title: "Project X: Tech Bingo (12:45 AM - 01:15 PM)",
         description: "Tech Bingo challenges participants to answer technical questions under pressure and call BINGO to secure their spot in the judgment round.",
         detailedDescription: "Tech Bingo is an exciting and fast-paced event that puts participants’ technical knowledge, critical thinking, and ability to perform under pressure to the test. One representative from each team will compete in a real-life Human Bingo, where they must answer a set of technical questions within or before a given time limit. The challenge doesn’t end with just answering correctly—participants must also call out BINGO to secure their ticket to the judgment round. This event is designed to assess not only technical expertise but also quick decision-making and composure under pressure.",
         },
       {
-        title: "Project X: Battleground (11:15 AM - 1:00 AM)",
+        title: "Project X: Battleground (03:00 PM - 4:00 PM)",
         description: "Battleground is a coding competition where participants tackle three challenges—Code Writing, Debugging, and Reverse Coding—with top performers advancing.",
         detailedDescription: "Battleground is a thrilling coding competition designed to test participants' problem-solving skills, debugging expertise, and ability to think in reverse. Based on the AUTOMATA FIX category, this event challenges tech enthusiasts to tackle three coding problems—Code Writing, Debugging, and Reverse Coding—one after another. All participants work on the same problem simultaneously, racing against time to find the most efficient solutions. With each round, only the top-performing candidates advance, making the competition more intense as it progresses.",      
         },
       {
-        title: "Project X: D for Decryption (12:00 PM - 12:30 PM)",
-        description: "Participants enhance a basic portfolio website through multiple code swaps, adapting and improving each iteration within strict time limits.",
-        detailedDescription: "In this event, organizers will provide participants with a basic HTML structure for a DSW portfolio website, serving as the foundation for development. Teams must enhance the website by adding CSS for styling, JavaScript for interactivity, and additional functionalities to improve its design and usability. After an initial development phase, teams will swap their codebases and continue refining another team's project. This process will repeat through four forks, with each team building upon the previous team's work.",
+        title: "Project X: D for Decryption (04:30 PM - 06:30 PM)",
+        description: "Participants enhance a basic portfolio website through two code swaps, adapting and improving each iteration within strict time limits.",
+        detailedDescription: "In this event, organizers will provide participants with a basic HTML structure for a portfolio website, serving as the foundation for development. Teams must enhance the website by adding CSS for styling, JavaScript for interactivity, and additional functionalities to improve its design and usability. After an initial development phase, teams will swap their codebases and continue refining another team's project. This process will repeat through two forks, with each team building upon the previous team's work.",
         },
         {
-        title: "Connect X: The Sacrifice (10:30 AM - 11:00 AM)",
+        title: "Connect X: The Sacrifice (8:30 PM - 10:00 PM)",
         description: "The Sacrifice is a strategic challenge where participants make tough elimination decisions, testing teamwork, persuasion, and emotional intelligence to advance.",
         detailedDescription: "The Sacrifice is an exciting challenge that tests how well participants analyze situations, work as a team, and make tough decisions under pressure. It focuses on leadership, communication, problem-solving, and emotional intelligence. In each round, teams must choose and justify eliminating a member for the group's benefit. Players need to think carefully, work together, and give strong reasons for their choices. Only those who make the smartest and most convincing decisions will move forward, making every choice a test of survival, strategy, and teamwork.",
        },
         {
-          title: "Connect X: Swap it (11:00 AM - 11:30 AM)",
+          title: "Connect X: Swap it (10:20 PM - 11:30 PM)",
           description: "Swap It challenges participants to think quickly, adapt instantly, and lead effectively. With unexpected leadership changes, teams must maintain strategy and flow without disruption.",
           detailedDescription: "Swap It is a dynamic challenge designed to test participants' creativity, adaptability, and negotiation skills. Teams nominate a leader who initially guides the discussion, but midway through the challenge, leaders are randomly swapped. The new leader must quickly adapt, align with team goals, and ensure seamless execution without disrupting team dynamics. Success depends on quick thinking, communication, and the ability to lead under unpredictable circumstances.",
         },
         {
-          title: "Connect X: How would you end it (11:30 AM - 12:00 PM)",
+          title: "Connect X: How would you end it (11:50 PM - 12:20 AM)",
           description: "How Would You End It? challenges teams to craft unique alternate endings for media, testing creativity, storytelling, and teamwork to engage audiences.",
           detailedDescription: "How Would You End It? is a creative storytelling challenge where teams are tasked with reimagining the ending of a documentary or movie. Participants collaborate to brainstorm, rewrite, and present an alternative conclusion, showcasing their creativity, teamwork, and storytelling skills. The challenge encourages originality while ensuring the new ending remains engaging and impactful. Teams must present their ideas clearly, capturing the essence of the original story while adding their unique twist.",   
         },
         {
-        title: "Connect X: Relay & Rely(12:00 PM - 12:30 PM):",
+        title: "Connect X: Relay & Rely(12:40 AM - 01:10 AM):",
         description: "Relay & Rely tests teamwork, trust, and problem-solving as members solve interconnected puzzles, requiring clear communication and strategic thinking.",
         detailedDescription: "Relay & Rely is a dynamic team-based challenge that tests coordination, trust, and problem-solving skills. Teams are given a four-part puzzle, with each member solving one section before merging their solutions into a final answer. Success depends on clear communication, strategic thinking, and seamless teamwork. The challenge pushes participants to think quickly under pressure while relying on their teammates for a smooth transition. This event encourages adaptability and efficiency, rewarding teams that synchronize their efforts and execute their strategy with precision.",      
          },    
@@ -169,7 +169,7 @@ const Timeline: React.FC = () => {
             viewport={{ once: true }}
             className="relative flex flex-col items-center md:block"
           >
-            <div className="absolute left-1/2 w-3 h-3 rounded-full bg-white transform -translate-x-1/2 mt-4 animate-pulse"></div>
+            <div className="hidden md:block absolute left-1/2 w-3 h-3 rounded-full bg-white transform -translate-x-1/2 mt-4 animate-pulse"></div>
             <div
               className={`bg-gradient-to-tr from-[#827574ba] to-transparent p-10 rounded-xl backdrop-blur-sm border transition cursor-pointer
                 ${activeItem === item.title ? "border-red-300 shadow-white-400 shadow-lg" : "border-transparent"}
@@ -204,17 +204,17 @@ const Timeline: React.FC = () => {
            animate={{ x: 0, opacity: 1 }}
            exit={{ x: "100%", opacity: 0 }}
            transition={{ duration: 0.4 }}
-           className="bg-gradient-to-br from-[#602525] via-[#222] to-[#1a1a1a] text-white p-6 rounded-lg border border-cyan-400 relative 
-             w-full max-w-lg max-h-[80vh] overflow-y-auto"
+           className="bg-gradient-to-br from-[#555454] via-[#5c4a4a] to-[#1a1a1a] text-white   p-6 rounded-lg border border-cyan-400 relative 
+             w-full max-w-xl max-h-[90vh] overflow-y-auto"
            >
            <button
            onClick={() => setActiveDescription(null)}
-           className="absolute top-2 right-2 text-red-400 hover:text-white"
+           className="absolute top-2 right-2 text-red-400 text-2xl p-3 font-semibold hover:text-white"
            >
            &times;
            </button>
-           <h3 className="text-lg font-bold text-white mb-4">{activeItem}</h3>
-           <p className="text-sm mb-4">{activeDescription}</p>
+           <h3 className="text-xl  font-bold text-white mb-4">{activeItem}</h3>
+           <p className="text-base font-quicksand mb-4">{activeDescription}</p>
          </motion.div>
 
         </div>

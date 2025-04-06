@@ -81,15 +81,20 @@ const Navigation = () => {
           : "bg-transparent backdrop-blur-md"
         } navbar font-primary`}
     >
-      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link
             to="/"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <span className="bg-gradient-to-r  from-[#e96969] via-[#ead7d7] to-[#8e8686]   font-bold font-orbitron bg-clip-text text-transparent">
-              Xception
-            </span>
+            <div className="flex items-center space-x-2 text-left">
+              <span className="bg-gradient-to-r from-[#e96969] via-[#ead7d7] to-[#8e8686] font-bold font-raleway bg-clip-text text-transparent text-base sm:text-base md:text-base">
+                Xception
+              </span>
+              <img src="/DSW_LOGO_Curve_transparent.webp" alt="DSW Logo" className="w-14 h-14 sm:w-14 sm:h-14 md:w-14 md:h-14" />
+              <img src="/cgc logo.webp" alt="CGC Logo" className="w-14 h-14 sm:w-14 sm:h-14 md:w-14 md:h-14 object-contain" />
+            </div>
+
           </Link>
 
           {/* Desktop Navigation */}

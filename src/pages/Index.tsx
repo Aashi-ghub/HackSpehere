@@ -18,10 +18,18 @@ import Faculty from "../components/Faculty";
 
 import { motion, useInView } from "framer-motion";
 
-// 🔥 Animation Wrapper
-const FadeInSection = ({ children }: { children: React.ReactNode }) => {
+//  Animation Wrapper
+const FadeInSection = ({
+  children,
+  from = "left", // 'left' or 'right'
+}: {
+  children: React.ReactNode;
+  from?: "left" | "right";
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const initialX = from === "left" ? -150 : 150;
 
   return (
     <motion.section
@@ -41,14 +49,13 @@ const FadeInSection = ({ children }: { children: React.ReactNode }) => {
         <motion.div
           key={index}
           variants={{
-            hidden: { opacity: 0, y: 50, scale: 0.95 },
+            hidden: { opacity: 0, x: initialX },
             visible: {
               opacity: 1,
-              y: 0,
-              scale: 1,
+              x: 0,
               transition: {
                 type: "spring",
-                stiffness: 100,
+                stiffness: 120,
                 damping: 20,
               },
             },

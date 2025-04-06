@@ -27,37 +27,42 @@ const WhatWeOffer = () => {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {offerings.map((offering, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
+        {offerings.map((offering, index) => {
+          const isLeftSide = index % 3 === 0 || index % 3 === 1;
+          const direction = isLeftSide ? -100 : 100;
+
+          return (
             <motion.div
-              whileHover={{
-                scale: 1.05,
-                y: -6,
-                boxShadow: "0px 8px 20px rgba(255, 0, 0, 0.15)",
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 200,
-                damping: 14,
-              }}
-              className="bg-gradient-to-br from-[#4a1f1a] via-[#151310]  to-[#000000] p-4 rounded-2xl backdrop-blur-md shadow-inner hover:shadow-lg transition-all duration-300"
+              key={index}
+              initial={{ opacity: 0, x: direction }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true }}
             >
-              <motion.div variants={iconBounce} initial="initial" animate="animate">
-                {offering.icon}
+              <motion.div
+                whileHover={{
+                  scale: 1.05,
+                  y: -6,
+                  boxShadow: "0px 8px 20px rgba(255, 0, 0, 0.15)",
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 14,
+                }}
+                className="bg-gradient-to-br from-[#4a1f1a] via-[#151310]  to-[#000000] p-4 rounded-2xl backdrop-blur-md shadow-inner hover:shadow-lg transition-all duration-300"
+              >
+                <motion.div variants={iconBounce} initial="initial" animate="animate">
+                  {offering.icon}
+                </motion.div>
+                <h3 className="text-xl text-white font-semibold mt-4 mb-1">
+                  {offering.title}
+                </h3>
+                <p className="text-gray-400">{offering.description}</p>
               </motion.div>
-              <h3 className="text-xl text-white font-semibold mt-4 mb-1">
-                {offering.title}
-              </h3>
-              <p className="text-gray-400">{offering.description}</p>
             </motion.div>
-          </motion.div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

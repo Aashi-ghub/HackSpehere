@@ -15,9 +15,9 @@ const Timeline: React.FC = () => {
         detailedDescription: "Register for the event and get familiar with rules and guidelines.",
       },
       {
-        title: "Problem Statement Release",
-        description: "Get ready to tackle real-world challenges.",
-        detailedDescription: "The problem statement will be released and participants can start working on their solutions."
+        title: "Themes Release",
+        description: "Built with a focus on clarity and style, this all-purpose theme fits effortlessly into any workflow or aesthetic.",
+        detailedDescription: "Explore groundbreaking themes that drive real-world impact. Dive into Business & Entrepreneurship to innovate scalable ventures and disrupt industries with bold business solutions. Focus on Health & Fitness to empower wellness through advanced health tech, mindful living, and fitness innovation. Contribute to a better planet with the Sustainable & Green Ecosystem by developing eco-friendly, conservation-driven technologies. And embrace the future with Intelligent Automation, where AI, robotics, and smart systems streamline efficiency and redefine possibilities."
       },
       {
         title: "Project X",
@@ -169,7 +169,7 @@ const Timeline: React.FC = () => {
             viewport={{ once: true }}
             className="relative flex flex-col items-center md:block"
           >
-            <div className="absolute left-1/2 w-3 h-3 rounded-full bg-white transform -translate-x-1/2 mt-4 animate-pulse"></div>
+            <div className="hidden md:block absolute left-1/2 w-3 h-3 rounded-full bg-white transform -translate-x-1/2 mt-4 animate-pulse"></div>
             <div
               className={`bg-gradient-to-tr from-[#827574ba] to-transparent p-10 rounded-xl backdrop-blur-sm border transition cursor-pointer
                 ${activeItem === item.title ? "border-red-300 shadow-white-400 shadow-lg" : "border-transparent"}

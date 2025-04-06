@@ -15,7 +15,7 @@ const Timeline: React.FC = () => {
         detailedDescription: "Register for the event and get familiar with rules and guidelines.",
       },
       {
-        title: "Themes Release",
+        title: "Themes Go Live",
         description: "Built with a focus on clarity and style, this all-purpose theme fits effortlessly into any workflow or aesthetic.",
         detailedDescription: "Explore groundbreaking themes that drive real-world impact. Dive into Business & Entrepreneurship to innovate scalable ventures and disrupt industries with bold business solutions. Focus on Health & Fitness to empower wellness through advanced health tech, mindful living, and fitness innovation. Contribute to a better planet with the Sustainable & Green Ecosystem by developing eco-friendly, conservation-driven technologies. And embrace the future with Intelligent Automation, where AI, robotics, and smart systems streamline efficiency and redefine possibilities."
       },

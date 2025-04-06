@@ -204,17 +204,17 @@ const Timeline: React.FC = () => {
            animate={{ x: 0, opacity: 1 }}
            exit={{ x: "100%", opacity: 0 }}
            transition={{ duration: 0.4 }}
-           className="bg-gradient-to-br from-[#602525] via-[#222] to-[#1a1a1a] text-white p-6 rounded-lg border border-cyan-400 relative 
-             w-full max-w-lg max-h-[80vh] overflow-y-auto"
+           className="bg-gradient-to-br from-[#555454] via-[#5c4a4a] to-[#1a1a1a] text-white   p-6 rounded-lg border border-cyan-400 relative 
+             w-full max-w-xl max-h-[90vh] overflow-y-auto"
            >
            <button
            onClick={() => setActiveDescription(null)}
-           className="absolute top-2 right-2 text-red-400 hover:text-white"
+           className="absolute top-2 right-2 text-red-400 text-2xl p-3 font-semibold hover:text-white"
            >
            &times;
            </button>
-           <h3 className="text-lg font-bold text-white mb-4">{activeItem}</h3>
-           <p className="text-sm mb-4">{activeDescription}</p>
+           <h3 className="text-xl  font-bold text-white mb-4">{activeItem}</h3>
+           <p className="text-base font-quicksand mb-4">{activeDescription}</p>
          </motion.div>
 
         </div>

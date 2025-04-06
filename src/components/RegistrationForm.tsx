@@ -190,23 +190,24 @@ const RegistrationForm: React.FC = () => {
 
     // set the TeamData in localStorage
     localStorage.setItem("teamData", JSON.stringify(updatedData));
-
+    console.log("data:",data);
+    console.log("json:",JSON.stringify(data));
     // Simulating API call
     // try {
-    //   // Make API call to the backend /register route
-    //   const response = await fetch(
-    //     "https://inceptionx-production.onrender.com/team/register",
-    //     {
-    //       method: "POST",
-    //       headers: { "Content-Type": "application/json" },
-    //       credentials: "include",
-    //       body: JSON.stringify(data), // Send the form data as JSON
-    //     }
-    //   );
+      // Make API call to the backend /register route
+      // const response = await fetch(
+      //   "https://inceptionx-production.onrender.com/team/register",
+      //   {
+      //     method: "POST",
+      //     headers: { "Content-Type": "application/json" },
+      //     credentials: "include",
+      //     body: data, // Send the form data as JSON
+      //   }
+      // );
     //   const result = await response.json();
     //   if (response.ok) {
     //     toast.success("Registration submitted successfully!", {
-    //       description: Team "${data.teamName}" has been registered with payment.,
+    //       description: `Team ${data.teamName} has been registered with payment.`,
     //       duration: 5000,
     //     });
     //     setTimeout(() => {
@@ -231,9 +232,9 @@ const RegistrationForm: React.FC = () => {
     //   setSubmitAnimation(false);
 
     // }
-    setTimeout(() => {
-      navigate('/payment')
-    }, 3000);
+    // setTimeout(() => {
+    //   navigate('/payment')
+    // }, 3000);
   };
 
   // Set the first member as the team leader by default

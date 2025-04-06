@@ -44,10 +44,11 @@ const PrizeCard = ({ title, amount, perks, icon, highlight = false }) => (
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
     className={`w-full md:w-[350px] lg:w-[340px] bg-gradient-to-br ${
-      highlight
-        ? "from-[#562424] to-[#2e2c2c]"
-        : "from-[#161616] to-[#2a2a2a]"
-    } border border-gray-700 rounded-2xl shadow-md py-14 text-white`}
+      highlight ? "from-[#612929] to-[#1e1d1d]" : "from-[#161616] to-[#2a2a2a]"
+    } border border-gray-700 rounded-2xl shadow-md py-14 text-white hover:brightness-150 `}
+    style={{
+      height: highlight ? "430px" : "auto", // Increase height for the highlighted card
+    }}
   >
     <div className="flex flex-col items-center text-center space-y-3">
       <div className="bg-white bg-opacity-10 p-3 rounded-full">{icon}</div>
@@ -66,19 +67,21 @@ const PrizeCard = ({ title, amount, perks, icon, highlight = false }) => (
 );
 
 const ExcitingPrizes = () => (
-  <section className="text-center py-16 px-4  text-white mt-12">
+  <section className="text-center py-16 px-4 text-white mt-12">
     <h2 className="text-3xl md:text-4xl font-extrabold font-orbitron mb-4">
       Exciting <span className="text-[#ff4c4c]">Prizes</span>
     </h2>
     <div className="w-24 h-1 bg-gradient-to-r from-[#8e4242] to-[#77111194] mx-auto mb-8" />
 
     <p className="mb-12 text-gray-400 text-lg max-w-xl mx-auto">
-      Compete for these amazing prizes and gain recognition for your innovative solutions.
+      Compete for these amazing prizes and gain recognition for your innovative
+      solutions.
     </p>
 
     <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
       <PrizeCard {...prizeData[1]} />
-      <PrizeCard {...prizeData[0]} highlight />
+      <PrizeCard {...prizeData[0]} highlight />{" "}
+      {/* Highlighted card with more height */}
       <PrizeCard {...prizeData[2]} />
     </div>
   </section>

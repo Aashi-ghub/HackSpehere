@@ -77,14 +77,22 @@ const ExcitingPrizes = () => (
       Compete for these amazing prizes and gain recognition for your innovative
       solutions.
     </p>
-
     <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
-      <PrizeCard {...prizeData[1]} />
-      <PrizeCard {...prizeData[0]} highlight />{" "}
-      {/* Highlighted card with more height */}
-      <PrizeCard {...prizeData[2]} />
-    </div>
+  
+  <div className="order-1 lg:order-2 w-full md:w-[350px] lg:w-[340px]">
+    <PrizeCard {...prizeData[0]} highlight />
+  </div>
+
+  <div className="order-2 lg:order-1 w-full md:w-[350px] lg:w-[340px]">
+    <PrizeCard {...prizeData[1]} />
+  </div>
+
+  <div className="order-3 w-full md:w-[350px] lg:w-[340px]">
+    <PrizeCard {...prizeData[2]} />
+  </div>
+</div>
+
   </section>
 );
 
-export default ExcitingPrizes;
+export default ExcitingPrizes;
